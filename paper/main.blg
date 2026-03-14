@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: references.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in azeta2018review
+Warning--empty address in azeta2018review
+Warning--no number and no volume in benallegue2025rhp
+Warning--page numbers missing in both pages and numpages fields in benallegue2025rhp
+Warning--empty publisher in brohan2023rt2
+Warning--empty address in brohan2023rt2
+Warning--page numbers missing in both pages and numpages fields in brohan2023rt2
+Warning--empty address in kajita2003biped
+Warning--page numbers missing in both pages and numpages fields in liu2025screens
+Warning--empty address in lum2009latency
+Warning--unusual to have number, but no volume, for mehrholz2017electromechanical
+Warning--empty address in mukherjee2022humanoid
+Warning--empty address in okamura2000dexterous
+Warning--empty address in pratt1995elastic
+Warning--empty address in sakagami2002asimo
+You've used 67 entries,
+            6273 wiz_defined-function locations,
+            1911 strings with 33806 characters,
+and the built_in function-call counts, 76862 in all, are:
+= -- 10155
+> -- 3217
+< -- 3
++ -- 1116
+- -- 1113
+* -- 5986
+:= -- 7919
+add.period$ -- 367
+call.type$ -- 67
+change.case$ -- 597
+chr.to.int$ -- 67
+cite$ -- 82
+duplicate$ -- 6077
+empty$ -- 4241
+format.name$ -- 1333
+if$ -- 18449
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 171
+newline$ -- 651
+num.names$ -- 469
+pop$ -- 2216
+preamble$ -- 1
+purify$ -- 1129
+quote$ -- 0
+skip$ -- 2304
+stack$ -- 0
+substring$ -- 5188
+swap$ -- 615
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1561
+warning$ -- 15
+while$ -- 367
+width$ -- 0
+write$ -- 1380
+(There were 15 warnings)

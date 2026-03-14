@@ -1,0 +1,955 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{67}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Abdi et~al\mbox{.}(2018)]%
+        {abdi2018scoping}
+\bibfield{author}{\bibinfo{person}{Jalal Abdi}, \bibinfo{person}{Abrar
+  Al-Hindawi}, \bibinfo{person}{Toto Ng}, {and} \bibinfo{person}{Marcela~P.
+  Vizcaychipi}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Scoping Review on the Use of Socially Assistive
+  Robot Technology in Elderly Care}.
+\newblock \bibinfo{journal}{\emph{BMJ Open}} \bibinfo{volume}{8},
+  \bibinfo{number}{2} (\bibinfo{year}{2018}), \bibinfo{pages}{e018815}.
+\newblock
+\href{https://doi.org/10.1136/bmjopen-2017-018815}{doi:\nolinkurl{10.1136/bmjopen-2017-018815}}
+
+
+\bibitem[Alameda-Pineda et~al\mbox{.}(2024)]%
+        {alamedapineda2024spring}
+\bibfield{author}{\bibinfo{person}{Xavier Alameda-Pineda} {et~al\mbox{.}}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Socially Pertinent Robots in Gerontological
+  Healthcare ({SPRING} Project)}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2404.07560}.
+
+
+\bibitem[Alemzadeh et~al\mbox{.}(2016)]%
+        {alemzadeh2016adverse}
+\bibfield{author}{\bibinfo{person}{Homa Alemzadeh},
+  \bibinfo{person}{Ravishankar~K. Iyer}, \bibinfo{person}{Zbigniew Kalbarczyk},
+  \bibinfo{person}{Nancy Leveson}, {and} \bibinfo{person}{Jaishankar Raman}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Adverse Events in Robotic Surgery: A Retrospective
+  Study of 14 Years of {FDA} Data}.
+\newblock \bibinfo{journal}{\emph{PLOS ONE}} \bibinfo{volume}{11},
+  \bibinfo{number}{4} (\bibinfo{year}{2016}), \bibinfo{pages}{e0151470}.
+\newblock
+\href{https://doi.org/10.1371/journal.pone.0151470}{doi:\nolinkurl{10.1371/journal.pone.0151470}}
+
+
+\bibitem[Atar et~al\mbox{.}(2025)]%
+        {atar2025humanoids}
+\bibfield{author}{\bibinfo{person}{Soofiyan Atar}, \bibinfo{person}{Xiao
+  Liang}, \bibinfo{person}{Calvin Joyce}, \bibinfo{person}{Florian Richter},
+  \bibinfo{person}{Ricardo Wood}, \bibinfo{person}{Charles Goldberg},
+  \bibinfo{person}{Preetham Suresh}, {and} \bibinfo{person}{Michael Yip}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{Humanoids in Hospitals: {A} Technical Study of
+  Humanoid Robot Surrogates for Dexterous Medical Interventions}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2503.12725}.
+
+
+\bibitem[Azeta et~al\mbox{.}(2018)]%
+        {azeta2018review}
+\bibfield{author}{\bibinfo{person}{J. Azeta}, \bibinfo{person}{C. Bolu},
+  \bibinfo{person}{A.~A. Abioye}, {and} \bibinfo{person}{F. Oyawale}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{A Review on Humanoid Robotics in Healthcare}. In
+  \bibinfo{booktitle}{\emph{MATEC Web of Conferences (ICMME 2018)}},
+  Vol.~\bibinfo{volume}{153}. \bibinfo{pages}{02004}.
+\newblock
+\href{https://doi.org/10.1051/matecconf/201815302004}{doi:\nolinkurl{10.1051/matecconf/201815302004}}
+
+
+\bibitem[Benallegue et~al\mbox{.}(2025)]%
+        {benallegue2025rhp}
+\bibfield{author}{\bibinfo{person}{Mehdi Benallegue} {et~al\mbox{.}}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Humanoid Robot {RHP} Friends: Seamless Combination
+  of Autonomous and Teleoperated Tasks in a Nursing Context}.
+\newblock \bibinfo{journal}{\emph{IEEE Robotics and Automation Magazine}}
+  (\bibinfo{year}{2025}).
+\newblock
+\newblock
+\shownote{In press. arXiv:2412.20770}.
+
+
+\bibitem[Black et~al\mbox{.}(2024)]%
+        {black2024pi0}
+\bibfield{author}{\bibinfo{person}{Kevin Black}, \bibinfo{person}{Noah Brown},
+  \bibinfo{person}{Danny Driess}, \bibinfo{person}{Adnan Esmail},
+  \bibinfo{person}{Michael Equi}, \bibinfo{person}{Chelsea Finn},
+  \bibinfo{person}{Niccolo Fusai}, \bibinfo{person}{Lachy Groom},
+  \bibinfo{person}{Karol Hausman}, \bibinfo{person}{Brian Ichter},
+  \bibinfo{person}{Szymon Jakubczak}, \bibinfo{person}{Tim Jones},
+  \bibinfo{person}{Liyiming Ke}, \bibinfo{person}{Sergey Levine},
+  \bibinfo{person}{Adrian Li}, \bibinfo{person}{Mohan Mothukuri},
+  \bibinfo{person}{Suraj Nair}, \bibinfo{person}{Karl Pertsch},
+  \bibinfo{person}{Lucy~Xiaoyang Shi}, \bibinfo{person}{James Tanner},
+  {et~al\mbox{.}}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{$\pi_0$: A Vision-Language-Action Flow Model for
+  General Robot Control}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2410.24164}.
+
+
+\bibitem[Broadbent(2017)]%
+        {broadbent2017interactions}
+\bibfield{author}{\bibinfo{person}{Elizabeth Broadbent}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Interactions with Robots: The Truths We Reveal
+  About Ourselves}.
+\newblock \bibinfo{journal}{\emph{Annual Review of Psychology}}
+  \bibinfo{volume}{68} (\bibinfo{year}{2017}), \bibinfo{pages}{627--652}.
+\newblock
+\href{https://doi.org/10.1146/annurev-psych-010416-043958}{doi:\nolinkurl{10.1146/annurev-psych-010416-043958}}
+
+
+\bibitem[Brohan et~al\mbox{.}(2023)]%
+        {brohan2023rt2}
+\bibfield{author}{\bibinfo{person}{Anthony Brohan}, \bibinfo{person}{Noah
+  Brown}, \bibinfo{person}{Justice Carbajal}, \bibinfo{person}{Yevgen
+  Chebotar}, \bibinfo{person}{Xi Chen}, \bibinfo{person}{Krzysztof
+  Choromanski}, \bibinfo{person}{Tianli Ding}, \bibinfo{person}{Danny Driess},
+  \bibinfo{person}{Avinava Dubey}, \bibinfo{person}{Chelsea Finn},
+  \bibinfo{person}{Pete Florence}, \bibinfo{person}{Chuyuan Fu},
+  \bibinfo{person}{Montse~Gonzalez Arenas}, \bibinfo{person}{Keerthana
+  Gopalakrishnan}, \bibinfo{person}{Kehang Han}, \bibinfo{person}{Karol
+  Hausman}, \bibinfo{person}{Alexander Herzog}, \bibinfo{person}{Jasmine Hsu},
+  \bibinfo{person}{Brian Ichter}, \bibinfo{person}{Alex Irpan},
+  {et~al\mbox{.}}} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{RT-2}: Vision-Language-Action Models Transfer Web
+  Knowledge to Robotic Control}. In \bibinfo{booktitle}{\emph{Conference on
+  Robot Learning ({CoRL})}}.
+\newblock
+\newblock
+\shownote{arXiv:2307.15818}.
+
+
+\bibitem[Cabibihan et~al\mbox{.}(2013)]%
+        {cabibihan2013robots}
+\bibfield{author}{\bibinfo{person}{John-John Cabibihan}, \bibinfo{person}{Hifza
+  Javed}, \bibinfo{person}{Marcelo Ang}, {and} \bibinfo{person}{Sharifah~Mariam
+  Aljunied}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Why Robots? {A} Survey on the Roles and Benefits of
+  Social Robots in the Therapy of Children with Autism}.
+\newblock \bibinfo{journal}{\emph{International Journal of Social Robotics}}
+  \bibinfo{volume}{5}, \bibinfo{number}{4} (\bibinfo{year}{2013}),
+  \bibinfo{pages}{593--618}.
+\newblock
+\href{https://doi.org/10.1007/s12369-013-0202-2}{doi:\nolinkurl{10.1007/s12369-013-0202-2}}
+
+
+\bibitem[{Cabinet Office, Government of Japan}(2023)]%
+        {japancabinet2023}
+\bibfield{author}{\bibinfo{person}{{Cabinet Office, Government of Japan}}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Annual Report on the Aging Society 2023}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Cabinet
+  Office, Government of Japan}, \bibinfo{address}{Tokyo}.
+\newblock
+
+
+\bibitem[Cadene et~al\mbox{.}(2024)]%
+        {cadene2024lerobot}
+\bibfield{author}{\bibinfo{person}{Remi Cadene}, \bibinfo{person}{Simon
+  Alibert}, \bibinfo{person}{Alexander Soare}, \bibinfo{person}{Quentin
+  Gallouedec}, \bibinfo{person}{Nicolas Levy}, {and} \bibinfo{person}{Thomas
+  Wolf}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{LeRobot}: Making Robotics More Accessible}.
+\newblock \bibinfo{howpublished}{GitHub repository}.
+\newblock
+
+
+\bibitem[Camarillo et~al\mbox{.}(2004)]%
+        {camarillo2004robotic}
+\bibfield{author}{\bibinfo{person}{David~B. Camarillo},
+  \bibinfo{person}{Thomas~M. Krummel}, {and} \bibinfo{person}{J.~Kenneth
+  Salisbury}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Robotic Technology in Surgery: Past, Present, and
+  Future}.
+\newblock \bibinfo{journal}{\emph{The American Journal of Surgery}}
+  \bibinfo{volume}{188}, \bibinfo{number}{4} (\bibinfo{year}{2004}),
+  \bibinfo{pages}{2S--15S}.
+\newblock
+\href{https://doi.org/10.1016/j.amjsurg.2004.09.017}{doi:\nolinkurl{10.1016/j.amjsurg.2004.09.017}}
+
+
+\bibitem[Cao(2025)]%
+        {cao2025humanoid}
+\bibfield{author}{\bibinfo{person}{Longbing Cao}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Humanoid Robots and Humanoid {AI}: Review,
+  Perspectives and Directions}.
+\newblock \bibinfo{journal}{\emph{Comput. Surveys}} \bibinfo{volume}{58},
+  \bibinfo{number}{4} (\bibinfo{year}{2025}), \bibinfo{pages}{97}.
+\newblock
+\href{https://doi.org/10.1145/3770574}{doi:\nolinkurl{10.1145/3770574}}
+\newblock
+\shownote{arXiv:2405.15775}.
+
+
+\bibitem[Chi et~al\mbox{.}(2023)]%
+        {chi2023diffusion}
+\bibfield{author}{\bibinfo{person}{Cheng Chi}, \bibinfo{person}{Siyuan Feng},
+  \bibinfo{person}{Yilun Du}, \bibinfo{person}{Zhenjia Xu},
+  \bibinfo{person}{Eric Cousineau}, \bibinfo{person}{Benjamin Burchfiel}, {and}
+  \bibinfo{person}{Shuran Song}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Diffusion Policy: Visuomotor Policy Learning via
+  Action Diffusion}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2303.04137}.
+
+
+\bibitem[Cho et~al\mbox{.}(2026)]%
+        {cho2026humanoid}
+\bibfield{author}{\bibinfo{person}{Sean~M. Cho}, \bibinfo{person}{Jan~Emily
+  Mangulabnan}, \bibinfo{person}{Hao Zhang}, \bibinfo{person}{Zhuoran Mao},
+  \bibinfo{person}{Yuxin He}, \bibinfo{person}{Pei Guo},
+  \bibinfo{person}{Danyang Xu}, \bibinfo{person}{Gregory Hager},
+  \bibinfo{person}{Masaru Ishii}, {and} \bibinfo{person}{Mathias Unberath}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Humanoid Robots as First Assistants in Endoscopic
+  Surgery}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2602.24156}.
+
+
+\bibitem[Cunha et~al\mbox{.}(2025)]%
+        {cunha2025humanoid}
+\bibfield{author}{\bibinfo{person}{I.~C. K.~O. Cunha}, \bibinfo{person}{R.~A.
+  Pimenta}, \bibinfo{person}{P.~A. Dadalt}, {and} \bibinfo{person}{M.~C. F.~L.
+  Haddad}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Care Provided by Humanoid Robots: A Scoping
+  Review}.
+\newblock \bibinfo{journal}{\emph{Investigaci{\'o}n y Educaci{\'o}n en
+  Enfermer{\'i}a}} \bibinfo{volume}{43}, \bibinfo{number}{1}
+  (\bibinfo{year}{2025}), \bibinfo{pages}{e11}.
+\newblock
+\href{https://doi.org/10.17533/udea.iee.v43n1e11}{doi:\nolinkurl{10.17533/udea.iee.v43n1e11}}
+
+
+\bibitem[Ghosh et~al\mbox{.}(2024)]%
+        {ghosh2024usercentered}
+\bibfield{author}{\bibinfo{person}{Rwitajit Ghosh}, \bibinfo{person}{Nayeem
+  Khan}, \bibinfo{person}{Maria Migovich}, \bibinfo{person}{Judith~A. Tate},
+  \bibinfo{person}{Cathy Maxwell}, \bibinfo{person}{Emily Latshaw},
+  \bibinfo{person}{Paul Newhouse}, \bibinfo{person}{Douglas~W. Scharre},
+  \bibinfo{person}{Andrew Tan}, \bibinfo{person}{Keri Colopietro},
+  \bibinfo{person}{Lorraine~C. Mion}, {and} \bibinfo{person}{Nilanjan Sarkar}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{User-Centered Design of Socially Assistive Robot with
+  Non-Immersive {VR} for Older Adults in Long Term Care}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2410.21197}.
+
+
+\bibitem[Hancock et~al\mbox{.}(2011)]%
+        {hancock2011meta}
+\bibfield{author}{\bibinfo{person}{Peter~A. Hancock},
+  \bibinfo{person}{Deborah~R. Billings}, \bibinfo{person}{Kristin~E. Schaefer},
+  \bibinfo{person}{Jessie~Y.C. Chen}, \bibinfo{person}{Ewart~J. de Visser},
+  {and} \bibinfo{person}{Raja Parasuraman}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{A Meta-Analysis of Factors Affecting Trust in
+  Human-Robot Interaction}.
+\newblock \bibinfo{journal}{\emph{Human Factors}} \bibinfo{volume}{53},
+  \bibinfo{number}{5} (\bibinfo{year}{2011}), \bibinfo{pages}{517--527}.
+\newblock
+\href{https://doi.org/10.1177/0018720811417254}{doi:\nolinkurl{10.1177/0018720811417254}}
+
+
+\bibitem[Heerink et~al\mbox{.}(2010)]%
+        {heerink2010assessing}
+\bibfield{author}{\bibinfo{person}{Marcel Heerink}, \bibinfo{person}{Ben
+  Kr{\"o}se}, \bibinfo{person}{Vanessa Evers}, {and} \bibinfo{person}{Bob
+  Wielinga}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Assessing Acceptance of Assistive Social Agent
+  Technology by Older Adults: The Almere Model}.
+\newblock \bibinfo{journal}{\emph{International Journal of Social Robotics}}
+  \bibinfo{volume}{2}, \bibinfo{number}{4} (\bibinfo{year}{2010}),
+  \bibinfo{pages}{361--375}.
+\newblock
+\href{https://doi.org/10.1007/s12369-010-0068-5}{doi:\nolinkurl{10.1007/s12369-010-0068-5}}
+
+
+\bibitem[Huang et~al\mbox{.}(2023)]%
+        {huang2023intelligent}
+\bibfield{author}{\bibinfo{person}{Rong Huang}, \bibinfo{person}{Hongxiu Li},
+  \bibinfo{person}{Reima Suomi}, \bibinfo{person}{Chenglong Li}, {and}
+  \bibinfo{person}{Teijo Peltoniemi}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Intelligent Physical Robots in Health Care:
+  Systematic Literature Review}.
+\newblock \bibinfo{journal}{\emph{Journal of Medical Internet Research}}
+  \bibinfo{volume}{25} (\bibinfo{year}{2023}), \bibinfo{pages}{e39786}.
+\newblock
+\href{https://doi.org/10.2196/39786}{doi:\nolinkurl{10.2196/39786}}
+
+
+\bibitem[Imtiaz and Khan(2024)]%
+        {imtiaz2024perceptions}
+\bibfield{author}{\bibinfo{person}{Rimsha Imtiaz} {and} \bibinfo{person}{Asad
+  Khan}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Perceptions of Humanoid Robots in Caregiving: {A}
+  Study of Skilled Nursing Home and Long Term Care Administrators}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2401.02105}.
+
+
+\bibitem[{International Organization for Standardization}(2014)]%
+        {iso13482}
+\bibfield{author}{\bibinfo{person}{{International Organization for
+  Standardization}}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Robots and Robotic Devices --- Safety
+  Requirements for Personal Care Robots}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} {ISO} 13482:2014.
+  \bibinfo{institution}{International Organization for Standardization},
+  \bibinfo{address}{Geneva, Switzerland}.
+\newblock
+
+
+\bibitem[{International Organization for Standardization}(2016)]%
+        {isots15066}
+\bibfield{author}{\bibinfo{person}{{International Organization for
+  Standardization}}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Robots and Robotic Devices ---
+  Collaborative Robots}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} {ISO/TS} 15066:2016.
+  \bibinfo{institution}{International Organization for Standardization},
+  \bibinfo{address}{Geneva, Switzerland}.
+\newblock
+
+
+\bibitem[Kajita et~al\mbox{.}(2003)]%
+        {kajita2003biped}
+\bibfield{author}{\bibinfo{person}{Shuuji Kajita}, \bibinfo{person}{Fumio
+  Kanehiro}, \bibinfo{person}{Kenji Kaneko}, \bibinfo{person}{Kiyoshi
+  Fujiwara}, \bibinfo{person}{Kensuke Harada}, \bibinfo{person}{Kohei Yokoi},
+  {and} \bibinfo{person}{Hirohisa Hirukawa}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Biped Walking Pattern Generation by Using Preview
+  Control of Zero-Moment Point}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the {IEEE} International Conference on Robotics and Automation ({ICRA})}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{1620--1626}.
+\newblock
+\href{https://doi.org/10.1109/ROBOT.2003.1241826}{doi:\nolinkurl{10.1109/ROBOT.2003.1241826}}
+
+
+\bibitem[Kaneko et~al\mbox{.}(2019)]%
+        {kaneko2019hrp5p}
+\bibfield{author}{\bibinfo{person}{Kenji Kaneko}, \bibinfo{person}{Mitsuharu
+  Morisawa}, \bibinfo{person}{Shuuji Kajita}, \bibinfo{person}{Shin-ichiro
+  Nakaoka}, \bibinfo{person}{Takeshi Sakaguchi}, \bibinfo{person}{Rafael
+  Cisneros}, {and} \bibinfo{person}{Fumio Kanehiro}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Humanoid Robot {HRP-5P}: An Electrically Actuated
+  Humanoid Robot with High-Power and Wide-Range Joints}.
+\newblock \bibinfo{journal}{\emph{IEEE Robotics and Automation Letters}}
+  \bibinfo{volume}{4}, \bibinfo{number}{2} (\bibinfo{year}{2019}),
+  \bibinfo{pages}{1431--1438}.
+\newblock
+\href{https://doi.org/10.1109/LRA.2019.2894979}{doi:\nolinkurl{10.1109/LRA.2019.2894979}}
+
+
+\bibitem[Kim et~al\mbox{.}(2024)]%
+        {kim2024openvla}
+\bibfield{author}{\bibinfo{person}{Moo~Jin Kim}, \bibinfo{person}{Karl
+  Pertsch}, \bibinfo{person}{Siddharth Karamcheti}, \bibinfo{person}{Ted Xiao},
+  \bibinfo{person}{Ashwin Balakrishna}, \bibinfo{person}{Suraj Nair},
+  \bibinfo{person}{Rafael Rafailov}, \bibinfo{person}{Ethan Foster},
+  \bibinfo{person}{Grace Lam}, \bibinfo{person}{Pannag Sanketi},
+  \bibinfo{person}{Quan Vuong}, \bibinfo{person}{Thomas Kollar},
+  \bibinfo{person}{Benjamin Burchfiel}, \bibinfo{person}{Russ Tedrake},
+  \bibinfo{person}{Dorsa Sadigh}, \bibinfo{person}{Sergey Levine},
+  \bibinfo{person}{Percy Liang}, {and} \bibinfo{person}{Chelsea Finn}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{OpenVLA}: An Open-Source Vision-Language-Action
+  Model}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2406.09246}.
+
+
+\bibitem[Lanfranco et~al\mbox{.}(2004)]%
+        {lanfranco2004robotic}
+\bibfield{author}{\bibinfo{person}{Anthony~R. Lanfranco},
+  \bibinfo{person}{Andres~E. Castellanos}, \bibinfo{person}{Jaydev~P. Desai},
+  {and} \bibinfo{person}{William~C. Meyers}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{Robotic Surgery: A Current Perspective}.
+\newblock \bibinfo{journal}{\emph{Annals of Surgery}} \bibinfo{volume}{239},
+  \bibinfo{number}{1} (\bibinfo{year}{2004}), \bibinfo{pages}{14--21}.
+\newblock
+\href{https://doi.org/10.1097/01.sla.0000103020.19595.7d}{doi:\nolinkurl{10.1097/01.sla.0000103020.19595.7d}}
+
+
+\bibitem[Lasater et~al\mbox{.}(2021)]%
+        {lasater2021}
+\bibfield{author}{\bibinfo{person}{Karen~B. Lasater}, \bibinfo{person}{Linda~H.
+  Aiken}, \bibinfo{person}{Douglas~M. Sloane}, \bibinfo{person}{Rachel French},
+  \bibinfo{person}{Brian Martin}, \bibinfo{person}{Katherine Reneau},
+  \bibinfo{person}{Mathew Alexander}, {and} \bibinfo{person}{Matthew~D.
+  McHugh}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Chronic Hospital Nurse Understaffing Meets
+  {COVID}-19: An Observational Study}.
+\newblock \bibinfo{journal}{\emph{BMJ Quality \& Safety}} \bibinfo{volume}{30},
+  \bibinfo{number}{8} (\bibinfo{year}{2021}), \bibinfo{pages}{639--647}.
+\newblock
+\href{https://doi.org/10.1136/bmjqs-2020-011512}{doi:\nolinkurl{10.1136/bmjqs-2020-011512}}
+
+
+\bibitem[Liang et~al\mbox{.}(2025)]%
+        {liang2025lapsurgie}
+\bibfield{author}{\bibinfo{person}{Zhuoyang Liang}, \bibinfo{person}{Xiao
+  Liang}, \bibinfo{person}{Soofiyan Atar}, \bibinfo{person}{Sayan Das},
+  \bibinfo{person}{Zhuoyi Chiu}, \bibinfo{person}{Peiyao Zhang},
+  \bibinfo{person}{Calvin Joyce}, \bibinfo{person}{Florian Richter},
+  \bibinfo{person}{Siheng Liu}, {and} \bibinfo{person}{Michael Yip}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{LapSurgie}: Humanoid Robots Performing Surgery via
+  Teleoperated Handheld Laparoscopy}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2510.03529}.
+
+
+\bibitem[Lindsay et~al\mbox{.}(2022)]%
+        {lindsay2022socially}
+\bibfield{author}{\bibinfo{person}{Alan Lindsay}, \bibinfo{person}{Andres
+  Ramirez-Duque}, \bibinfo{person}{Ronald P.~A. Petrick}, {and}
+  \bibinfo{person}{Mary~Ellen Foster}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{A Socially Assistive Robot using Automated Planning
+  in a Paediatric Clinical Setting}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2210.09753}.
+
+
+\bibitem[Lisondra et~al\mbox{.}(2026)]%
+        {lisondra2026embodied}
+\bibfield{author}{\bibinfo{person}{Matthew Lisondra}, \bibinfo{person}{Beno
+  Benhabib}, {and} \bibinfo{person}{Goldie Nejat}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Embodied {AI} with Foundation Models for Mobile
+  Service Robots: {A} Systematic Review}.
+\newblock \bibinfo{journal}{\emph{Robotics}} \bibinfo{volume}{15},
+  \bibinfo{number}{3} (\bibinfo{year}{2026}), \bibinfo{pages}{55}.
+\newblock
+\href{https://doi.org/10.3390/robotics15030055}{doi:\nolinkurl{10.3390/robotics15030055}}
+\newblock
+\shownote{arXiv:2505.20503}.
+
+
+\bibitem[Liu et~al\mbox{.}(2025)]%
+        {liu2025screens}
+\bibfield{author}{\bibinfo{person}{Yihao Liu}, \bibinfo{person}{Xu Cao},
+  \bibinfo{person}{Tingting Chen}, \bibinfo{person}{Yankai Jiang},
+  \bibinfo{person}{Junjie You}, \bibinfo{person}{Minghua Wu},
+  \bibinfo{person}{Xiaosong Wang}, \bibinfo{person}{Mengling Feng},
+  \bibinfo{person}{Yaochu Jing}, {and} \bibinfo{person}{Jintai Chen}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{From Screens to Scenes: {A} Survey of Embodied {AI}
+  in Healthcare}.
+\newblock \bibinfo{journal}{\emph{Information Fusion}}  \bibinfo{volume}{119}
+  (\bibinfo{year}{2025}).
+\newblock
+\href{https://doi.org/10.1016/j.inffus.2025.103033}{doi:\nolinkurl{10.1016/j.inffus.2025.103033}}
+\newblock
+\shownote{arXiv:2501.07468}.
+
+
+\bibitem[Lu et~al\mbox{.}(2025)]%
+        {lu2025gentlehumanoid}
+\bibfield{author}{\bibinfo{person}{Qiayuan Lu}, \bibinfo{person}{Yuxiang Feng},
+  \bibinfo{person}{Bike Shi}, \bibinfo{person}{Maxwell Piseno},
+  \bibinfo{person}{Zhongyu Bao}, {and} \bibinfo{person}{C.~Karen Liu}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{GentleHumanoid}: Learning Upper-body Compliance for
+  Contact-rich Human and Object Interaction}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2511.04679}.
+
+
+\bibitem[Lum et~al\mbox{.}(2009)]%
+        {lum2009latency}
+\bibfield{author}{\bibinfo{person}{Mitchell~J.H. Lum}, \bibinfo{person}{Jacob
+  Rosen}, \bibinfo{person}{Hawkeye King}, \bibinfo{person}{Diana~C.W.
+  Friedman}, \bibinfo{person}{Thomas~S. Lendvay}, \bibinfo{person}{Andrew~S.
+  Wright}, \bibinfo{person}{Mika~N. Sinanan}, {and} \bibinfo{person}{Blake
+  Hannaford}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Teleoperation in Surgical Robotics --- Network
+  Latency Effects on Surgical Performance}. In \bibinfo{booktitle}{\emph{31st
+  Annual International Conference of the {IEEE} Engineering in Medicine and
+  Biology Society ({EMBC})}}. \bibinfo{publisher}{IEEE},
+  \bibinfo{pages}{6860--6863}.
+\newblock
+\href{https://doi.org/10.1109/IEMBS.2009.5333120}{doi:\nolinkurl{10.1109/IEMBS.2009.5333120}}
+
+
+\bibitem[Mehrholz et~al\mbox{.}(2017)]%
+        {mehrholz2017electromechanical}
+\bibfield{author}{\bibinfo{person}{Jan Mehrholz}, \bibinfo{person}{Simone
+  Thomas}, {and} \bibinfo{person}{Bernhard Elsner}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Electromechanical-Assisted Training for Walking
+  after Stroke}.
+\newblock \bibinfo{journal}{\emph{Cochrane Database of Systematic Reviews}}
+  \bibinfo{number}{5} (\bibinfo{year}{2017}), \bibinfo{pages}{CD006185}.
+\newblock
+\href{https://doi.org/10.1002/14651858.CD006185.pub4}{doi:\nolinkurl{10.1002/14651858.CD006185.pub4}}
+
+
+\bibitem[Mir et~al\mbox{.}(2026)]%
+        {mir2026embodied}
+\bibfield{author}{\bibinfo{person}{Bilal~Ahmad Mir}, \bibinfo{person}{Dur~E.
+  Nishwa}, {and} \bibinfo{person}{Seung~Won Lee}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Embodied Artificial Intelligence in Healthcare: {A}
+  Systematic Review of Robotic Perception, Decision-Making, and Clinical
+  Impact}.
+\newblock \bibinfo{journal}{\emph{Healthcare}} \bibinfo{volume}{14},
+  \bibinfo{number}{5} (\bibinfo{year}{2026}), \bibinfo{pages}{572}.
+\newblock
+\href{https://doi.org/10.3390/healthcare14050572}{doi:\nolinkurl{10.3390/healthcare14050572}}
+
+
+\bibitem[Morgan et~al\mbox{.}(2022)]%
+        {morgan2022robots}
+\bibfield{author}{\bibinfo{person}{Ahmed~Ashraf Morgan},
+  \bibinfo{person}{Jordan Abdi}, \bibinfo{person}{Mohammed A.~Q. Syed},
+  \bibinfo{person}{Ghita El~Kohen}, \bibinfo{person}{Phillip Barlow}, {and}
+  \bibinfo{person}{Marcela~P. Vizcaychipi}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Robots in Healthcare: A Scoping Review}.
+\newblock \bibinfo{journal}{\emph{Current Robotics Reports}}
+  \bibinfo{volume}{3}, \bibinfo{number}{4} (\bibinfo{year}{2022}),
+  \bibinfo{pages}{271--280}.
+\newblock
+\href{https://doi.org/10.1007/s43154-022-00095-4}{doi:\nolinkurl{10.1007/s43154-022-00095-4}}
+
+
+\bibitem[Mori et~al\mbox{.}(2012)]%
+        {mori2012uncanny}
+\bibfield{author}{\bibinfo{person}{Masahiro Mori}, \bibinfo{person}{Karl~F.
+  MacDorman}, {and} \bibinfo{person}{Norri Kageki}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{The Uncanny Valley [From the Field]}.
+\newblock \bibinfo{journal}{\emph{IEEE Robotics and Automation Magazine}}
+  \bibinfo{volume}{19}, \bibinfo{number}{2} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{98--100}.
+\newblock
+\href{https://doi.org/10.1109/MRA.2012.2192811}{doi:\nolinkurl{10.1109/MRA.2012.2192811}}
+
+
+\bibitem[Mukherjee et~al\mbox{.}(2022)]%
+        {mukherjee2022humanoid}
+\bibfield{author}{\bibinfo{person}{S. Mukherjee}, \bibinfo{person}{M. Baral},
+  \bibinfo{person}{S. Pal}, \bibinfo{person}{V. Chittipaka},
+  \bibinfo{person}{R. Roy}, {and} \bibinfo{person}{K. Alam}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Humanoid Robot in Healthcare: {A} Systematic Review
+  and Future Research Directions}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the IEEE International Conference on Machine Learning, Big Data, Cloud and
+  Parallel Computing (COM-IT-CON)}}. \bibinfo{publisher}{IEEE}.
+\newblock
+\href{https://doi.org/10.1109/COM-IT-CON54601.2022.9850577}{doi:\nolinkurl{10.1109/COM-IT-CON54601.2022.9850577}}
+
+
+\bibitem[Nguyen et~al\mbox{.}(2024)]%
+        {nguyen2024eeg}
+\bibfield{author}{\bibinfo{person}{An~T. Nguyen}, \bibinfo{person}{Aman Anand},
+  {and} \bibinfo{person}{Michelle~J. Johnson}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Exploring {EEG} Responses during Observation of
+  Actions Performed by Human Actor and Humanoid Robot}. In
+  \bibinfo{booktitle}{\emph{10th IEEE RAS/EMBS International Conference for
+  Biomedical Robotics and Biomechatronics (BioRob)}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{address}{Piscataway, NJ},
+  \bibinfo{pages}{1795--1801}.
+\newblock
+\newblock
+\shownote{arXiv:2506.10170}.
+
+
+\bibitem[Okamura et~al\mbox{.}(2000)]%
+        {okamura2000dexterous}
+\bibfield{author}{\bibinfo{person}{Allison~M. Okamura}, \bibinfo{person}{Niels
+  Smaby}, {and} \bibinfo{person}{Mark~R. Cutkosky}.}
+  \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{An Overview of Dexterous Manipulation}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the {IEEE} International Conference
+  on Robotics and Automation ({ICRA})}}. \bibinfo{publisher}{IEEE},
+  \bibinfo{pages}{255--262}.
+\newblock
+
+
+\bibitem[{Open X-Embodiment Collaboration} et~al\mbox{.}(2023)]%
+        {openxembodiment2023}
+\bibfield{author}{\bibinfo{person}{{Open X-Embodiment Collaboration}},
+  \bibinfo{person}{Abhishek Padalkar}, \bibinfo{person}{Acorn Pooley},
+  \bibinfo{person}{Ajinkya Jain}, \bibinfo{person}{Alex Bewley},
+  \bibinfo{person}{Alex Herzog}, \bibinfo{person}{Alex Irpan}, {et~al\mbox{.}}}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Open {X}-Embodiment: Robotic Learning Datasets and
+  {RT-X} Models}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2310.08864}.
+
+
+\bibitem[{OpenAI} et~al\mbox{.}(2023)]%
+        {openai2023gpt4}
+\bibfield{author}{\bibinfo{person}{{OpenAI}}, \bibinfo{person}{Josh Achiam},
+  \bibinfo{person}{Steven Adler}, \bibinfo{person}{Sandhini Agarwal},
+  \bibinfo{person}{Lama Ahmad}, \bibinfo{person}{Ilge Akkaya}, {et~al\mbox{.}}}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{GPT}-4 Technical Report}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{OpenAI}.
+\newblock
+\newblock
+\shownote{arXiv:2303.08774}.
+
+
+\bibitem[{Organisation for Economic Co-operation and Development}(2023)]%
+        {oecd2023health}
+\bibfield{author}{\bibinfo{person}{{Organisation for Economic Co-operation and
+  Development}}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Health at a Glance 2023: {OECD}
+  Indicators}}.
+\newblock \bibinfo{publisher}{OECD Publishing}, \bibinfo{address}{Paris}.
+\newblock
+\href{https://doi.org/10.1787/7a7afb35-en}{doi:\nolinkurl{10.1787/7a7afb35-en}}
+
+
+\bibitem[Ozturkcan and Merdin-Uygur(2022)]%
+        {ozturkcan2022humanoid}
+\bibfield{author}{\bibinfo{person}{Selcen Ozturkcan} {and}
+  \bibinfo{person}{Ezgi Merdin-Uygur}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Humanoid Service Robots: The Future of Healthcare?}
+\newblock \bibinfo{journal}{\emph{Journal of Information Technology Teaching
+  Cases}} \bibinfo{volume}{12}, \bibinfo{number}{2} (\bibinfo{year}{2022}),
+  \bibinfo{pages}{163--170}.
+\newblock
+\href{https://doi.org/10.1177/20438869211003905}{doi:\nolinkurl{10.1177/20438869211003905}}
+
+
+\bibitem[Pratt and Williamson(1995)]%
+        {pratt1995elastic}
+\bibfield{author}{\bibinfo{person}{Gill~A. Pratt} {and}
+  \bibinfo{person}{Matthew~M. Williamson}.} \bibinfo{year}{1995}\natexlab{}.
+\newblock \showarticletitle{Series Elastic Actuators}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the {IEEE/RSJ} International
+  Conference on Intelligent Robots and Systems ({IROS})}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{399--406}.
+\newblock
+
+
+\bibitem[Provoost et~al\mbox{.}(2017)]%
+        {provoost2017embodied}
+\bibfield{author}{\bibinfo{person}{Simon Provoost}, \bibinfo{person}{Ho~Ming
+  Lau}, \bibinfo{person}{Jeroen Ruwaard}, {and} \bibinfo{person}{Heleen
+  Riper}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Embodied Conversational Agents in Clinical
+  Psychology: {A} Scoping Review}.
+\newblock \bibinfo{journal}{\emph{Journal of Medical Internet Research}}
+  \bibinfo{volume}{19}, \bibinfo{number}{5} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{e151}.
+\newblock
+\href{https://doi.org/10.2196/jmir.6553}{doi:\nolinkurl{10.2196/jmir.6553}}
+
+
+\bibitem[Radosavovic et~al\mbox{.}(2024)]%
+        {radosavovic2024humanoid}
+\bibfield{author}{\bibinfo{person}{Ilija Radosavovic}, \bibinfo{person}{Bike
+  Zhang}, \bibinfo{person}{Baifeng Shi}, \bibinfo{person}{Rahul Malik},
+  \bibinfo{person}{Koushil Sreenath}, {and} \bibinfo{person}{Jitendra Malik}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Humanoid Locomotion as Next Token Prediction}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2402.19469}.
+
+
+\bibitem[Rajpurkar et~al\mbox{.}(2022)]%
+        {rajpurkar2022ai}
+\bibfield{author}{\bibinfo{person}{Pranav Rajpurkar}, \bibinfo{person}{Emma
+  Chen}, \bibinfo{person}{Oishi Banerjee}, {and} \bibinfo{person}{Eric~J.
+  Topol}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{{AI} in Health and Medicine}.
+\newblock \bibinfo{journal}{\emph{Nature Medicine}} \bibinfo{volume}{28},
+  \bibinfo{number}{1} (\bibinfo{year}{2022}), \bibinfo{pages}{31--38}.
+\newblock
+\href{https://doi.org/10.1038/s41591-021-01614-0}{doi:\nolinkurl{10.1038/s41591-021-01614-0}}
+
+
+\bibitem[Rizzolatti and Craighero(2004)]%
+        {rizzolatti2004mirror}
+\bibfield{author}{\bibinfo{person}{Giacomo Rizzolatti} {and}
+  \bibinfo{person}{Laila Craighero}.} \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{The Mirror-Neuron System}.
+\newblock \bibinfo{journal}{\emph{Annual Review of Neuroscience}}
+  \bibinfo{volume}{27} (\bibinfo{year}{2004}), \bibinfo{pages}{169--192}.
+\newblock
+\href{https://doi.org/10.1146/annurev.neuro.27.070203.144230}{doi:\nolinkurl{10.1146/annurev.neuro.27.070203.144230}}
+
+
+\bibitem[Robinson et~al\mbox{.}(2023)]%
+        {robinson2023brief}
+\bibfield{author}{\bibinfo{person}{Nicole Robinson}, \bibinfo{person}{Jennifer
+  Connolly}, \bibinfo{person}{Gavin Suddrey}, {and} \bibinfo{person}{David~J.
+  Kavanagh}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{A Brief Wellbeing Training Session Delivered by a
+  Humanoid Social Robot: {A} Pilot {RCT}}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2308.06435}.
+
+
+\bibitem[Sakagami et~al\mbox{.}(2002)]%
+        {sakagami2002asimo}
+\bibfield{author}{\bibinfo{person}{Yoshiaki Sakagami}, \bibinfo{person}{Ryujin
+  Watanabe}, \bibinfo{person}{Chiaki Aoyama}, \bibinfo{person}{Shinichi
+  Matsunaga}, \bibinfo{person}{Nobuo Higaki}, {and} \bibinfo{person}{Kikuo
+  Fujimura}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{The Intelligent {ASIMO}: System Overview and
+  Integration}. In \bibinfo{booktitle}{\emph{Proceedings of the {IEEE/RSJ}
+  International Conference on Intelligent Robots and Systems ({IROS})}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{2478--2483}.
+\newblock
+
+
+\bibitem[Sayis and Gunes(2024)]%
+        {sayis2024technology}
+\bibfield{author}{\bibinfo{person}{Bertan Sayis} {and} \bibinfo{person}{Hatice
+  Gunes}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Technology-assisted Journal Writing for Improving
+  Student Mental Wellbeing: Humanoid Robot vs. Voice Assistant}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2403.05083}.
+
+
+\bibitem[Sentis and Khatib(2005)]%
+        {sentis2005synthesis}
+\bibfield{author}{\bibinfo{person}{Luis Sentis} {and} \bibinfo{person}{Oussama
+  Khatib}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Synthesis of Whole-Body Behaviors through
+  Hierarchical Control of Behavioral Primitives}.
+\newblock \bibinfo{journal}{\emph{International Journal of Humanoid Robotics}}
+  \bibinfo{volume}{2}, \bibinfo{number}{4} (\bibinfo{year}{2005}),
+  \bibinfo{pages}{505--518}.
+\newblock
+\href{https://doi.org/10.1142/S0219843605000387}{doi:\nolinkurl{10.1142/S0219843605000387}}
+
+
+\bibitem[Sharkey and Sharkey(2012)]%
+        {sharkey2012granny}
+\bibfield{author}{\bibinfo{person}{Noel Sharkey} {and} \bibinfo{person}{Amanda
+  Sharkey}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Granny and the Robots: Ethical Issues in Robot Care
+  for the Elderly}.
+\newblock \bibinfo{journal}{\emph{Ethics and Information Technology}}
+  \bibinfo{volume}{14}, \bibinfo{number}{1} (\bibinfo{year}{2012}),
+  \bibinfo{pages}{27--40}.
+\newblock
+\href{https://doi.org/10.1007/s10676-010-9234-6}{doi:\nolinkurl{10.1007/s10676-010-9234-6}}
+
+
+\bibitem[Sheetz et~al\mbox{.}(2020)]%
+        {sheetz2020robotic}
+\bibfield{author}{\bibinfo{person}{Kyle~H. Sheetz}, \bibinfo{person}{Jyothi
+  Claflin}, {and} \bibinfo{person}{Justin~B. Dimick}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Trends in the Adoption of Robotic Surgery for
+  Common Surgical Procedures}.
+\newblock \bibinfo{journal}{\emph{JAMA Network Open}} \bibinfo{volume}{3},
+  \bibinfo{number}{1} (\bibinfo{year}{2020}), \bibinfo{pages}{e1918911}.
+\newblock
+\href{https://doi.org/10.1001/jamanetworkopen.2019.18911}{doi:\nolinkurl{10.1001/jamanetworkopen.2019.18911}}
+
+
+\bibitem[Sobrepera et~al\mbox{.}(2022)]%
+        {sobrepera2022feasibility}
+\bibfield{author}{\bibinfo{person}{Michael~J. Sobrepera},
+  \bibinfo{person}{Vera~G. Lee}, \bibinfo{person}{Shreyans Garg}, {and}
+  \bibinfo{person}{Michelle~J. Johnson}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{Feasibility and Acceptability of Remote Neuromotor
+  Rehabilitation Interactions Using Social Robot Augmented Telepresence: {A}
+  Case Study}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2202.13433}.
+
+
+\bibitem[Sorensen et~al\mbox{.}(2025)]%
+        {sorensen2025humanoid}
+\bibfield{author}{\bibinfo{person}{Linda Sorensen}, \bibinfo{person}{Dag~Tomas
+  Johannesen}, {and} \bibinfo{person}{Hege~Mari Johnsen}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Humanoid Robots for Assisting People with Physical
+  Disabilities in Activities of Daily Living: {A} Scoping Review}.
+\newblock \bibinfo{journal}{\emph{Assistive Technology}} \bibinfo{volume}{37},
+  \bibinfo{number}{3} (\bibinfo{year}{2025}), \bibinfo{pages}{203--219}.
+\newblock
+\href{https://doi.org/10.1080/10400435.2024.2337194}{doi:\nolinkurl{10.1080/10400435.2024.2337194}}
+
+
+\bibitem[Topol(2019)]%
+        {topol2019high}
+\bibfield{author}{\bibinfo{person}{Eric~J. Topol}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{High-Performance Medicine: The Convergence of Human
+  and Artificial Intelligence}.
+\newblock \bibinfo{journal}{\emph{Nature Medicine}} \bibinfo{volume}{25},
+  \bibinfo{number}{1} (\bibinfo{year}{2019}), \bibinfo{pages}{44--56}.
+\newblock
+\href{https://doi.org/10.1038/s41591-018-0300-7}{doi:\nolinkurl{10.1038/s41591-018-0300-7}}
+
+
+\bibitem[{U.S. Food and Drug Administration}(2021)]%
+        {fda2021aiml}
+\bibfield{author}{\bibinfo{person}{{U.S. Food and Drug Administration}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Artificial Intelligence / Machine Learning
+  ({AI/ML})-Based Software as a Medical Device ({SaMD}): Action Plan}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Food and
+  Drug Administration}, \bibinfo{address}{Silver Spring, MD}.
+\newblock
+
+
+\bibitem[{U.S. Food and Drug Administration}(2024)]%
+        {fda2024pccp}
+\bibfield{author}{\bibinfo{person}{{U.S. Food and Drug Administration}}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Marketing Submission Recommendations for a
+  Predetermined Change Control Plan for Artificial Intelligence-Enabled Device
+  Software Functions}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Food and
+  Drug Administration}, \bibinfo{address}{Silver Spring, MD}.
+\newblock
+
+
+\bibitem[Venkatesh et~al\mbox{.}(2003)]%
+        {venkatesh2003user}
+\bibfield{author}{\bibinfo{person}{Viswanath Venkatesh},
+  \bibinfo{person}{Michael~G. Morris}, \bibinfo{person}{Gordon~B. Davis}, {and}
+  \bibinfo{person}{Fred~D. Davis}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{User Acceptance of Information Technology: Toward a
+  Unified Theory}.
+\newblock \bibinfo{journal}{\emph{MIS Quarterly}} \bibinfo{volume}{27},
+  \bibinfo{number}{3} (\bibinfo{year}{2003}), \bibinfo{pages}{425--478}.
+\newblock
+\href{https://doi.org/10.2307/30036540}{doi:\nolinkurl{10.2307/30036540}}
+
+
+\bibitem[Wada and Shibata(2007)]%
+        {wada2007living}
+\bibfield{author}{\bibinfo{person}{Kazuyoshi Wada} {and}
+  \bibinfo{person}{Takanori Shibata}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Living with Seal Robots --- Its Sociopsychological
+  and Physiological Influences on the Elderly at a Care House}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Neural Systems and
+  Rehabilitation Engineering}} \bibinfo{volume}{15}, \bibinfo{number}{4}
+  (\bibinfo{year}{2007}), \bibinfo{pages}{557--559}.
+\newblock
+\href{https://doi.org/10.1109/TNSRE.2007.891431}{doi:\nolinkurl{10.1109/TNSRE.2007.891431}}
+
+
+\bibitem[{World Health Organization}(2016)]%
+        {who2016workforce}
+\bibfield{author}{\bibinfo{person}{{World Health Organization}}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Health Workforce 2030: Towards a Global
+  Strategy on Human Resources for Health}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} A70/18.
+  \bibinfo{institution}{World Health Organization}, \bibinfo{address}{Geneva,
+  Switzerland}.
+\newblock
+
+
+\bibitem[Yuan et~al\mbox{.}(2025)]%
+        {yuan2025integrating}
+\bibfield{author}{\bibinfo{person}{Fengpei Yuan}, \bibinfo{person}{Nafis
+  Hasnaeen}, \bibinfo{person}{Rui Zhang}, \bibinfo{person}{Bella Bible},
+  \bibinfo{person}{J.~Ryne Taylor}, \bibinfo{person}{Hairong Qi},
+  \bibinfo{person}{Fengjie Yao}, {and} \bibinfo{person}{Xinxin Zhao}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{Integrating Reinforcement Learning and {AI} Agents
+  for Adaptive Robotic Interaction and Assistance in Dementia Care}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2501.17206}.
+
+
+\bibitem[Zhao et~al\mbox{.}(2023)]%
+        {zhao2023act}
+\bibfield{author}{\bibinfo{person}{Tony~Z. Zhao}, \bibinfo{person}{Vikash
+  Kumar}, \bibinfo{person}{Sergey Levine}, {and} \bibinfo{person}{Chelsea
+  Finn}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Learning Fine-Grained Bimanual Manipulation with
+  Low-Cost Hardware}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2304.13705}.
+
+
+\end{thebibliography}
