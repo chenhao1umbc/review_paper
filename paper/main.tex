@@ -817,12 +817,6 @@ in this ecosystem.
     ManiSkill          & HKUST              & $\sim$1.8k & Embodied manipulation benchmark   & Apache 2.0  & No clinical task benchmarks            & M \\
     RoboManip          & isri-robot         & $\sim$0.3k & Bimanual manipulation dataset     & MIT         & Tabletop tasks only                    & M \\
     Open Duck Mini     & apirrone           & $\sim$2k   & Miniature bipedal robot (open HW) & MIT         & Educational; not clinical scale        & L \\
-    \midrule
-    \multicolumn{7}{@{}l}{\emph{Medical infrastructure (absent from ecosystem)}} \\
-    \midrule
-    (none)             & ---                & ---        & Clinical safety layer (PFL/gait)  & ---         & No validated implementation exists     & --- \\
-    (none)             & ---                & ---        & Medical simulation environment    & ---         & No clinical instrument/anatomy physics & --- \\
-    (none)             & ---                & ---        & Open clinical demonstration data  & ---         & All major VLA datasets are non-medical & --- \\
     \bottomrule
   \end{tabular}%
   }
@@ -1058,7 +1052,7 @@ domains reviewed above.
     Mental health / HRI &
       P11~\cite{robinson2023brief}, P14~\cite{sayis2024technology} &
       Unspecified humanoid & RCT; comparative & 230; 42 & 4--5 \\[3pt]
-    Hospital logistics & --- & --- & None & --- & 2 \\
+    Hospital logistics & \multicolumn{4}{l}{\emph{No qualifying papers identified; wheeled autonomous systems dominate this role (TRL~2)}} & 2 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1315,16 +1309,10 @@ robot learning infrastructure publicly available. For general-purpose humanoid
 manipulation research, this infrastructure is genuinely strong.
 
 What is absent is the layer between this general infrastructure and clinical
-deployment. Four gaps have no current open-source solution: (1)~a clinical safety
-layer enforcing ISO/TS~15066 PFL force limits, triggering gait interrupts on
-patient proximity, and managing safe-state transitions; (2)~clinical workflow
-integration connecting humanoid robot actions to hospital EHR systems and nursing
-workflow management; (3)~an open clinical demonstration dataset---every major VLA
-training corpus consists of household and tabletop manipulation tasks with no
-publicly available demonstrations in clinical or clinical-simulated environments;
-and (4)~a validated medical simulation environment with deformable tissue,
-clinical instrument physics, and patient anatomy at the fidelity required for
-clinical manipulation policy training.
+deployment. As identified in Section~\ref{sec:software}, the four critical gaps
+with no current open-source solution are a clinical safety layer, clinical
+workflow integration, an open clinical demonstration dataset, and a validated
+medical simulation environment.
 
 The AI validation gap extends to deployment readiness. VLA models achieve high
 success rates on standard benchmarks, but these share no tasks with the clinical
@@ -1475,8 +1463,6 @@ Figure~\ref{fig:radar} quantifies the specific capability gaps between the
 current state-of-the-art and the required thresholds for two leading clinical
 deployment domains.
 
-\clearpage
-
 \begin{figure}[H]
   \centering
   \Description{Radar chart with six axes: Force Precision, Gait Safety, Tactile
@@ -1486,7 +1472,7 @@ deployment domains.
   procedures (red, dashed) with scores 7--8; required threshold for elderly
   nursing care (green, dashed) with scores 5--8. The largest gap for both
   domains is in Clinical Validation (current score 1), followed by Gait Safety.}
-  \includegraphics[width=0.6\columnwidth]{figures/capability_radar.pdf}
+  \includegraphics[width=0.7\columnwidth]{figures/capability_radar.pdf}
   \caption{Capability gap radar chart: current state-of-the-art (blue, 2026)
   versus required thresholds for clinical procedures (red dashed) and elderly
   nursing care (green dashed). Scores are on a 0--10 scale representing
@@ -1590,7 +1576,7 @@ key decision points for both jurisdictions.
   both tracks: no accepted safety standard exists for bipedal gait in
   patient-proximate environments, as ISO 13482 excludes medical devices and
   ISO/TS 15066 is designed for fixed-base collaborative arms.}
-  \includegraphics[width=\columnwidth]{figures/regulatory_pathways.pdf}
+  \includegraphics[width=0.7\columnwidth]{figures/regulatory_pathways.pdf}
   \caption{Regulatory pathways for clinical humanoid robots: FDA De~Novo (US,
   left) and EU MDR plus EU AI Act (EU, right). Both tracks require the same
   foundational evidence---safety standards for bipedal gait in patient-proximate
@@ -1753,7 +1739,7 @@ step. The infrastructure to take it is the work of the next five years.
 %% Acknowledgments
 %%======================================================================
 \begin{acks}
-The authors thank [to be completed]. No external funding was received for this work.
+No external funding was received for this work.
 \end{acks}
 
 %%======================================================================

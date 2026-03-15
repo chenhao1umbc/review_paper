@@ -188,13 +188,15 @@ def gen_tech_timeline():
 
     fig, ax = plt.subplots(figsize=(22, 12))
 
-    year_end = 2026
-    ax.set_xlim(year_to_x(1994.5), year_to_x(2026.5))
+    year_end  = 2026   # last tick mark
+    x_shade   = 2026.9 # right edge of era shading
+    x_right   = 2027.0 # xlim right boundary (small gap after shading, mirrors left gap)
+    ax.set_xlim(year_to_x(1994.5), year_to_x(x_right))
     ax.set_ylim(-6.5, 6.5)
     ax.axis("off")
 
     # Central axis line
-    ax.axhline(0, color="#888888", linewidth=1.8, zorder=1)
+    ax.axhline(0, color="#555555", linewidth=3.0, zorder=1)
 
     # Platform / technology milestones (above axis)
     # x positions staggered for same-year events to avoid horizontal overlap
@@ -255,11 +257,16 @@ def gen_tech_timeline():
     era_spans = [
         (1995, 2010, "#e8f4f8", "Locomotion era\n(1996-2010)"),
         (2010, 2022, "#fff3cd", "Manipulation era\n(2010-2022)"),
-        (2022, 2030, "#d4edda", "Commercial scale-up\n(2022-present)"),
+        (2022, x_shade, "#d4edda", "Commercial scale-up\n(2022-present)"),
     ]
+    era_label_x = {  # explicit label centres — independent of span boundaries
+        "Locomotion era\n(1996-2010)":    year_to_x(2002.5),
+        "Manipulation era\n(2010-2022)":  year_to_x(2016),
+        "Commercial scale-up\n(2022-present)": year_to_x(2024),
+    }
     for xstart, xend, color, label in era_spans:
         ax.axvspan(year_to_x(xstart), year_to_x(xend), alpha=0.28, color=color, zorder=0)
-        ax.text(year_to_x((xstart + xend) / 2), -5.8, label, ha="center", va="bottom",
+        ax.text(era_label_x[label], -5.8, label, ha="center", va="bottom",
                 fontsize=18, color="#444444", style="italic",
                 bbox=dict(boxstyle="round,pad=0.2", facecolor="white",
                           edgecolor="none", alpha=0.75),
@@ -275,28 +282,16 @@ def gen_tech_timeline():
                 color="#555555")
         ax.plot([year_to_x(yr), year_to_x(yr)], [-0.14, 0.14], color="#888888", linewidth=1.8)
 
-    # Break marker at 2022 to signal non-linear axis
-    bx = year_to_x(2022)
-    ax.text(bx, 0.55, "//", ha="center", va="bottom", fontsize=14,
-            color="#888888", zorder=6)
-    ax.text(bx, -0.55, "//", ha="center", va="top", fontsize=14,
-            color="#888888", zorder=6)
-
-    # Track labels
-    ax.text(year_to_x(1994.6), 1.0, "Platform /\ntechnology", ha="left",
-            va="center", fontsize=18, color=blue, weight="bold")
-    ax.text(year_to_x(1994.6), -1.0, "Healthcare\nresearch", ha="left",
-            va="center", fontsize=18, color=green, weight="bold")
 
     # Legend
     legend_elements = [
         Line2D([0], [0], marker="o", color="w", markerfacecolor=blue,
-               markersize=8, label="Platform / technology milestones"),
+               markersize=9, label="Platform / technology milestones"),
         Line2D([0], [0], marker="o", color="w", markerfacecolor=green,
-               markersize=8, label="Healthcare research events"),
+               markersize=9, label="Healthcare research events"),
     ]
     ax.legend(handles=legend_elements, loc="lower center",
-              bbox_to_anchor=(0.5, -0.08), fontsize=16, ncol=2,
+              bbox_to_anchor=(0.5, -0.08), fontsize=24, ncol=2,
               framealpha=0.9, edgecolor="#cccccc")
 
     ax.set_title(
@@ -347,65 +342,70 @@ def gen_regulatory_pathways():
             ha="center", va="center", fontsize=13, weight="bold",
             color="#145a32")
 
-    # Divider
-    ax.axvline(6.0, color="#bbbbbb", linewidth=1.5, linestyle="--", zorder=1)
+    # Divider — limited to flow area only, does not touch the critical gap box
+    ax.plot([6.0, 6.0], [1.40, 9.0], color="#bbbbbb",
+            linewidth=1.5, linestyle="--", zorder=1)
+
+    # Arrow helper values: pad=0.1 (boxstyle), gap=0.03 (breathing room)
+    # arrow tail  = box_center - h/2 - 0.13
+    # arrow head  = next_box_center + h/2 + 0.13
 
     # US track (x = 3.0)
     box(ax, 3.0, 8.1, 5.0, 0.65,
         "Clinical Humanoid Robot\n(novel device, no predicate)",
         bg="#d6eaf8", edge="#2874a6", fontsize=13, bold=True)
 
-    arrow(ax, 3.0, 7.77, 3.0, 7.2)
+    arrow(ax, 3.0, 7.645, 3.0, 7.31)   # 8.1-0.325-0.13=7.645 → 6.9+0.28+0.13=7.31
     box(ax, 3.0, 6.9, 5.0, 0.56,
         "510(k): no predicate\nDe Novo (21 CFR 513(f)(2))",
         bg="#eaf4fb", edge="#2874a6")
 
-    arrow(ax, 3.0, 6.62, 3.0, 6.05)
+    arrow(ax, 3.0, 6.49, 3.0, 6.16)    # 6.9-0.28-0.13=6.49 → 5.75+0.28+0.13=6.16
     box(ax, 3.0, 5.75, 5.0, 0.56,
         "Pre-Sub meeting with FDA\n(risk class, evidence plan)",
         bg="#eaf4fb", edge="#2874a6")
 
-    arrow(ax, 3.0, 5.47, 3.0, 4.90)
+    arrow(ax, 3.0, 5.34, 3.0, 5.01)    # 5.75-0.28-0.13=5.34 → 4.60+0.28+0.13=5.01
     box(ax, 3.0, 4.60, 5.0, 0.56,
         "De Novo request submission\n(bench + non-clin. + clinical)",
         bg="#eaf4fb", edge="#2874a6")
 
-    arrow(ax, 3.0, 4.32, 3.0, 3.75)
+    arrow(ax, 3.0, 4.19, 3.0, 3.86)    # 4.60-0.28-0.13=4.19 → 3.45+0.28+0.13=3.86
     box(ax, 3.0, 3.45, 5.0, 0.56,
         "FDA review (~12 months)\nClassification order issued",
         bg="#eaf4fb", edge="#2874a6")
 
-    arrow(ax, 3.0, 3.17, 3.0, 2.60)
+    arrow(ax, 3.0, 3.04, 3.0, 2.71)    # 3.45-0.28-0.13=3.04 → 2.30+0.28+0.13=2.71
     box(ax, 3.0, 2.30, 5.0, 0.56,
         "Market auth. (Class II)\nPost-mkt. surveillance req.",
         bg="#d5f5e3", edge="#1e8449", bold=True, fontsize=11)
 
-    # EU track (x = 9.0)
+    # EU track (x = 9.0) — same y-positions, same offsets
     box(ax, 9.0, 8.1, 5.0, 0.65,
         "Clinical Humanoid Robot\n(novel device, no CE pred.)",
         bg="#d5f5e3", edge="#1e8449", fontsize=13, bold=True)
 
-    arrow(ax, 9.0, 7.77, 9.0, 7.2)
+    arrow(ax, 9.0, 7.645, 9.0, 7.31)
     box(ax, 9.0, 6.9, 5.0, 0.56,
         "EU MDR Class IIb/III\n(Notified Body required)",
         bg="#eafaf1", edge="#1e8449")
 
-    arrow(ax, 9.0, 6.62, 9.0, 6.05)
+    arrow(ax, 9.0, 6.49, 9.0, 6.16)
     box(ax, 9.0, 5.75, 5.0, 0.56,
         "EU AI Act: High-Risk AI\n(Art. 6; conformity Aug 2026)",
         bg="#fef9e7", edge="#d4ac0d")
 
-    arrow(ax, 9.0, 5.47, 9.0, 4.90)
+    arrow(ax, 9.0, 5.34, 9.0, 5.01)
     box(ax, 9.0, 4.60, 5.0, 0.56,
         "Clinical invest. MDR Art. 62\n(Competent Auth. + ethics)",
         bg="#eafaf1", edge="#1e8449")
 
-    arrow(ax, 9.0, 4.32, 9.0, 3.75)
+    arrow(ax, 9.0, 4.19, 9.0, 3.86)
     box(ax, 9.0, 3.45, 5.0, 0.56,
         "CE marking by Notified Body\n+ AI Act declaration",
         bg="#eafaf1", edge="#1e8449")
 
-    arrow(ax, 9.0, 3.17, 9.0, 2.60)
+    arrow(ax, 9.0, 3.04, 9.0, 2.71)
     box(ax, 9.0, 2.30, 5.0, 0.56,
         "EU market authorization\nPost-mkt. follow-up (PMCF)",
         bg="#d5f5e3", edge="#1e8449", bold=True, fontsize=11)
@@ -476,7 +476,7 @@ def gen_capability_radar():
             label="Required: elderly / nursing care")
     ax.fill(angles, required_elderly, alpha=0.08, color="#1a9641")
 
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.38),
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.25),
               ncol=1, fontsize=10, framealpha=0.9, edgecolor="#cccccc")
 
     ax.set_title(

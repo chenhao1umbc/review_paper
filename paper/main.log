@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  14 MAR 2026 05:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  14 MAR 2026 20:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1222,11 +1222,11 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5.5{/Users/hc/Library/texmf/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
-<figures/tech_timeline.pdf, id=280, 1558.36525pt x 863.82349pt>
+<figures/tech_timeline.pdf, id=280, 1572.19585pt x 864.1447pt>
 File: figures/tech_timeline.pdf Graphic file (type pdf)
 <use figures/tech_timeline.pdf>
 Package pdftex.def Info: figures/tech_timeline.pdf  used on input line 468.
-(pdftex.def)             Requested size: 430.00462pt x 238.34964pt.
+(pdftex.def)             Requested size: 430.00462pt x 236.34172pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 474.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
@@ -1292,254 +1292,229 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
  [10.10]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 799.
-
-Underfull \hbox (badness 5519) in paragraph at lines 828--828
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) No clin-i-cal in-stru-ment/anatomy
- []
-
-[11.11] [12.12] [13.13]
-Underfull \vbox (badness 2073) has occurred while \output is active []
-
- [14.14]
+ [11.11] [12.12]
+[13.13]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 7.0pt on input line 1045.
+(Font)              scaled to size 7.0pt on input line 1039.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1048
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1042
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) P1 [[]], P2 [[]],
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1049--1049
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1043
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Lab; user
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1049--1049
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1043
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) study; ca-
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 1051.
+(Font)              scaled to size 5.5pt on input line 1045.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Exhibition
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1052
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) demo; field
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1053
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1047
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) 0 (demo);
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1055
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1049
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) P5 [[]], P6 [[]],
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1056
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Humanoid; SRAT;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1056
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) EEG pi-lot;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1056
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1050
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) case se-ries;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1060
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1054
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Unspecified hu-
  []
 
-<figures/evidence_landscape.pdf, id=538, 706.9386pt x 453.27856pt>
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 1055.
+[14.14]
+<figures/evidence_landscape.pdf, id=517, 706.9386pt x 453.27856pt>
 File: figures/evidence_landscape.pdf Graphic file (type pdf)
 <use figures/evidence_landscape.pdf>
-Package pdftex.def Info: figures/evidence_landscape.pdf  used on input line 108
-5.
+Package pdftex.def Info: figures/evidence_landscape.pdf  used on input line 107
+9.
 (pdftex.def)             Requested size: 430.00462pt x 275.71796pt.
-[15.15] [16.16 <./figures/evidence_landscape.pdf>]
-Overfull \hbox (4.1195pt too wide) in paragraph at lines 1167--1173
+ [15.15] [16.16 <./figures/evidence_landscape.pdf>]
+Overfull \hbox (4.1195pt too wide) in paragraph at lines 1161--1167
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) The de-sign tar-get for patient-contact f
 orce lim-its is the Power and Force Lim-it-ing (PFL) regime of ISO/TS 15066:201
 6 [[]],
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17.17]
-Underfull \hbox (badness 10000) in paragraph at lines 1306--1306
+[17.17]
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Must de-fine fall-prevention,
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 1306--1306
+Underfull \hbox (badness 3386) in paragraph at lines 1300--1300
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) PFL, la-tency, AI/ML Spe-cial
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1306--1306
+Underfull \hbox (badness 5203) in paragraph at lines 1300--1300
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) un-der Art. 62; PMCF post-
  []
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 1306--1306
+Underfull \hbox (badness 1325) in paragraph at lines 1300--1300
 \T1/LinuxLibertineT-TLF/b/n/9 (+20) de-vices\T1/LinuxLibertineT-TLF/m/n/9 (+20)
  ; no bipedal gait dy-
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18.18]
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+[18.18]
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/b/n/9 (+20) Blocking Do-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-ce-
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 1383--1383
+Underfull \hbox (badness 5331) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dures, Re-ha-bil-i-ta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) thresh-olds ap-proached
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 1383--1383
+Underfull \hbox (badness 2418) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) i-za-tion of gait-induced
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 1383--1383
+Underfull \hbox (badness 1038) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) force pro-files; ac-cepted
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) All physical-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) ISO/TS 15066 [[]];
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No na-tive RCM; no
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1383--1383
+Underfull \hbox (badness 2591) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) ware ana-log; tool-path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-ce-
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 1383--1383
+Underfull \hbox (badness 1142) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) tion dataset; VLA fine-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) ce-dures, all
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical safety
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 1383--1383
+Underfull \hbox (badness 1087) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) bipedal gait in patient-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1383
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1371
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) fea-si-bil-ity study; FDA
  []
 
+[19.19]
+Underfull \vbox (badness 4467) has occurred while \output is active []
 
-Underfull \vbox (badness 3179) has occurred while \output is active []
-
- [19.19]
-[20.20]
-<figures/trl_readiness.pdf, id=700, 707.05531pt x 344.8402pt>
+ [20.20]
+<figures/trl_readiness.pdf, id=679, 707.05531pt x 344.8402pt>
 File: figures/trl_readiness.pdf Graphic file (type pdf)
 <use figures/trl_readiness.pdf>
-Package pdftex.def Info: figures/trl_readiness.pdf  used on input line 1464.
+Package pdftex.def Info: figures/trl_readiness.pdf  used on input line 1452.
 (pdftex.def)             Requested size: 430.00462pt x 209.7208pt.
-
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
- [21.21 <./figures/trl_readiness.pdf>] [22.22]
-<figures/capability_radar.pdf, id=766, 373.39781pt x 512.27225pt>
+<figures/capability_radar.pdf, id=681, 423.51799pt x 543.68967pt>
 File: figures/capability_radar.pdf Graphic file (type pdf)
 <use figures/capability_radar.pdf>
-Package pdftex.def Info: figures/capability_radar.pdf  used on input line 1489.
+Package pdftex.def Info: figures/capability_radar.pdf  used on input line 1475.
 
-(pdftex.def)             Requested size: 258.00539pt x 353.97632pt.
- [23.23
+(pdftex.def)             Requested size: 301.00192pt x 386.42058pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- <./figures/capability_radar.pdf>]
-[24.24]
-<figures/regulatory_pathways.pdf, id=841, 547.85304pt x 640.58824pt>
+ [21.21 <./figures/trl_readiness.pdf>] [22.22
+
+ <./figures/capability_radar.pdf>] [23.23]
+<figures/regulatory_pathways.pdf, id=816, 547.85304pt x 640.58824pt>
 File: figures/regulatory_pathways.pdf Graphic file (type pdf)
 <use figures/regulatory_pathways.pdf>
 Package pdftex.def Info: figures/regulatory_pathways.pdf  used on input line 15
-93.
-(pdftex.def)             Requested size: 430.00462pt x 502.79445pt.
+79.
+(pdftex.def)             Requested size: 301.00192pt x 351.95319pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[24.24
 
- [25.25
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26.26 <./figures/regulatory_pathways.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27.27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28.28]
-Processing 'acks' comment.
+ <./figures/regulatory_pathways.pdf>] [25.25] Processing 'acks' comment.
+[26.26]
 \openout3 = `comment.cut'.
 
- Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut) (./main.bbl
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 46.
- [29.29] [30.30])
-[31.31] (./main.aux)
+ Comment 'acks' writing to comment.cut. Straight input of comment.cut.
+(./comment.cut) (./main.bbl [27.27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28.28])
+[29.29] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1552,13 +1527,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 15D13516684106067FD6DE54719AB9B3;7720.
  ) 
 Here is how much of TeX's memory you used:
- 21933 strings out of 469006
- 357307 string characters out of 5454814
- 801583 words of memory out of 5000000
+ 21931 strings out of 469006
+ 357293 string characters out of 5454814
+ 799583 words of memory out of 5000000
  49266 multiletter control sequences out of 15000+600000
  853479 words of font info for 589 fonts, out of 8000000 for 9000
  480 hyphenation exceptions out of 8191
- 90i,15n,131p,1001b,842s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,131p,1001b,852s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/hc/Library/texmf/fonts/type1/public/newtx/LibertineMathMI.pfb></Users
 /hc/Library/texmf/fonts/type1/public/newtx/LibertineMathMI7.pfb></Users/hc/Libr
 ary/texmf/fonts/type1/public/libertine/LinBiolinumT.pfb></Users/hc/Library/texm
@@ -1568,10 +1543,10 @@ public/libertine/LinLibertineT.pfb></Users/hc/Library/texmf/fonts/type1/public/
 libertine/LinLibertineTB.pfb></Users/hc/Library/texmf/fonts/type1/public/libert
 ine/LinLibertineTI.pfb></Users/hc/Library/texmf/fonts/type1/public/newtx/NewTXM
 I7.pfb></Users/hc/Library/texmf/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (31 pages, 669531 bytes).
+Output written on main.pdf (29 pages, 662597 bytes).
 PDF statistics:
- 1126 PDF objects out of 1200 (max. 8388607)
- 695 compressed objects within 7 object streams
- 167 named destinations out of 1000 (max. 500000)
+ 1096 PDF objects out of 1200 (max. 8388607)
+ 685 compressed objects within 7 object streams
+ 165 named destinations out of 1000 (max. 500000)
  108866 words of extra memory for PDF output out of 128383 (max. 10000000)
 
