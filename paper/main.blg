@@ -27,45 +27,49 @@ Warning--empty address in mukherjee2022humanoid
 Warning--empty address in okamura2000dexterous
 Warning--empty address in pratt1995elastic
 Warning--empty address in sakagami2002asimo
+Warning--empty address in sayis2024technology
+Warning--page numbers missing in both pages and numpages fields in sayis2024technology
+Warning--empty address in sobrepera2022feasibility
+Warning--page numbers missing in both pages and numpages fields in sobrepera2022feasibility
 You've used 67 entries,
             6273 wiz_defined-function locations,
-            1911 strings with 33806 characters,
-and the built_in function-call counts, 76862 in all, are:
-= -- 10155
-> -- 3217
+            1921 strings with 34230 characters,
+and the built_in function-call counts, 77918 in all, are:
+= -- 10306
+> -- 3249
 < -- 3
-+ -- 1116
-- -- 1113
-* -- 5986
-:= -- 7919
++ -- 1128
+- -- 1125
+* -- 6088
+:= -- 7980
 add.period$ -- 367
 call.type$ -- 67
-change.case$ -- 597
+change.case$ -- 601
 chr.to.int$ -- 67
-cite$ -- 82
-duplicate$ -- 6077
-empty$ -- 4241
-format.name$ -- 1333
-if$ -- 18449
+cite$ -- 86
+duplicate$ -- 6178
+empty$ -- 4310
+format.name$ -- 1345
+if$ -- 18757
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 171
-newline$ -- 651
+missing$ -- 185
+newline$ -- 654
 num.names$ -- 469
-pop$ -- 2216
+pop$ -- 2282
 preamble$ -- 1
-purify$ -- 1129
+purify$ -- 1133
 quote$ -- 0
-skip$ -- 2304
+skip$ -- 2324
 stack$ -- 0
-substring$ -- 5188
-swap$ -- 615
+substring$ -- 5258
+swap$ -- 627
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1561
-warning$ -- 15
-while$ -- 367
+type$ -- 1547
+warning$ -- 19
+while$ -- 370
 width$ -- 0
-write$ -- 1380
-(There were 15 warnings)
+write$ -- 1386
+(There were 19 warnings)
