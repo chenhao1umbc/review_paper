@@ -5,7 +5,7 @@ Output: paper/figures/trl_readiness.pdf
          paper/figures/evidence_landscape.pdf
          paper/figures/tech_timeline.pdf
          paper/figures/regulatory_pathways.pdf
-         paper/figures/capability_radar.pdf
+         paper/figures/capability_gap.pdf
 """
 
 import matplotlib
@@ -22,9 +22,18 @@ OUTPUT_DIR = "paper/figures"
 
 def gen_trl_readiness():
     """
-    TRL heatmap / domain readiness chart.
-    Five clinical domains x TRL scale (1-9).
+    TRL horizontal bar chart: five clinical domains.
+    Single bar color; per-domain binding constraint annotation.
     """
+    import matplotlib as mpl
+    mpl.rcParams.update({
+        "font.size": 16,
+        "axes.titlesize": 14,
+        "axes.labelsize": 14,
+        "xtick.labelsize": 13,
+        "ytick.labelsize": 14,
+    })
+
     domains = [
         "Clinical Procedures",
         "Elderly / Nursing Care\n(bipedal)",
@@ -34,36 +43,39 @@ def gen_trl_readiness():
     ]
     trl_low  = [3, 3, 3, 4, 2]
     trl_high = [4, 4, 4, 5, 2]
+    constraints = [
+        "force precision, no predicate",
+        "no care facility pilot",
+        "no patient trial",
+        "platform unspecified",
+        "wheeled systems preferred",
+    ]
 
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(6, 4.8))
 
-    bar_height = 0.5
+    bar_height  = 0.5
     y_positions = np.arange(len(domains))
-    colors = ["#2c7bb6", "#abd9e9", "#fdae61", "#d7191c", "#a6d96a"]
+    bar_color   = "#2c7bb6"
 
-    for i, (yl, yh, col) in enumerate(zip(trl_low, trl_high, colors)):
+    for i, (yl, yh) in enumerate(zip(trl_low, trl_high)):
         width = max(yh - yl + 1, 0.5)
         ax.barh(y_positions[i], width, left=yl - 0.5, height=bar_height,
-                color=col, edgecolor="none", alpha=0.85)
-        label = f"TRL {yl}" if yl == yh else f"TRL {yl}-{yh}"
-        ax.text(yh + 0.15, y_positions[i], f"  {label}",
-                va="center", ha="left", fontsize=10, color="#333333")
+                color=bar_color, edgecolor="none", alpha=0.85)
+        xh = yh + 0.5
+        ax.text(xh + 0.2, y_positions[i], constraints[i],
+                va="center", ha="left", fontsize=11, color="#444444")
 
-    # TRL-5 target line
-    ax.axvline(x=4.5, color="#1a1a1a", linestyle="--", linewidth=1.6,
-               label="TRL 5 target")
-    ax.legend(loc="upper right", fontsize=10, framealpha=0.9)
+    ax.axvline(x=4.5, color="#1a1a1a", linestyle="--", linewidth=1.6)
+    ax.text(4.62, 4.62, "TRL 5\ntarget", ha="left", va="bottom",
+            fontsize=11, color="#1a1a1a", linespacing=1.2)
 
+    ax.set_ylim(-0.5, 5.5)
     ax.set_yticks(y_positions)
-    ax.set_yticklabels(domains, fontsize=10)
-    ax.set_xlabel("Technology Readiness Level (ISO 16290:2013)", fontsize=11)
-    ax.set_xlim(0.5, 10.5)
+    ax.set_yticklabels(domains)
+    ax.set_xlabel("Technology Readiness Level (ISO 16290:2013)")
+    ax.set_xlim(0.5, 13)
     ax.set_xticks(range(1, 10))
-    ax.xaxis.set_tick_params(labelsize=10)
-    ax.set_title(
-        "Clinical Domain TRL Assessment: Humanoid Robots in Healthcare (March 2026)",
-        fontsize=11, pad=14,
-    )
+    ax.set_title("TRL assessment by clinical domain (March 2026)", pad=10)
     ax.grid(axis="x", linestyle=":", linewidth=0.6, color="#cccccc")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -77,44 +89,41 @@ def gen_trl_readiness():
 
 def gen_evidence_landscape():
     """
-    Evidence landscape: 14 papers by domain x year, sized by study type.
-    Manual offsets per P-code label; no x-jitter — papers at true publication year.
-    Labels P1–P14 correspond to Table 1 in the paper.
+    Evidence distribution: 14 papers by domain x year.
+    Dot matrix; shape encodes study type; no bubble sizes.
+    Colliding points (same domain + year) offset vertically by 0.15 per slot.
     """
-    papers = [
-        (0, 2025, "P1",  150),
-        (0, 2025, "P2",  150),
-        (0, 2026, "P3",  180),
-        (1, 2024, "P7",  200),
-        (1, 2025, "P8",  100),
-        (1, 2024, "P9",  120),
-        (1, 2024, "P10", 120),
-        (2, 2024, "P5",  120),
-        (2, 2022, "P6",  200),
-        (2, 2025, "P13", 150),
-        (3, 2023, "P11", 300),
-        (3, 2024, "P14", 150),
-        (3, 2025, "P4",  120),
-        (3, 2025, "P12", 100),
-    ]
+    import matplotlib as mpl
+    from collections import Counter
+    mpl.rcParams.update({
+        "font.size": 14,
+        "axes.titlesize": 14,
+        "axes.labelsize": 14,
+        "xtick.labelsize": 12,
+        "ytick.labelsize": 12,
+        "legend.fontsize": 12,
+    })
 
-    # Manual (xytext_dx_pts, xytext_dy_pts, ha) per label — no automated jitter.
-    _offsets = {
-        "P1":  ( 15,  14, "left"),
-        "P2":  (-15, -14, "right"),
-        "P3":  ( 15,  14, "left"),
-        "P7":  ( 15,  14, "left"),
-        "P9":  (-15, -14, "right"),
-        "P10": ( 15,  30, "left"),
-        "P8":  (-20,  14, "right"),
-        "P5":  ( 15,  14, "left"),
-        "P6":  (-15,  14, "right"),
-        "P13": ( 15,  14, "left"),
-        "P11": (-15,  14, "right"),
-        "P14": ( 15,  14, "left"),
-        "P4":  (-15,  30, "right"),
-        "P12": ( 15, -14, "left"),
-    }
+    # (domain_idx, year, surname, study_type)
+    # study_type: "eng"=engineering/lab/feasibility,
+    #             "obs"=case series/observational,
+    #             "rct"=RCT/comparative
+    papers = [
+        (0, 2025, "Atar",           "eng"),
+        (0, 2025, "Liang",          "eng"),
+        (0, 2026, "Cho",            "obs"),
+        (1, 2024, "Alameda-Pineda", "obs"),
+        (1, 2025, "Benallegue",     "eng"),
+        (1, 2024, "Imtiaz",         "eng"),
+        (1, 2024, "Ghosh",          "eng"),
+        (2, 2024, "Nguyen",         "eng"),
+        (2, 2022, "Sobrepera",      "obs"),
+        (2, 2025, "Lu",             "eng"),
+        (3, 2023, "Robinson",       "rct"),
+        (3, 2024, "Sayis",          "obs"),
+        (3, 2025, "Yuan",           "eng"),
+        (3, 2025, "Lindsay",        "eng"),
+    ]
 
     domains = [
         "Clinical\nProcedures",
@@ -123,43 +132,59 @@ def gen_evidence_landscape():
         "Mental Health\n/ HRI",
     ]
 
-    fig, ax = plt.subplots(figsize=(10, 6.5))
-
     domain_colors = {0: "#2c7bb6", 1: "#2b8a3e", 2: "#e67700", 3: "#c92a2a"}
+    shape_markers  = {"eng": "o", "obs": "D", "rct": "*"}
+    marker_sizes   = {"eng": 80,  "obs": 80,  "rct": 130}
 
-    for domain_idx, year, label, size in papers:
-        ox, oy, ha_val = _offsets[label]
-        ax.scatter(year, domain_idx, s=size,
-                   color=domain_colors[domain_idx], edgecolors="#555555",
-                   linewidths=0.8, alpha=0.85, zorder=3)
-        ax.annotate(label, (year, domain_idx),
-                    textcoords="offset points", xytext=(ox, oy),
-                    ha=ha_val, fontsize=10, color="#333333",
-                    arrowprops=dict(arrowstyle="->", color="#aaaaaa",
-                                   lw=0.7, mutation_scale=10))
+    fig, ax = plt.subplots(figsize=(9, 4))
+
+    coord_count = Counter((d, y) for d, y, _, _ in papers)
+    coord_idx   = defaultdict(int)
+
+    for domain_idx, year, surname, stype in papers:
+        key   = (domain_idx, year)
+        idx   = coord_idx[key]
+        total = coord_count[key]
+        y_off    = (idx - (total - 1) / 2.0) * 0.45
+        x_jitter = (idx - (total - 1) / 2.0) * 0.12
+        coord_idx[key] += 1
+
+        ax.scatter(year + x_jitter, domain_idx + y_off,
+                   s=marker_sizes[stype], marker=shape_markers[stype],
+                   color=domain_colors[domain_idx],
+                   edgecolors="#555555" if stype != "rct" else "none",
+                   linewidths=0.8, alpha=0.9, zorder=3)
+        if total == 1:
+            ax.text(year, domain_idx + 0.18, surname,
+                    ha="center", va="bottom", fontsize=9, color="#333333")
+        else:
+            ax.text(year + x_jitter + 0.15, domain_idx + y_off, surname,
+                    ha="left", va="center", fontsize=9, color="#333333")
 
     ax.set_yticks(range(len(domains)))
-    ax.set_yticklabels(domains, fontsize=11)
-    ax.set_xlabel("Publication Year", fontsize=11)
-    ax.set_xlim(2021.2, 2027.8)
+    ax.set_yticklabels(domains)
+    ax.set_xlabel("Publication Year")
+    ax.set_xlim(2021.0, 2027.5)
     ax.set_xticks([2022, 2023, 2024, 2025, 2026])
-    ax.xaxis.set_tick_params(labelsize=10.5)
-    ax.set_ylim(-0.7, len(domains) - 0.3)
-    ax.set_title(
-        "Evidence Landscape: 14 Qualifying Papers by Domain and Year\n"
-        "(bubble size \u221d study design strength: RCT > case series > engineering > pilot;"
-        " labels P1\u2013P14 per Table 1)",
-        fontsize=10.5, pad=10,
-    )
+    ax.set_ylim(-0.85, len(domains) - 0.15)
+    ax.set_title("Evidence distribution: 14 papers, 2022\u20132026")
 
     legend_elements = [
+        Line2D([0], [0], marker="o", color="w", markerfacecolor="#888888",
+               markeredgecolor="#555555", markersize=8,
+               label="Engineering / lab"),
+        Line2D([0], [0], marker="D", color="w", markerfacecolor="#888888",
+               markeredgecolor="#555555", markersize=8,
+               label="Case series / observational"),
+        Line2D([0], [0], marker="*", color="w", markerfacecolor="#888888",
+               markersize=11, label="RCT / comparative"),
         mpatches.Patch(facecolor=domain_colors[0], label="Clinical Procedures"),
         mpatches.Patch(facecolor=domain_colors[1], label="Elderly / Nursing Care"),
         mpatches.Patch(facecolor=domain_colors[2], label="Rehabilitation"),
         mpatches.Patch(facecolor=domain_colors[3], label="Mental Health / HRI"),
     ]
-    ax.legend(handles=legend_elements, loc="lower left",
-              bbox_to_anchor=(0.01, 0.01), fontsize=10,
+    ax.legend(handles=legend_elements, loc="lower center",
+              bbox_to_anchor=(0.5, -0.58), fontsize=10, ncol=4,
               framealpha=0.9, edgecolor="#cccccc")
 
     ax.grid(axis="x", linestyle=":", linewidth=0.6, color="#cccccc")
@@ -429,63 +454,65 @@ def gen_regulatory_pathways():
     print(f"Saved: {path}")
 
 
-def gen_capability_radar():
+def gen_capability_gap():
     """
-    Capability gap radar chart: current state vs. required thresholds.
+    Capability gap: horizontal grouped bar chart (current vs. required for TRL 5).
+    Title: Humanoid Capability Gap: Current vs. Required for Clinical Deployment
+    Axes: six capability dimensions, scale 0-10.
     """
-    categories = [
-        "Force\nPrecision",
-        "Gait\nSafety",
-        "Tactile\nSensing",
-        "Tool Kinematics",
-        "AI\nGeneralization",
-        "Clinical\nValidation",
+    import matplotlib as mpl
+    mpl.rcParams.update({
+        "font.size": 14,
+        "axes.titlesize": 16,
+        "axes.labelsize": 14,
+        "xtick.labelsize": 13,
+        "ytick.labelsize": 14,
+        "legend.fontsize": 13,
+    })
+
+    dimensions = [
+        "Manipulation Precision",
+        "Bipedal Gait Stability",
+        "LLM/VLA Task\nGeneralization",
+        "Contact Safety",
+        "Regulatory Compliance\nReadiness",
+        "Human Trust Score",
     ]
-    N = len(categories)
-    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
-    angles += angles[:1]
+    current  = [4, 5, 5, 3, 2, 5]
+    required = [8, 7, 7, 8, 8, 7]
 
-    current           = [4, 3, 3, 4, 5, 1]
-    required_clinical = [8, 7, 7, 8, 7, 8]
-    required_elderly  = [5, 8, 6, 5, 7, 7]
+    n = len(dimensions)
+    y = np.arange(n)
+    bar_height = 0.35
 
-    current           += current[:1]
-    required_clinical += required_clinical[:1]
-    required_elderly  += required_elderly[:1]
+    fig, ax = plt.subplots(figsize=(11, 6))
 
-    fig, ax = plt.subplots(figsize=(9, 8), subplot_kw=dict(polar=True))
+    bars_req = ax.barh(y + bar_height / 2, required, height=bar_height,
+                       color="#f4a261", label="Required (TRL 5)", zorder=3)
+    bars_cur = ax.barh(y - bar_height / 2, current, height=bar_height,
+                       color="#2166ac", label="Current (best commercial, 2026)", zorder=3)
 
-    ax.set_theta_offset(np.pi / 2)
-    ax.set_theta_direction(-1)
-    ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(categories, fontsize=11)
-    ax.set_ylim(0, 10)
-    ax.set_yticks([2, 4, 6, 8, 10])
-    ax.set_yticklabels(["2", "4", "6", "8", "10"], fontsize=10, color="#888888")
-    ax.tick_params(axis="y", labelsize=10)
+    for bar, val in zip(bars_req, required):
+        ax.text(val + 0.15, bar.get_y() + bar.get_height() / 2,
+                str(val), va="center", ha="left", fontsize=13, color="#333333")
+    for bar, val in zip(bars_cur, current):
+        ax.text(val + 0.15, bar.get_y() + bar.get_height() / 2,
+                str(val), va="center", ha="left", fontsize=13, color="#333333")
 
-    ax.plot(angles, current, "o-", linewidth=2.2, color="#2166ac",
-            label="Current state (best commercial, 2026)")
-    ax.fill(angles, current, alpha=0.15, color="#2166ac")
-
-    ax.plot(angles, required_clinical, "s--", linewidth=2.2, color="#d73027",
-            label="Required: clinical procedures")
-    ax.fill(angles, required_clinical, alpha=0.08, color="#d73027")
-
-    ax.plot(angles, required_elderly, "^--", linewidth=2.2, color="#1a9641",
-            label="Required: elderly / nursing care")
-    ax.fill(angles, required_elderly, alpha=0.08, color="#1a9641")
-
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.25),
-              ncol=1, fontsize=10, framealpha=0.9, edgecolor="#cccccc")
-
-    ax.set_title(
-        "Capability Gap: Current State vs.\nRequired Thresholds for Clinical Deployment",
-        fontsize=11, pad=22,
-    )
+    ax.set_yticks(y)
+    ax.set_yticklabels(dimensions)
+    ax.set_xlim(0, 11)
+    ax.set_xlabel("Score (0-10)")
+    ax.set_title("Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
+                 pad=12)
+    ax.axvline(x=7, color="#aaaaaa", linewidth=0.8, linestyle="--", zorder=2)
+    ax.legend(loc="lower right", framealpha=0.9)
+    ax.grid(axis="x", linewidth=0.5, color="#dddddd", zorder=1)
+    ax.set_axisbelow(True)
+    ax.invert_yaxis()
 
     fig.tight_layout(pad=1.5)
-    path = f"{OUTPUT_DIR}/capability_radar.pdf"
+    path = f"{OUTPUT_DIR}/capability_gap.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
     print(f"Saved: {path}")
@@ -496,5 +523,5 @@ if __name__ == "__main__":
     gen_evidence_landscape()
     gen_tech_timeline()
     gen_regulatory_pathways()
-    gen_capability_radar()
+    gen_capability_gap()
     print("All figures generated successfully.")

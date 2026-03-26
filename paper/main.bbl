@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{67}
+\begin{thebibliography}{100}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -90,6 +90,23 @@
 \shownote{arXiv:2503.12725}.
 
 
+\bibitem[Avgousti et~al\mbox{.}(2016)]%
+        {avgousti2016medical}
+\bibfield{author}{\bibinfo{person}{Sotiris Avgousti},
+  \bibinfo{person}{Elpida~G. Christoforou}, \bibinfo{person}{Andreas~S.
+  Panayides}, \bibinfo{person}{Sven V{\"o}ssel}, \bibinfo{person}{Andreas
+  Wiartalla}, \bibinfo{person}{Dror Raicher}, \bibinfo{person}{Christian
+  Fauster}, \bibinfo{person}{Nikolaos Spiridis}, \bibinfo{person}{Stelios
+  Demetriou}, {and} \bibinfo{person}{Kleanthis Neokleous}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Medical Telerobotic Systems: Current Status and
+  Future Trends}.
+\newblock \bibinfo{journal}{\emph{Biomedical Engineering Online}}
+  \bibinfo{volume}{15} (\bibinfo{year}{2016}), \bibinfo{pages}{96}.
+\newblock
+\href{https://doi.org/10.1186/s12938-016-0217-7}{doi:\nolinkurl{10.1186/s12938-016-0217-7}}
+
+
 \bibitem[Azeta et~al\mbox{.}(2018)]%
         {azeta2018review}
 \bibfield{author}{\bibinfo{person}{J. Azeta}, \bibinfo{person}{C. Bolu},
@@ -114,6 +131,21 @@
 \href{https://doi.org/10.1109/MRA.2025.3536168}{doi:\nolinkurl{10.1109/MRA.2025.3536168}}
 \newblock
 \shownote{arXiv:2412.20770}.
+
+
+\bibitem[Birkhoff et~al\mbox{.}(2024)]%
+        {birkhoff2024integrating}
+\bibfield{author}{\bibinfo{person}{Sherri~S. Birkhoff},
+  \bibinfo{person}{Patricia Merring}, \bibinfo{person}{Alicia Spence},
+  \bibinfo{person}{William Bassett}, {and} \bibinfo{person}{Sherry~C. Roth}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Integrating Collaborative Robots into a Complex
+  Hospital Setting: A Qualitative Descriptive Study}.
+\newblock \bibinfo{journal}{\emph{Delaware Journal of Public Health}}
+  \bibinfo{volume}{10}, \bibinfo{number}{5} (\bibinfo{year}{2024}),
+  \bibinfo{pages}{20--27}.
+\newblock
+\href{https://doi.org/10.32481/djph.2024.12.05}{doi:\nolinkurl{10.32481/djph.2024.12.05}}
 
 
 \bibitem[Black et~al\mbox{.}(2024)]%
@@ -234,6 +266,35 @@
 \shownote{arXiv:2405.15775}.
 
 
+\bibitem[Cesta et~al\mbox{.}(2016)]%
+        {cesta2016amicare}
+\bibfield{author}{\bibinfo{person}{Amedeo Cesta}, \bibinfo{person}{Gabriella
+  Cortellessa}, \bibinfo{person}{Andrea Orlandini}, {and}
+  \bibinfo{person}{Lorenza Tiberio}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Long-Term Evaluation of a Telepresence Robot for
+  the Elderly: Methodology and Ecological Case Study}.
+\newblock \bibinfo{journal}{\emph{International Journal of Social Robotics}}
+  \bibinfo{volume}{8}, \bibinfo{number}{3} (\bibinfo{year}{2016}),
+  \bibinfo{pages}{421--441}.
+\newblock
+\href{https://doi.org/10.1007/s12369-016-0337-z}{doi:\nolinkurl{10.1007/s12369-016-0337-z}}
+
+
+\bibitem[Cheng et~al\mbox{.}(2024)]%
+        {cheng2024expressive}
+\bibfield{author}{\bibinfo{person}{Xuxin Cheng}, \bibinfo{person}{Yandong Ji},
+  \bibinfo{person}{Junming Chen}, \bibinfo{person}{Ruihan Yang},
+  \bibinfo{person}{Ge Yang}, {and} \bibinfo{person}{Xiaolong Wang}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Expressive Whole-Body Control for Humanoid Robots}.
+  In \bibinfo{booktitle}{\emph{Robotics: Science and Systems {XX}}}.
+  \bibinfo{address}{Delft, Netherlands}.
+\newblock
+\href{https://doi.org/10.15607/RSS.2024.XX.107}{doi:\nolinkurl{10.15607/RSS.2024.XX.107}}
+\newblock
+\shownote{arXiv:2402.16796}.
+
+
 \bibitem[Chi et~al\mbox{.}(2023)]%
         {chi2023diffusion}
 \bibfield{author}{\bibinfo{person}{Cheng Chi}, \bibinfo{person}{Zhenjia Xu},
@@ -247,6 +308,21 @@
 \newblock
 \newblock
 \shownote{arXiv:2303.04137}.
+
+
+\bibitem[Chi et~al\mbox{.}(2024)]%
+        {chi2024umi}
+\bibfield{author}{\bibinfo{person}{Cheng Chi}, \bibinfo{person}{Zhenjia Xu},
+  \bibinfo{person}{Chuer Pan}, \bibinfo{person}{Eric Cousineau},
+  \bibinfo{person}{Benjamin Burchfiel}, \bibinfo{person}{Siyuan Feng},
+  \bibinfo{person}{Russ Tedrake}, {and} \bibinfo{person}{Shuran Song}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Universal Manipulation Interface: In-The-Wild Robot
+  Teaching Without In-The-Wild Robots}. In \bibinfo{booktitle}{\emph{Robotics:
+  Science and Systems ({RSS})}}.
+\newblock
+\newblock
+\shownote{arXiv:2402.10329}.
 
 
 \bibitem[Cho et~al\mbox{.}(2026)]%
@@ -266,6 +342,19 @@
 \shownote{arXiv:2602.24156}.
 
 
+\bibitem[Coiera(2019)]%
+        {coiera2019last}
+\bibfield{author}{\bibinfo{person}{Enrico Coiera}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{The Last Mile: Where Artificial Intelligence Meets
+  Reality}.
+\newblock \bibinfo{journal}{\emph{Journal of Medical Internet Research}}
+  \bibinfo{volume}{21}, \bibinfo{number}{11} (\bibinfo{year}{2019}),
+  \bibinfo{pages}{e16323}.
+\newblock
+\href{https://doi.org/10.2196/16323}{doi:\nolinkurl{10.2196/16323}}
+
+
 \bibitem[Cunha et~al\mbox{.}(2025)]%
         {cunha2025humanoid}
 \bibfield{author}{\bibinfo{person}{I.~C. K.~O. Cunha}, \bibinfo{person}{R.~A.
@@ -278,6 +367,69 @@
   (\bibinfo{year}{2025}), \bibinfo{pages}{e11}.
 \newblock
 \href{https://doi.org/10.17533/udea.iee.v43n1e11}{doi:\nolinkurl{10.17533/udea.iee.v43n1e11}}
+
+
+\bibitem[Dautenhahn(2007)]%
+        {dautenhahn2007socially}
+\bibfield{author}{\bibinfo{person}{Kerstin Dautenhahn}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Socially Intelligent Robots: Dimensions of
+  Human-Robot Interaction}.
+\newblock \bibinfo{journal}{\emph{Philosophical Transactions of the Royal
+  Society {B}: Biological Sciences}} \bibinfo{volume}{362},
+  \bibinfo{number}{1480} (\bibinfo{year}{2007}), \bibinfo{pages}{679--704}.
+\newblock
+\href{https://doi.org/10.1098/rstb.2006.2004}{doi:\nolinkurl{10.1098/rstb.2006.2004}}
+
+
+\bibitem[Feil-Seifer and Matari{\'c}(2005)]%
+        {feilseifer2005defining}
+\bibfield{author}{\bibinfo{person}{David Feil-Seifer} {and}
+  \bibinfo{person}{Maja~J. Matari{\'c}}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Defining Socially Assistive Robotics}. In
+  \bibinfo{booktitle}{\emph{9th International Conference on Rehabilitation
+  Robotics ({ICORR})}}. \bibinfo{publisher}{IEEE}, \bibinfo{pages}{465--468}.
+\newblock
+\href{https://doi.org/10.1109/ICORR.2005.1501143}{doi:\nolinkurl{10.1109/ICORR.2005.1501143}}
+
+
+\bibitem[{Figure AI}(2024)]%
+        {figureai2024unveils}
+\bibfield{author}{\bibinfo{person}{{Figure AI}}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Figure Unveils Figure 02, Its Second-Generation
+  Humanoid, Setting New Standards in {AI} and Robotics}.
+\newblock \bibinfo{howpublished}{Press release, PR Newswire}.
+\newblock
+\urldef\tempurl%
+\url{https://www.prnewswire.com/news-releases/figure-unveils-figure-02-its-second-generation-humanoid-setting-new-standards-in-ai-and-robotics-302214889.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Fong et~al\mbox{.}(2003)]%
+        {fong2003survey}
+\bibfield{author}{\bibinfo{person}{Terrence Fong}, \bibinfo{person}{Illah
+  Nourbakhsh}, {and} \bibinfo{person}{Kerstin Dautenhahn}.}
+  \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{A Survey of Socially Interactive Robots}.
+\newblock \bibinfo{journal}{\emph{Robotics and Autonomous Systems}}
+  \bibinfo{volume}{42}, \bibinfo{number}{3--4} (\bibinfo{year}{2003}),
+  \bibinfo{pages}{143--166}.
+\newblock
+\href{https://doi.org/10.1016/S0921-8890(02)00372-X}{doi:\nolinkurl{10.1016/S0921-8890(02)00372-X}}
+
+
+\bibitem[{Gemini Robotics Team}(2025)]%
+        {geminiroboticsTeam2025}
+\bibfield{author}{\bibinfo{person}{{Gemini Robotics Team}}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{Gemini Robotics: Bringing {AI} into the Physical
+  World}.
+\newblock \bibinfo{howpublished}{Technical Report, Google DeepMind}.
+\newblock
+\newblock
+\shownote{arXiv:2503.20020}.
 
 
 \bibitem[Ghosh et~al\mbox{.}(2024)]%
@@ -298,18 +450,57 @@
 \shownote{arXiv:2410.21197}.
 
 
-\bibitem[Hancock et~al\mbox{.}(2011)]%
+\bibitem[Hancock et~al\mbox{.}(2011a)]%
+        {hancock2011trust}
+\bibfield{author}{\bibinfo{person}{Peter~A. Hancock},
+  \bibinfo{person}{Deborah~R. Billings}, {and} \bibinfo{person}{Kristin~E.
+  Schaefer}.} \bibinfo{year}{2011}\natexlab{a}.
+\newblock \showarticletitle{Can You Trust Your Robot?}
+\newblock \bibinfo{journal}{\emph{Ergonomics in Design}} \bibinfo{volume}{19},
+  \bibinfo{number}{3} (\bibinfo{year}{2011}), \bibinfo{pages}{24--29}.
+\newblock
+\href{https://doi.org/10.1177/1064804611415045}{doi:\nolinkurl{10.1177/1064804611415045}}
+
+
+\bibitem[Hancock et~al\mbox{.}(2011b)]%
         {hancock2011meta}
 \bibfield{author}{\bibinfo{person}{Peter~A. Hancock},
   \bibinfo{person}{Deborah~R. Billings}, \bibinfo{person}{Kristin~E. Schaefer},
   \bibinfo{person}{Jessie~Y.C. Chen}, \bibinfo{person}{Ewart~J. de Visser},
-  {and} \bibinfo{person}{Raja Parasuraman}.} \bibinfo{year}{2011}\natexlab{}.
+  {and} \bibinfo{person}{Raja Parasuraman}.} \bibinfo{year}{2011}\natexlab{b}.
 \newblock \showarticletitle{A Meta-Analysis of Factors Affecting Trust in
   Human-Robot Interaction}.
 \newblock \bibinfo{journal}{\emph{Human Factors}} \bibinfo{volume}{53},
   \bibinfo{number}{5} (\bibinfo{year}{2011}), \bibinfo{pages}{517--527}.
 \newblock
 \href{https://doi.org/10.1177/0018720811417254}{doi:\nolinkurl{10.1177/0018720811417254}}
+
+
+\bibitem[He et~al\mbox{.}(2024)]%
+        {he2024omnikh}
+\bibfield{author}{\bibinfo{person}{Tairan He}, \bibinfo{person}{Zhengyi Luo},
+  \bibinfo{person}{Wenli Xiao}, \bibinfo{person}{Chong Zhang},
+  \bibinfo{person}{Guanya Shi}, \bibinfo{person}{Deepak Pathak}, {and}
+  \bibinfo{person}{Pieter Abbeel}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{OmniH2O}: Universal and Dexterous
+  Human-to-Humanoid Whole-Body Teleoperation and Learning}. In
+  \bibinfo{booktitle}{\emph{8th Conference on Robot Learning ({CoRL})}}.
+  \bibinfo{address}{Munich, Germany}.
+\newblock
+\newblock
+\shownote{arXiv:2406.08858}.
+
+
+\bibitem[H{\'e}der(2017)]%
+        {heder2017trl}
+\bibfield{author}{\bibinfo{person}{Mih{\'a}ly H{\'e}der}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{From {NASA} to {EU}: The Evolution of the {TRL}
+  Scale in Public Sector Innovation}.
+\newblock \bibinfo{journal}{\emph{The Innovation Journal: The Public Sector
+  Innovation Journal}} \bibinfo{volume}{22}, \bibinfo{number}{2}
+  (\bibinfo{year}{2017}), \bibinfo{pages}{1--23}.
+\newblock
 
 
 \bibitem[Heerink et~al\mbox{.}(2010)]%
@@ -349,6 +540,43 @@
 \newblock
 \newblock
 \shownote{arXiv:2401.02105}.
+
+
+\bibitem[{International Organization for Standardization}(2011a)]%
+        {iso10218_1}
+\bibfield{author}{\bibinfo{person}{{International Organization for
+  Standardization}}.} \bibinfo{year}{2011}\natexlab{a}.
+\newblock \bibinfo{booktitle}{\emph{Robots and Robotic Devices --- Safety
+  Requirements for Industrial Robots --- Part~1: Robots}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} {ISO} 10218-1:2011.
+  \bibinfo{institution}{International Organization for Standardization},
+  \bibinfo{address}{Geneva, Switzerland}.
+\newblock
+
+
+\bibitem[{International Organization for Standardization}(2011b)]%
+        {iso10218_2}
+\bibfield{author}{\bibinfo{person}{{International Organization for
+  Standardization}}.} \bibinfo{year}{2011}\natexlab{b}.
+\newblock \bibinfo{booktitle}{\emph{Robots and Robotic Devices --- Safety
+  Requirements for Industrial Robots --- Part~2: Robot Systems and
+  Integration}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} {ISO} 10218-2:2011.
+  \bibinfo{institution}{International Organization for Standardization},
+  \bibinfo{address}{Geneva, Switzerland}.
+\newblock
+
+
+\bibitem[{International Organization for Standardization}(2013)]%
+        {iso16290}
+\bibfield{author}{\bibinfo{person}{{International Organization for
+  Standardization}}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Space Systems --- Definition of the
+  Technology Readiness Levels ({TRLs}) and Their Criteria of Assessment}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport} {ISO} 16290:2013.
+  \bibinfo{institution}{International Organization for Standardization},
+  \bibinfo{address}{Geneva, Switzerland}.
+\newblock
 
 
 \bibitem[{International Organization for Standardization}(2014)]%
@@ -423,6 +651,38 @@
 \newblock
 \newblock
 \shownote{arXiv:2406.09246}.
+
+
+\bibitem[Klamroth-Marganska et~al\mbox{.}(2014)]%
+        {klamroth2014armin}
+\bibfield{author}{\bibinfo{person}{Verena Klamroth-Marganska},
+  \bibinfo{person}{Jakob Blanco}, \bibinfo{person}{Kaspar Campen},
+  \bibinfo{person}{Armin Curt}, \bibinfo{person}{Volker Dietz},
+  \bibinfo{person}{Thierry Ettlin}, \bibinfo{person}{Mischa Felder},
+  \bibinfo{person}{Bernd Fellinghauer}, \bibinfo{person}{Martin Guidali},
+  \bibinfo{person}{Anja Kollmar}, \bibinfo{person}{Andreas Luft},
+  \bibinfo{person}{Tobias Nef}, \bibinfo{person}{Christine Schuster-Amft},
+  \bibinfo{person}{Werner Stahel}, {and} \bibinfo{person}{Robert Riener}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Three-Dimensional, Task-Specific Robot Therapy of
+  the Arm after Stroke: A Multicentre, Parallel-Group Randomised Trial}.
+\newblock \bibinfo{journal}{\emph{The Lancet Neurology}} \bibinfo{volume}{13},
+  \bibinfo{number}{2} (\bibinfo{year}{2014}), \bibinfo{pages}{159--166}.
+\newblock
+\href{https://doi.org/10.1016/S1474-4422(13)70305-3}{doi:\nolinkurl{10.1016/S1474-4422(13)70305-3}}
+
+
+\bibitem[Krebs et~al\mbox{.}(1998)]%
+        {krebs1998robot}
+\bibfield{author}{\bibinfo{person}{Hermano~Igo Krebs}, \bibinfo{person}{Neville
+  Hogan}, \bibinfo{person}{Mindy~L. Aisen}, {and} \bibinfo{person}{Bruce~T.
+  Volpe}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Robot-Aided Neurorehabilitation}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Rehabilitation
+  Engineering}} \bibinfo{volume}{6}, \bibinfo{number}{1}
+  (\bibinfo{year}{1998}), \bibinfo{pages}{75--87}.
+\newblock
+\href{https://doi.org/10.1109/86.662623}{doi:\nolinkurl{10.1109/86.662623}}
 
 
 \bibitem[Lanfranco et~al\mbox{.}(2004)]%
@@ -514,6 +774,24 @@
 \shownote{arXiv:2501.07468}.
 
 
+\bibitem[Lo et~al\mbox{.}(2010)]%
+        {lo2010robot}
+\bibfield{author}{\bibinfo{person}{Albert~C. Lo}, \bibinfo{person}{Pedro~D.
+  Guarino}, \bibinfo{person}{Lorie~G. Richards}, \bibinfo{person}{Janet~K.
+  Haselkorn}, \bibinfo{person}{George~F. Wittenberg},
+  \bibinfo{person}{Daniel~G. Federman}, \bibinfo{person}{Robert~J. Ringer},
+  \bibinfo{person}{Todd~H. Wagner}, \bibinfo{person}{Hermano~Igo Krebs},
+  \bibinfo{person}{Bruce~T. Volpe}, {et~al\mbox{.}}}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Robot-Assisted Therapy for Long-Term Upper-Limb
+  Impairment after Stroke}.
+\newblock \bibinfo{journal}{\emph{New England Journal of Medicine}}
+  \bibinfo{volume}{362}, \bibinfo{number}{19} (\bibinfo{year}{2010}),
+  \bibinfo{pages}{1772--1783}.
+\newblock
+\href{https://doi.org/10.1056/NEJMoa0911341}{doi:\nolinkurl{10.1056/NEJMoa0911341}}
+
+
 \bibitem[Lu et~al\mbox{.}(2025)]%
         {lu2025gentlehumanoid}
 \bibfield{author}{\bibinfo{person}{Qingzhou Lu}, \bibinfo{person}{Yao Feng},
@@ -544,6 +822,15 @@
 \href{https://doi.org/10.1109/IEMBS.2009.5333120}{doi:\nolinkurl{10.1109/IEMBS.2009.5333120}}
 
 
+\bibitem[Mankins(1995)]%
+        {mankins1995trl}
+\bibfield{author}{\bibinfo{person}{John~C. Mankins}.}
+  \bibinfo{year}{1995}\natexlab{}.
+\newblock \bibinfo{title}{Technology Readiness Levels: A White Paper}.
+\newblock \bibinfo{howpublished}{NASA Office of Space Access and Technology}.
+\newblock
+
+
 \bibitem[Mehrholz et~al\mbox{.}(2017)]%
         {mehrholz2017electromechanical}
 \bibfield{author}{\bibinfo{person}{Jan Mehrholz}, \bibinfo{person}{Simone
@@ -572,6 +859,20 @@
 \href{https://doi.org/10.3390/healthcare14050572}{doi:\nolinkurl{10.3390/healthcare14050572}}
 
 
+\bibitem[Mitzner et~al\mbox{.}(2018)]%
+        {mitzner2018technology}
+\bibfield{author}{\bibinfo{person}{Tracy~L. Mitzner},
+  \bibinfo{person}{Tiffany~L. Chen}, \bibinfo{person}{Charles~C. Kemp}, {and}
+  \bibinfo{person}{Wendy~A. Rogers}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Identifying the Potential for Robotics to Assist
+  Older Adults in Different Living Environments}.
+\newblock \bibinfo{journal}{\emph{International Journal of Social Robotics}}
+  \bibinfo{volume}{10}, \bibinfo{number}{2} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{141--163}.
+\newblock
+\href{https://doi.org/10.1007/s12369-017-0431-z}{doi:\nolinkurl{10.1007/s12369-017-0431-z}}
+
+
 \bibitem[Morgan et~al\mbox{.}(2022)]%
         {morgan2022robots}
 \bibfield{author}{\bibinfo{person}{Ahmed~Ashraf Morgan},
@@ -597,6 +898,35 @@
   \bibinfo{pages}{98--100}.
 \newblock
 \href{https://doi.org/10.1109/MRA.2012.2192811}{doi:\nolinkurl{10.1109/MRA.2012.2192811}}
+
+
+\bibitem[Moyle et~al\mbox{.}(2017)]%
+        {moyle2017telepresence}
+\bibfield{author}{\bibinfo{person}{Wendy Moyle}, \bibinfo{person}{Urska
+  Arnautovska}, \bibinfo{person}{Tamara Ownsworth}, {and}
+  \bibinfo{person}{Cindy Jones}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Potential of Telepresence Robots to Enhance Social
+  Connectedness in Older Adults with Dementia: {An} Integrative Review of
+  Literature}.
+\newblock \bibinfo{journal}{\emph{International Psychogeriatrics}}
+  \bibinfo{volume}{29}, \bibinfo{number}{12} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{1951--1964}.
+\newblock
+\href{https://doi.org/10.1017/S1041610217001776}{doi:\nolinkurl{10.1017/S1041610217001776}}
+
+
+\bibitem[Moyle et~al\mbox{.}(2014)]%
+        {moyle2014dementia}
+\bibfield{author}{\bibinfo{person}{Wendy Moyle}, \bibinfo{person}{Cindy Jones},
+  \bibinfo{person}{Marie Cooke}, \bibinfo{person}{Siobhan O'Dwyer},
+  \bibinfo{person}{Belt Sung}, {and} \bibinfo{person}{Michael Bramble}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Connecting the Person with Dementia and Family: {A}
+  Feasibility Study of a Telepresence Robot}.
+\newblock \bibinfo{journal}{\emph{BMC Geriatrics}}  \bibinfo{volume}{14}
+  (\bibinfo{year}{2014}), \bibinfo{pages}{7}.
+\newblock
+\href{https://doi.org/10.1186/1471-2318-14-7}{doi:\nolinkurl{10.1186/1471-2318-14-7}}
 
 
 \bibitem[Mukherjee et~al\mbox{.}(2022)]%
@@ -692,6 +1022,19 @@
 \href{https://doi.org/10.1177/20438869211003905}{doi:\nolinkurl{10.1177/20438869211003905}}
 
 
+\bibitem[Poli et~al\mbox{.}(2013)]%
+        {poli2013robotic}
+\bibfield{author}{\bibinfo{person}{Patrizia Poli}, \bibinfo{person}{Giovanni
+  Morone}, \bibinfo{person}{Giulio Rosati}, {and} \bibinfo{person}{Stefano
+  Masiero}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Robotic Technologies and Rehabilitation: New Tools
+  for Stroke Patients' Therapy}.
+\newblock \bibinfo{journal}{\emph{BioMed Research International}}
+  \bibinfo{volume}{2013} (\bibinfo{year}{2013}), \bibinfo{pages}{153872}.
+\newblock
+\href{https://doi.org/10.1155/2013/153872}{doi:\nolinkurl{10.1155/2013/153872}}
+
+
 \bibitem[Pratt and Williamson(1995)]%
         {pratt1995elastic}
 \bibfield{author}{\bibinfo{person}{Gill~A. Pratt} {and}
@@ -740,6 +1083,17 @@
   \bibinfo{number}{1} (\bibinfo{year}{2022}), \bibinfo{pages}{31--38}.
 \newblock
 \href{https://doi.org/10.1038/s41591-021-01614-0}{doi:\nolinkurl{10.1038/s41591-021-01614-0}}
+
+
+\bibitem[Riek(2017)]%
+        {riek2017healthcare}
+\bibfield{author}{\bibinfo{person}{Laurel~D. Riek}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Healthcare Robotics}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{60},
+  \bibinfo{number}{11} (\bibinfo{year}{2017}), \bibinfo{pages}{68--78}.
+\newblock
+\href{https://doi.org/10.1145/3127874}{doi:\nolinkurl{10.1145/3127874}}
 
 
 \bibitem[Rizzolatti and Craighero(2004)]%
@@ -793,6 +1147,37 @@
 \href{https://doi.org/10.1145/3610978.3640721}{doi:\nolinkurl{10.1145/3610978.3640721}}
 \newblock
 \shownote{arXiv:2403.05083}.
+
+
+\bibitem[Sciutti et~al\mbox{.}(2018)]%
+        {sciutti2018humanizing}
+\bibfield{author}{\bibinfo{person}{Alessandra Sciutti},
+  \bibinfo{person}{Martina Mara}, \bibinfo{person}{Vincenzo Tagliasco}, {and}
+  \bibinfo{person}{Giulio Sandini}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Humanizing Human-Robot Interaction: On the
+  Importance of Mutual Understanding}.
+\newblock \bibinfo{journal}{\emph{IEEE Technology and Society Magazine}}
+  \bibinfo{volume}{37}, \bibinfo{number}{1} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{22--29}.
+\newblock
+\href{https://doi.org/10.1109/MTS.2018.2795095}{doi:\nolinkurl{10.1109/MTS.2018.2795095}}
+
+
+\bibitem[Sendak et~al\mbox{.}(2020)]%
+        {sendak2020real}
+\bibfield{author}{\bibinfo{person}{Mark~P. Sendak},
+  \bibinfo{person}{Madeleine~Clare Elish}, \bibinfo{person}{Michael Gao},
+  \bibinfo{person}{Joseph Futoma}, \bibinfo{person}{William Ratliff},
+  \bibinfo{person}{Marshall Nichols}, \bibinfo{person}{Armando Bedoya},
+  \bibinfo{person}{Suresh Balu}, {and} \bibinfo{person}{Cara O'Brien}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{``The Human Body is a Black Box'': Supporting
+  Clinical Decision-Making with Deep Learning}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the ACM Conference on
+  Fairness, Accountability, and Transparency}} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{99--109}.
+\newblock
+\href{https://doi.org/10.1145/3351095.3372827}{doi:\nolinkurl{10.1145/3351095.3372827}}
 
 
 \bibitem[Sentis and Khatib(2005)]%
@@ -862,6 +1247,23 @@
 \href{https://doi.org/10.1080/10400435.2024.2337194}{doi:\nolinkurl{10.1080/10400435.2024.2337194}}
 
 
+\bibitem[Stasse et~al\mbox{.}(2017)]%
+        {stasse2017talos}
+\bibfield{author}{\bibinfo{person}{Olivier Stasse}, \bibinfo{person}{Thomas
+  Flayols}, \bibinfo{person}{Rohan Budhiraja}, \bibinfo{person}{Kevin
+  Giraud-Esclasse}, \bibinfo{person}{Justin Carpentier},
+  \bibinfo{person}{Philippe Saurel}, \bibinfo{person}{Philippe Soueres},
+  \bibinfo{person}{Nicolas Mansard}, \bibinfo{person}{Florent Lamiraux},
+  \bibinfo{person}{Jean-Paul Laumond}, {et~al\mbox{.}}}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{{TALOS}: A New Humanoid Research Platform Targeted
+  for Industrial Scenarios}. In \bibinfo{booktitle}{\emph{IEEE-RAS
+  International Conference on Humanoid Robots (Humanoids)}}.
+  \bibinfo{pages}{689--695}.
+\newblock
+\href{https://doi.org/10.1109/HUMANOIDS.2017.8246947}{doi:\nolinkurl{10.1109/HUMANOIDS.2017.8246947}}
+
+
 \bibitem[Topol(2019)]%
         {topol2019high}
 \bibfield{author}{\bibinfo{person}{Eric~J. Topol}.}
@@ -923,6 +1325,19 @@
 \href{https://doi.org/10.1109/TRO.2007.906261}{doi:\nolinkurl{10.1109/TRO.2007.906261}}
 
 
+\bibitem[Wen et~al\mbox{.}(2024)]%
+        {wen2024hirt}
+\bibfield{author}{\bibinfo{person}{Jianke Wen}, \bibinfo{person}{Xingyu Zhu},
+  \bibinfo{person}{Yao He}, \bibinfo{person}{Jianfeng Cheng},
+  \bibinfo{person}{Ziluo Li}, {et~al\mbox{.}}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{HiRT}: Enhancing Robotic Control with Hierarchical
+  Robot Transformers}. In \bibinfo{booktitle}{\emph{8th Conference on Robot
+  Learning ({CoRL})}}. \bibinfo{address}{Munich, Germany}.
+\newblock
+\newblock
+\shownote{arXiv:2410.05273}.
+
+
 \bibitem[{World Health Organization}(2016)]%
         {who2016workforce}
 \bibfield{author}{\bibinfo{person}{{World Health Organization}}.}
@@ -933,6 +1348,34 @@
   \bibinfo{institution}{World Health Organization}, \bibinfo{address}{Geneva,
   Switzerland}.
 \newblock
+
+
+\bibitem[Wu et~al\mbox{.}(2024)]%
+        {wu2023gello}
+\bibfield{author}{\bibinfo{person}{Philip Wu}, \bibinfo{person}{Yuzhe Shentu},
+  \bibinfo{person}{Zhongyu Yi}, \bibinfo{person}{Xingyu Lin}, {and}
+  \bibinfo{person}{Pieter Abbeel}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{GELLO}: A General, Low-Cost, and Intuitive
+  Teleoperation Framework for Robot Manipulators}. In
+  \bibinfo{booktitle}{\emph{IEEE International Conference on Robotics and
+  Automation ({ICRA})}}.
+\newblock
+\newblock
+\shownote{arXiv:2309.13037}.
+
+
+\bibitem[Young et~al\mbox{.}(2009)]%
+        {young2009toward}
+\bibfield{author}{\bibinfo{person}{James~E. Young}, \bibinfo{person}{Richard
+  Hawkins}, \bibinfo{person}{Ehud Sharlin}, {and} \bibinfo{person}{Takeo
+  Igarashi}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Toward Acceptable Domestic Robots: Applying
+  Insights from Social Psychology}.
+\newblock \bibinfo{journal}{\emph{International Journal of Social Robotics}}
+  \bibinfo{volume}{1}, \bibinfo{number}{1} (\bibinfo{year}{2009}),
+  \bibinfo{pages}{95--108}.
+\newblock
+\href{https://doi.org/10.1007/s12369-008-0006-y}{doi:\nolinkurl{10.1007/s12369-008-0006-y}}
 
 
 \bibitem[Yuan et~al\mbox{.}(2025)]%
@@ -961,6 +1404,21 @@
 \newblock
 \newblock
 \shownote{arXiv:2304.13705}.
+
+
+\bibitem[Zhen et~al\mbox{.}(2024)]%
+        {zhen20243dvla}
+\bibfield{author}{\bibinfo{person}{Haoyu Zhen}, \bibinfo{person}{Xiaowen Qiu},
+  \bibinfo{person}{Peihao Chen}, \bibinfo{person}{Jincheng Yang},
+  \bibinfo{person}{Xin Yan}, \bibinfo{person}{Yilun Du},
+  \bibinfo{person}{Yining Hong}, {and} \bibinfo{person}{Chuang Gan}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{3D-VLA}: A {3D} Vision-Language-Action Generative
+  World Model}. In \bibinfo{booktitle}{\emph{International Conference on
+  Machine Learning ({ICML})}}.
+\newblock
+\newblock
+\shownote{arXiv:2403.09631}.
 
 
 \end{thebibliography}

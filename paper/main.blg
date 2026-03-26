@@ -19,6 +19,14 @@ Warning--page numbers missing in both pages and numpages fields in benallegue202
 Warning--empty publisher in brohan2023rt2
 Warning--empty address in brohan2023rt2
 Warning--page numbers missing in both pages and numpages fields in brohan2023rt2
+Warning--empty publisher in cheng2024expressive
+Warning--page numbers missing in both pages and numpages fields in cheng2024expressive
+Warning--empty publisher in chi2024umi
+Warning--empty address in chi2024umi
+Warning--page numbers missing in both pages and numpages fields in chi2024umi
+Warning--empty address in feilseifer2005defining
+Warning--empty publisher in he2024omnikh
+Warning--page numbers missing in both pages and numpages fields in he2024omnikh
 Warning--empty address in kajita2003biped
 Warning--page numbers missing in both pages and numpages fields in liu2025screens
 Warning--empty address in lum2009latency
@@ -29,47 +37,58 @@ Warning--empty address in pratt1995elastic
 Warning--empty address in sakagami2002asimo
 Warning--empty address in sayis2024technology
 Warning--page numbers missing in both pages and numpages fields in sayis2024technology
+Warning--no number and no volume in sendak2020real
 Warning--empty address in sobrepera2022feasibility
 Warning--page numbers missing in both pages and numpages fields in sobrepera2022feasibility
-You've used 67 entries,
+Warning--empty publisher in stasse2017talos
+Warning--empty address in stasse2017talos
+Warning--empty publisher in wen2024hirt
+Warning--page numbers missing in both pages and numpages fields in wen2024hirt
+Warning--empty publisher in wu2023gello
+Warning--empty address in wu2023gello
+Warning--page numbers missing in both pages and numpages fields in wu2023gello
+Warning--empty publisher in zhen20243dvla
+Warning--empty address in zhen20243dvla
+Warning--page numbers missing in both pages and numpages fields in zhen20243dvla
+You've used 100 entries,
             6273 wiz_defined-function locations,
-            1921 strings with 34230 characters,
-and the built_in function-call counts, 77918 in all, are:
-= -- 10306
-> -- 3249
-< -- 3
-+ -- 1128
-- -- 1125
-* -- 6088
-:= -- 7980
-add.period$ -- 367
-call.type$ -- 67
-change.case$ -- 601
-chr.to.int$ -- 67
-cite$ -- 86
-duplicate$ -- 6178
-empty$ -- 4310
-format.name$ -- 1345
-if$ -- 18757
-int.to.chr$ -- 2
+            2107 strings with 42058 characters,
+and the built_in function-call counts, 116674 in all, are:
+= -- 15555
+> -- 4729
+< -- 6
++ -- 1630
+- -- 1631
+* -- 9045
+:= -- 11801
+add.period$ -- 539
+call.type$ -- 100
+change.case$ -- 883
+chr.to.int$ -- 98
+cite$ -- 138
+duplicate$ -- 9353
+empty$ -- 6541
+format.name$ -- 1942
+if$ -- 28318
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 185
-newline$ -- 654
-num.names$ -- 469
-pop$ -- 2282
+missing$ -- 301
+newline$ -- 949
+num.names$ -- 698
+pop$ -- 3518
 preamble$ -- 1
-purify$ -- 1133
+purify$ -- 1675
 quote$ -- 0
-skip$ -- 2324
+skip$ -- 3446
 stack$ -- 0
-substring$ -- 5258
-swap$ -- 627
-text.length$ -- 3
+substring$ -- 7925
+swap$ -- 932
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1547
-warning$ -- 19
-while$ -- 370
+type$ -- 2262
+warning$ -- 38
+while$ -- 567
 width$ -- 0
-write$ -- 1386
-(There were 19 warnings)
+write$ -- 2042
+(There were 38 warnings)

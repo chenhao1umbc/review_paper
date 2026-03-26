@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  23 MAR 2026 01:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  25 MAR 2026 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -42,7 +42,6 @@ Package acmart Info: Explicitly selecting natbib mode on input line 138.
 Package acmart Info: Not using anonymous mode on input line 146.
 Package acmart Info: Not using timestamp mode on input line 154.
 Package acmart Info: Not using authordraft mode on input line 164.
-Package acmart Info: Using screen mode on input line 179.
 Class acmart Info: Using format manuscript, number 0 on input line 179.
 Class acmart Info: Using fontsize 9pt on input line 281.
 
@@ -710,17 +709,21 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \bigstrutjot=\dimen257
 )
 Excluding 'CCSXML' comment.
-Package hyperref Info: Option `colorlinks' set `true' on input line 90.
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 90.
 
 \c@theorem=\count334
- Include comment 'screenonly'
-Excluding comment 'printonly' Include comment 'anonsuppress'
+ Excluding comment 'screenonly'
+Include comment 'printonly' Include comment 'anonsuppress'
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
-) (./main.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [acmjour].
+
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 90.
@@ -862,7 +865,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring OFF on input line 90.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -1022,409 +1025,409 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
 (Font)              scaled to size 9.0pt on input line 96.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 121.
 
 [1.1{/Users/hc/Library/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdft
 ex.map}{/Users/hc/Library/texmf/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/Use
 rs/hc/Library/texmf/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/Users/hc/Librar
 y/texmf/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/Users/hc/Library/texmf/font
 s/enc/dvips/libertine/lbtn_nh77jq.enc}{/Users/hc/Library/texmf/fonts/enc/dvips/
-libertine/lbtn_7grukw.enc}] [2.2]
+libertine/lbtn_7grukw.enc}]
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 9.0pt on input line 158.
+LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
+(Font)              scaled to size 6.6pt on input line 158.
+ [2.2]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 205.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 208.
- [3.3] [4.4]
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 9.0pt on input line 385.
-LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 385.
+(Font)              scaled to size 9.0pt on input line 259.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5.5{/Users/hc/Library/texmf/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
-<figures/tech_timeline.pdf, id=276, 1572.19585pt x 864.1447pt>
+ [3.3]
+[4.4{/Users/hc/Library/texmf/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}]
+<figures/tech_timeline.pdf, id=272, 1562.82417pt x 853.73784pt>
 File: figures/tech_timeline.pdf Graphic file (type pdf)
 <use figures/tech_timeline.pdf>
-Package pdftex.def Info: figures/tech_timeline.pdf  used on input line 477.
-(pdftex.def)             Requested size: 430.00462pt x 236.34172pt.
+Package pdftex.def Info: figures/tech_timeline.pdf  used on input line 424.
+(pdftex.def)             Requested size: 430.00462pt x 234.90239pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 483.
+(Font)              scaled to size 8.0pt on input line 430.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5.5]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 495.
+(Font)              scaled to size 9.0pt on input line 442.
 
-Underfull \vbox (badness 4048) has occurred while \output is active []
-
- [6.6]
-[7.7 <./figures/tech_timeline.pdf>]
+[6.6 <./figures/tech_timeline.pdf>]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 582.
+(Font)              scaled to size 6.0pt on input line 532.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.5pt on input line 582.
+(Font)              scaled to size 6.5pt on input line 532.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 610.
-LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 610.
+(Font)              scaled to size 6.6pt on input line 560.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 560.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `OML/nxlmi/m/it' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 4.81796pt on input line 610.
+(Font)              scaled to size 4.81796pt on input line 560.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 3.63002pt on input line 610.
+(Font)              scaled to size 3.63002pt on input line 560.
+ [7.7] [8.8] [9.9]
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
+(Font)              scaled to size 8.0pt on input line 721.
 
-Underfull \vbox (badness 2762) has occurred while \output is active []
-
- [8.8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9.9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1460) has occurred while \output is active []
 
  [10.10]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 766.
-
 [11.11] [12.12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13.13]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 7.0pt on input line 998.
+(Font)              scaled to size 7.0pt on input line 939.
 
-Underfull \hbox (badness 2269) in paragraph at lines 1001--1001
+Underfull \hbox (badness 2269) in paragraph at lines 942--942
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) et al. [[]], Cho et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1002
+Underfull \hbox (badness 10000) in paragraph at lines 943--943
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Lab; user
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1002
+Underfull \hbox (badness 10000) in paragraph at lines 943--943
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) study; ca-
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 1004.
+(Font)              scaled to size 5.5pt on input line 945.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1004--1004
+Underfull \hbox (badness 10000) in paragraph at lines 945--945
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) Alameda-Pineda et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1005--1005
+Underfull \hbox (badness 10000) in paragraph at lines 946--946
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Exhibition
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1005--1005
+Underfull \hbox (badness 10000) in paragraph at lines 946--946
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) demo; field
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1006
+Underfull \hbox (badness 10000) in paragraph at lines 947--947
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) 0 (demo);
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1009
+Underfull \hbox (badness 10000) in paragraph at lines 950--950
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Humanoid; SRAT;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1009
+Underfull \hbox (badness 10000) in paragraph at lines 950--950
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) EEG pi-lot;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1009--1009
+Underfull \hbox (badness 10000) in paragraph at lines 950--950
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) case se-ries;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1013
+Underfull \hbox (badness 10000) in paragraph at lines 954--954
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Unspecified hu-
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 1014.
-<figures/evidence_landscape.pdf, id=514, 706.9386pt x 453.27856pt>
+(Font)              scaled to size 7.0pt on input line 955.
+[13.13]
+<figures/evidence_landscape.pdf, id=543, 645.17973pt x 193.57896pt>
 File: figures/evidence_landscape.pdf Graphic file (type pdf)
 <use figures/evidence_landscape.pdf>
-Package pdftex.def Info: figures/evidence_landscape.pdf  used on input line 103
-8.
-(pdftex.def)             Requested size: 430.00462pt x 275.71796pt.
-[14.14]
-Underfull \vbox (badness 1184) has occurred while \output is active []
-
- [15.15 <./figures/evidence_landscape.pdf>]
-Overfull \hbox (4.1195pt too wide) in paragraph at lines 1120--1126
+Package pdftex.def Info: figures/evidence_landscape.pdf  used on input line 100
+2.
+(pdftex.def)             Requested size: 430.00462pt x 129.02081pt.
+ [14.14 <./figures/evidence_landscape.pdf>]
+Overfull \hbox (4.1195pt too wide) in paragraph at lines 1083--1089
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) The de-sign tar-get for patient-contact f
 orce lim-its is the Power and Force Lim-it-ing (PFL) regime of ISO/TS 15066:201
 6 [[]],
  []
 
-[16.16] [17.17]
-Underfull \hbox (badness 10000) in paragraph at lines 1259--1259
+[15.15] [16.16]
+Underfull \hbox (badness 10000) in paragraph at lines 1226--1226
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Must de-fine fall-prevention,
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 1259--1259
+Underfull \hbox (badness 3386) in paragraph at lines 1226--1226
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) PFL, la-tency, AI/ML Spe-cial
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1259--1259
+Underfull \hbox (badness 5203) in paragraph at lines 1226--1226
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) un-der Art. 62; PMCF post-
  []
 
 
-Underfull \hbox (badness 1325) in paragraph at lines 1259--1259
+Underfull \hbox (badness 1325) in paragraph at lines 1226--1226
 \T1/LinuxLibertineT-TLF/b/n/9 (+20) de-vices\T1/LinuxLibertineT-TLF/m/n/9 (+20)
  ; no bipedal gait dy-
  []
 
-[18.18]
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+
+Underfull \vbox (badness 2452) has occurred while \output is active []
+
+ [17.17]
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/b/n/9 (+20) Blocking Do-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-ce-
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 1330--1330
+Underfull \hbox (badness 5331) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dures, Re-ha-bil-i-ta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) thresh-olds ap-proached
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 1330--1330
+Underfull \hbox (badness 2418) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) i-za-tion of gait-induced
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 1330--1330
+Underfull \hbox (badness 1038) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) force pro-files; ac-cepted
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) All physical-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) ISO/TS 15066 [[]];
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No na-tive RCM; no
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1330--1330
+Underfull \hbox (badness 2591) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) ware ana-log; tool-path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-ce-
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 1330--1330
+Underfull \hbox (badness 1142) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) tion dataset; VLA fine-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical pro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) ce-dures, all
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Clinical safety
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 1330--1330
+Underfull \hbox (badness 1087) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) bipedal gait in patient-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1297--1297
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) fea-si-bil-ity study; FDA
  []
 
-[19.19]
-<figures/trl_readiness.pdf, id=677, 707.05531pt x 344.8402pt>
+
+Underfull \vbox (badness 2452) has occurred while \output is active []
+
+ [18.18]
+<figures/trl_readiness.pdf, id=709, 459.2404pt x 312.49309pt>
 File: figures/trl_readiness.pdf Graphic file (type pdf)
 <use figures/trl_readiness.pdf>
-Package pdftex.def Info: figures/trl_readiness.pdf  used on input line 1416.
-(pdftex.def)             Requested size: 430.00462pt x 209.7208pt.
-<figures/capability_radar.pdf, id=679, 423.51799pt x 543.68967pt>
-File: figures/capability_radar.pdf Graphic file (type pdf)
-<use figures/capability_radar.pdf>
-Package pdftex.def Info: figures/capability_radar.pdf  used on input line 1437.
-
-(pdftex.def)             Requested size: 258.00539pt x 331.21881pt.
+Package pdftex.def Info: figures/trl_readiness.pdf  used on input line 1383.
+(pdftex.def)             Requested size: 430.00462pt x 292.6087pt.
+<figures/capability_gap.pdf, id=711, 766.82108pt x 406.0382pt>
+File: figures/capability_gap.pdf Graphic file (type pdf)
+<use figures/capability_gap.pdf>
+Package pdftex.def Info: figures/capability_gap.pdf  used on input line 1404.
+(pdftex.def)             Requested size: 430.00462pt x 227.6896pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20.20]
-[21.21 <./figures/trl_readiness.pdf>] [22.22 <./figures/capability_radar.pdf>]
-Underfull \hbox (badness 1014) in paragraph at lines 1566--1566
+ [19.19]
+[20.20 <./figures/trl_readiness.pdf>] [21.21 <./figures/capability_gap.pdf>]
+Underfull \hbox (badness 1014) in paragraph at lines 1533--1533
 []\T1/LinuxLibertineT-TLF/b/n/7 (+20) Reg. Com-plex-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+Underfull \hbox (badness 10000) in paragraph at lines 1533--1534
 []\T1/LinuxLibertineT-TLF/b/n/7 (+20) Binding Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1568--1568
+Underfull \hbox (badness 10000) in paragraph at lines 1535--1535
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Class II /
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 1568--1568
+Underfull \hbox (badness 2150) in paragraph at lines 1535--1535
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Safety stan-dard:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1570--1570
+Underfull \hbox (badness 10000) in paragraph at lines 1537--1537
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Supervised-to-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1570--1570
+Underfull \hbox (badness 10000) in paragraph at lines 1537--1537
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Both: gait
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1571--1571
+Underfull \hbox (badness 10000) in paragraph at lines 1538--1538
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) Indirect (in-
  []
 
-[23.23] [24.24]
-<figures/regulatory_pathways.pdf, id=825, 547.85304pt x 640.58824pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22.22]
+[23.23]
+<figures/regulatory_pathways.pdf, id=866, 547.85304pt x 630.95221pt>
 File: figures/regulatory_pathways.pdf Graphic file (type pdf)
 <use figures/regulatory_pathways.pdf>
 Package pdftex.def Info: figures/regulatory_pathways.pdf  used on input line 16
-56.
-(pdftex.def)             Requested size: 301.00192pt x 351.95319pt.
- [25.25
+23.
+(pdftex.def)             Requested size: 301.00192pt x 346.65894pt.
+ [24.24
 
- <./figures/regulatory_pathways.pdf>] [26.26] [27.27]
+ <./figures/regulatory_pathways.pdf>] [25.25] [26.26]
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
  Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut) (./main.bbl
-Underfull \vbox (badness 5260) has occurred while \output is active []
+Straight input of comment.cut. (./comment.cut) (./main.bbl [27.27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28.28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29.29])
-[30.30] (./main.aux)
+ [29.29]
+[30.30]) [31.31] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FF1BE70498A549B1EFDF55EA38DEF4BC;8869.
+(rerunfilecheck)             Checksum: 9E7BDF16606631029654817BA2F3638D;8215.
  ) 
 Here is how much of TeX's memory you used:
- 21525 strings out of 469006
- 351594 string characters out of 5454814
- 793452 words of memory out of 5000000
- 48908 multiletter control sequences out of 15000+600000
- 850874 words of font info for 573 fonts, out of 8000000 for 9000
+ 21649 strings out of 469006
+ 354529 string characters out of 5454814
+ 796434 words of memory out of 5000000
+ 49003 multiletter control sequences out of 15000+600000
+ 849922 words of font info for 571 fonts, out of 8000000 for 9000
  480 hyphenation exceptions out of 8191
- 90i,15n,131p,1001b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,131p,1001b,887s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/hc/Library/texmf/fonts/type1/public/newtx/LibertineMathMI.pfb></Users
 /hc/Library/texmf/fonts/type1/public/newtx/LibertineMathMI7.pfb></Users/hc/Libr
 ary/texmf/fonts/type1/public/libertine/LinBiolinumT.pfb></Users/hc/Library/texm
@@ -1433,12 +1436,12 @@ f/fonts/type1/public/libertine/LinBiolinumTB.pfb></Users/hc/Library/texmf/fonts
 public/libertine/LinLibertineT.pfb></Users/hc/Library/texmf/fonts/type1/public/
 libertine/LinLibertineTB.pfb></Users/hc/Library/texmf/fonts/type1/public/libert
 ine/LinLibertineTI.pfb></Users/hc/Library/texmf/fonts/type1/public/newtx/NewTXM
-I7.pfb></Users/hc/Library/texmf/fonts/type1/public/newtx/txmiaX.pfb></Users/hc/
-Library/texmf/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (30 pages, 675270 bytes).
+I.pfb></Users/hc/Library/texmf/fonts/type1/public/newtx/txmiaX.pfb></Users/hc/L
+ibrary/texmf/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (31 pages, 689102 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 699 compressed objects within 7 object streams
- 155 named destinations out of 1000 (max. 500000)
- 110946 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 1194 PDF objects out of 1200 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 186 named destinations out of 1000 (max. 500000)
+ 110922 words of extra memory for PDF output out of 128383 (max. 10000000)
 
