@@ -5,3 +5,9 @@ work_log.md
 paper_core.md
 plan.md
 .DS_Store
+*.aux
+*.log
+__pycache__/
+.pm_state
+outputs/
+ready_for_post_review.md

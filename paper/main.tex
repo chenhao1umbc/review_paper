@@ -147,8 +147,11 @@ Scholar. The primary query combined platform and application terms:
 \emph{surgery}), supplemented by domain-specific secondary searches and
 citation-list hand-search. Title and abstract screening of 147 candidate papers
 yielded 52 full-text reviews; applying inclusion and exclusion criteria produced
-14 qualifying papers. The sparsity of this set is itself a primary finding: the
-evidence base for bipedal humanoid clinical research is narrow and concentrated.
+14 qualifying papers as the primary evidence corpus; the full survey draws on
+100 references covering background literature, technical foundations, and
+regulatory sources. The sparsity of this primary corpus is itself a central
+finding: the evidence base for bipedal humanoid clinical research is narrow
+and concentrated.
 Concurrent with the literature search, a platform survey identified 13
 commercial and 12 academic systems meeting scope criteria, with specifications
 verified against manufacturer documentation or peer-reviewed publications.
@@ -674,7 +677,7 @@ mature in general manipulation infrastructure but entirely absent in clinical-sp
 components. A systematic survey of prominent repositories yields four layers:
 
 \textbf{Foundation models and VLA frameworks.} LeRobot~\cite{cadene2024lerobot}
-(HuggingFace; 22,179~stars; Apache~2.0) provides a hardware-agnostic imitation
+(HuggingFace; Apache~2.0) provides a hardware-agnostic imitation
 learning and VLA pipeline with direct Unitree G1 support. Physical Intelligence's
 openpi provides the $\pi_0$~\cite{black2024pi0} VLA model pre-trained on over
 10,000~hours of real robot demonstrations, with best-reported results on ALOHA
@@ -684,15 +687,15 @@ MIT license) and Diffusion Policy~\cite{chi2023diffusion} complete the general-p
 manipulation toolkit. All are general-purpose; none include healthcare-specific
 training data, safety validation, or clinical task benchmarks.
 
-\textbf{Simulation environments.} Genesis (28,254~stars; Apache~2.0) provides
-unified differentiable physics simulation; Isaac Lab (6,544~stars; BSD-3-Clause)
+\textbf{Simulation environments.} Genesis (Apache~2.0) provides
+unified differentiable physics simulation; Isaac Lab (BSD-3-Clause)
 offers GPU-accelerated reinforcement learning with native Unitree G1/H1 support.
 Neither provides medical environment models, clinical workflow scenarios, or
 validated patient-contact physics.
 
 \textbf{Unitree hardware ecosystem.} The Unitree GitHub organization maintains
-nine publicly accessible repositories including unitree\_rl\_gym (3,022~stars),
-unitree\_sdk2 (932~stars), and xr\_teleoperate (1,309~stars) for full-body
+nine publicly accessible repositories including unitree\_rl\_gym,
+unitree\_sdk2, and xr\_teleoperate for full-body
 XR teleoperation, the software component used in Atar et al.~\cite{atar2025humanoids}.
 Low-cost leader-follower teleoperation hardware such as GELLO~\cite{wu2023gello}
 further lowers the barrier to clinical procedure research.
@@ -714,31 +717,31 @@ in this ecosystem.
 
 \begin{table*}[t]
   \caption{Open-Source Software Ecosystem for Humanoid and Embodied-AI Robotics
-  (March 2026). Stars are approximate GitHub counts at time of writing. Medical
-  Relevance: \textbf{H}~=~high (direct hardware/algorithm support for clinical
-  candidate platforms), \textbf{M}~=~medium (transferable general capability),
-  \textbf{L}~=~low (infrastructure/simulation only). No repository provides
-  clinical-specific safety validation or medical workflow integration.}
+  (March 2026). Medical Relevance: \textbf{H}~=~high (direct hardware/algorithm
+  support for clinical candidate platforms), \textbf{M}~=~medium (transferable
+  general capability), \textbf{L}~=~low (infrastructure/simulation only). No
+  repository provides clinical-specific safety validation or medical workflow
+  integration.}
   \label{tab:opensource}
   \resizebox{\linewidth}{!}{%
-  \begin{tabular}{@{}llrllp{4.5cm}l@{}}
+  \begin{tabular}{@{}llllp{4.5cm}l@{}}
     \toprule
-    \textbf{Repository} & \textbf{Org / Author} & \textbf{Stars} &
+    \textbf{Repository} & \textbf{Org / Author} &
     \textbf{Purpose} & \textbf{License} & \textbf{Notes} & \textbf{Med.\ Rel.} \\
     \midrule
-    lerobot            & HuggingFace        & $\sim$22k  & VLA/imitation learning pipeline  & Apache 2.0  & Supports Unitree G1; no clinical data & H \\
-    openpi             & Physical Intelligence & $\sim$10k & $\pi_0$ VLA foundation model      & Apache 2.0  & 10k+ hrs robot demos; bimanual ALOHA   & H \\
-    openvla            & Stanford/Berkeley/TRI & $\sim$5.4k & 7B-param open VLA model          & MIT         & 970k demos; generalist manipulation    & H \\
-    act                & tonyzhaozh         & $\sim$5k   & Action Chunking Transformers      & MIT         & Original ALOHA bimanual policy code    & H \\
-    diffusion\_policy  & Columbia/MIT       & $\sim$4.5k & Diffusion-based robot policy      & MIT         & Imitation learning / VLA pipeline        & M \\
-    Genesis            & Genesis-Embodied-AI & $\sim$28k & Differentiable physics simulation & Apache 2.0  & No medical environment models          & M \\
-    IsaacLab           & isaac-sim (NVIDIA) & $\sim$6.5k & GPU-accelerated RL + sim          & BSD-3       & G1/H1 native support; no clinical env. & M \\
-    unitree\_rl\_gym   & Unitree Robotics   & $\sim$3k   & RL locomotion for Unitree robots   & BSD-3       & G1/H1/B2 locomotion training           & H \\
-    xr\_teleoperate    & Unitree Robotics   & $\sim$1.3k & Full-body XR teleoperation        & Apache 2.0  & Used in Atar et al.\ 2025 study        & H \\
-    unitree\_sdk2      & Unitree Robotics   & $\sim$0.9k & Hardware SDK for G1/H1/B2         & Apache 2.0  & Low-level hardware interface           & H \\
-    ManiSkill          & HKUST              & $\sim$1.8k & Embodied manipulation benchmark   & Apache 2.0  & No clinical task benchmarks            & M \\
-    RoboManip          & isri-robot         & $\sim$0.3k & Bimanual manipulation dataset     & MIT         & Tabletop tasks only                    & M \\
-    Open Duck Mini     & apirrone           & $\sim$2k   & Miniature bipedal robot (open HW) & MIT         & Educational; not clinical scale        & L \\
+    lerobot            & HuggingFace           & VLA/imitation learning pipeline  & Apache 2.0  & Supports Unitree G1; no clinical data  & H \\
+    openpi             & Physical Intelligence  & $\pi_0$ VLA foundation model      & Apache 2.0  & 10k+ hrs robot demos; bimanual ALOHA   & H \\
+    openvla            & Stanford/Berkeley/TRI  & 7B-param open VLA model           & MIT         & 970k demos; generalist manipulation    & H \\
+    act                & tonyzhaozh            & Action Chunking Transformers      & MIT         & Original ALOHA bimanual policy code    & H \\
+    diffusion\_policy  & Columbia/MIT          & Diffusion-based robot policy      & MIT         & Imitation learning / VLA pipeline      & M \\
+    Genesis            & Genesis-Embodied-AI   & Differentiable physics simulation & Apache 2.0  & No medical environment models          & M \\
+    IsaacLab           & isaac-sim (NVIDIA)    & GPU-accelerated RL + sim          & BSD-3       & G1/H1 native support; no clinical env. & M \\
+    unitree\_rl\_gym   & Unitree Robotics      & RL locomotion for Unitree robots  & BSD-3       & G1/H1/B2 locomotion training           & H \\
+    xr\_teleoperate    & Unitree Robotics      & Full-body XR teleoperation        & Apache 2.0  & Used in Atar et al.\ 2025 study        & H \\
+    unitree\_sdk2      & Unitree Robotics      & Hardware SDK for G1/H1/B2         & Apache 2.0  & Low-level hardware interface           & H \\
+    ManiSkill          & HKUST                 & Embodied manipulation benchmark   & Apache 2.0  & No clinical task benchmarks            & M \\
+    RoboManip          & isri-robot            & Bimanual manipulation dataset     & MIT         & Tabletop tasks only                    & M \\
+    Open Duck Mini     & apirrone              & Miniature bipedal robot (open HW) & MIT         & Educational; not clinical scale        & L \\
     \bottomrule
   \end{tabular}%
   }
@@ -1229,8 +1232,8 @@ dimensions that determine market entry strategy.
 \subsection{Software Infrastructure and AI Validation}
 \label{sec:software}
 
-The leading VLA models, including openpi/$\pi_0$ (10,551~stars), OpenVLA (5,479~stars),
-and LeRobot (22,179~stars), represent the highest-capability general-purpose
+The leading VLA models, including openpi/$\pi_0$, OpenVLA~\cite{kim2024openvla},
+and LeRobot~\cite{cadene2024lerobot}, represent the highest-capability general-purpose
 robot learning infrastructure publicly available. For general-purpose humanoid
 manipulation research, this infrastructure is genuinely strong.
 
@@ -1620,7 +1623,7 @@ key decision points for both jurisdictions.
   both tracks: no accepted safety standard exists for bipedal gait in
   patient-proximate environments, as ISO 13482 excludes medical devices and
   ISO/TS 15066 is designed for fixed-base collaborative arms.}
-  \includegraphics[width=0.7\columnwidth]{figures/regulatory_pathways.pdf}
+  \includegraphics[width=\textwidth]{figures/regulatory_pathways.pdf}
   \caption{Regulatory pathways for clinical humanoid robots: FDA De~Novo (US,
   left) and EU MDR plus EU AI Act (EU, right). Both tracks require the same
   foundational evidence (safety standards for bipedal gait in patient-proximate
