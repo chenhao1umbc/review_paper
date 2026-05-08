@@ -47,48 +47,45 @@ Warning--page numbers missing in both pages and numpages fields in wen2024hirt
 Warning--empty publisher in wu2023gello
 Warning--empty address in wu2023gello
 Warning--page numbers missing in both pages and numpages fields in wu2023gello
-Warning--empty publisher in zhen20243dvla
-Warning--empty address in zhen20243dvla
-Warning--page numbers missing in both pages and numpages fields in zhen20243dvla
-You've used 100 entries,
+You've used 101 entries,
             6273 wiz_defined-function locations,
-            2107 strings with 42058 characters,
-and the built_in function-call counts, 116674 in all, are:
-= -- 15555
-> -- 4729
+            2114 strings with 42347 characters,
+and the built_in function-call counts, 118119 in all, are:
+= -- 15725
+> -- 4808
 < -- 6
-+ -- 1630
-- -- 1631
-* -- 9045
-:= -- 11801
-add.period$ -- 539
-call.type$ -- 100
-change.case$ -- 883
-chr.to.int$ -- 98
-cite$ -- 138
-duplicate$ -- 9353
-empty$ -- 6541
-format.name$ -- 1942
-if$ -- 28318
++ -- 1660
+- -- 1658
+* -- 9171
+:= -- 11968
+add.period$ -- 546
+call.type$ -- 101
+change.case$ -- 896
+chr.to.int$ -- 99
+cite$ -- 136
+duplicate$ -- 9454
+empty$ -- 6610
+format.name$ -- 1973
+if$ -- 28634
 int.to.chr$ -- 4
 int.to.str$ -- 1
 missing$ -- 301
-newline$ -- 949
-num.names$ -- 698
-pop$ -- 3518
+newline$ -- 959
+num.names$ -- 705
+pop$ -- 3541
 preamble$ -- 1
-purify$ -- 1675
+purify$ -- 1696
 quote$ -- 0
-skip$ -- 3446
+skip$ -- 3493
 stack$ -- 0
-substring$ -- 7925
-swap$ -- 932
+substring$ -- 8052
+swap$ -- 950
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2262
-warning$ -- 38
-while$ -- 567
+type$ -- 2292
+warning$ -- 35
+while$ -- 573
 width$ -- 0
-write$ -- 2042
-(There were 38 warnings)
+write$ -- 2065
+(There were 35 warnings)

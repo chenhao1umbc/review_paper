@@ -21,7 +21,6 @@ from collections import defaultdict, Counter
 
 OUTPUT_DIR = "paper/figures"
 
-# --- Publication style foundation ---
 PALETTE = {
     "primary": "#2166ac",
     "secondary": "#4dac26",
@@ -59,7 +58,6 @@ mpl.rcParams.update(
     }
 )
 
-# Shared domain colors — consistent across all figures
 DOMAIN_COLORS = {
     "Clinical Procedures": "#2166ac",
     "Elderly / Nursing Care": "#4dac26",
@@ -70,11 +68,7 @@ DOMAIN_COLORS = {
 
 
 def gen_trl_readiness():
-    """
-    TRL horizontal bar chart: five clinical domains.
-    figsize=(6, 4.8) used as width=\\columnwidth (~170mm single-col).
-    Rendered scale ≈ 1.12 — fontsize=12 → ~13.4pt rendered.
-    """
+    """TRL horizontal bar chart: five clinical domains with constraint callouts."""
     domains = [
         "Clinical Procedures",
         "Elderly / Nursing Care\n(bipedal)",
@@ -92,16 +86,16 @@ def gen_trl_readiness():
     trl_low = [3, 3, 3, 4, 2]
     trl_high = [4, 4, 4, 5, 2]
     constraints = [
-        "force precision, no predicate",
-        "no care facility pilot",
-        "no patient trial",
-        "platform unspecified",
-        "wheeled systems preferred",
+        "force precision,\nno predicate",
+        "no care facility\npilot",
+        "no patient\ntrial",
+        "platform\nunspecified",
+        "wheeled systems\npreferred",
     ]
 
-    fig, ax = plt.subplots(figsize=(6, 4.8))
+    fig, ax = plt.subplots(figsize=(7, 5.5))
 
-    bar_height = 0.5
+    bar_height = 0.55
     y_positions = np.arange(len(domains))
 
     for i, (yl, yh) in enumerate(zip(trl_low, trl_high)):
@@ -118,39 +112,39 @@ def gen_trl_readiness():
         )
         xh = yh + 0.5
         ax.text(
-            xh + 0.2,
+            xh + 0.15,
             y_positions[i],
             constraints[i],
             va="center",
             ha="left",
-            fontsize=11,
-            color="#444444",
+            fontsize=10.5,
+            color="#555555",
+            linespacing=1.15,
         )
 
-    ax.axvline(x=4.5, color="#1a1a1a", linestyle="--", linewidth=1.6)
+    ax.axvline(x=4.5, color="#1a1a1a", linestyle="--", linewidth=1.4)
     ax.text(
-        4.62,
-        4.62,
-        "TRL 5\ntarget",
+        4.58,
+        len(domains) - 0.35,
+        "TRL 5 target",
         ha="left",
         va="bottom",
         fontsize=11,
         color="#1a1a1a",
-        linespacing=1.2,
     )
 
-    ax.set_ylim(-0.5, 5.5)
+    ax.set_ylim(-0.5, len(domains) + 0.3)
     ax.set_yticks(y_positions)
     ax.set_yticklabels(domains, fontsize=12)
     ax.set_xlabel("Technology Readiness Level (ISO 16290:2013)")
-    ax.set_xlim(0.5, 13)
+    ax.set_xlim(0.5, 11)
     ax.set_xticks(range(1, 10))
     ax.set_title("TRL assessment by clinical domain (March 2026)", pad=10)
-    ax.grid(axis="x", linestyle=":", linewidth=0.6, color="#cccccc")
+    ax.grid(axis="x", linestyle=":", linewidth=0.5, color="#cccccc")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
-    fig.tight_layout(pad=1.5)
+    fig.tight_layout(pad=1.2)
     path = f"{OUTPUT_DIR}/trl_readiness.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
@@ -158,12 +152,7 @@ def gen_trl_readiness():
 
 
 def gen_evidence_landscape():
-    """
-    Evidence distribution: 14 papers by domain x year.
-    Dot matrix; shape = study type; color = domain.
-    figsize=(9, 4) at width=\\textwidth (~170mm).
-    Rendered scale ≈ 0.744 — fontsize=14 → ~10.4pt rendered for labels.
-    """
+    """Evidence distribution: 14 papers by domain x year with unified legend."""
     papers = [
         (0, 2025, "Atar", "eng"),
         (0, 2025, "Liang", "eng"),
@@ -195,18 +184,34 @@ def gen_evidence_landscape():
     ]
 
     shape_markers = {"eng": "o", "obs": "D", "rct": "*"}
-    marker_sizes = {"eng": 80, "obs": 80, "rct": 130}
+    marker_sizes = {"eng": 85, "obs": 85, "rct": 140}
 
-    fig, ax = plt.subplots(figsize=(9, 4))
+    fig, ax = plt.subplots(figsize=(10, 5.5))
 
     coord_count = Counter((d, y) for d, y, _, _ in papers)
     coord_idx = defaultdict(int)
+
+    # Per-label placement to avoid overlaps in crowded clusters.
+    # WARNING: these offsets are hand-tuned to the current dataset.
+    # Any addition/removal of papers in a cluster will require
+    # recalibration of the affected entries.
+    label_style = {
+        (1, 2024, "Alameda-Pineda"): ("right", -0.26, "center", 0),
+        (1, 2024, "Imtiaz"): ("left", 0.20, "center", 0),
+        (1, 2024, "Ghosh"): ("left", 0.20, "center", 0),
+        (1, 2025, "Benallegue"): ("left", 0.20, "center", 0),
+        (0, 2025, "Atar"): ("left", 0.20, "center", 0),
+        (0, 2025, "Liang"): ("right", -0.20, "center", 0),
+        (3, 2024, "Sayis"): ("right", -0.20, "center", 0),
+        (3, 2025, "Yuan"): ("left", 0.20, "center", 0),
+        (3, 2025, "Lindsay"): ("right", -0.20, "center", 0),
+    }
 
     for domain_idx, year, surname, stype in papers:
         key = (domain_idx, year)
         idx = coord_idx[key]
         total = coord_count[key]
-        y_off = (idx - (total - 1) / 2.0) * 0.45
+        y_off = (idx - (total - 1) / 2.0) * 0.60
         x_jitter = (idx - (total - 1) / 2.0) * 0.12
         coord_idx[key] += 1
 
@@ -221,35 +226,33 @@ def gen_evidence_landscape():
             alpha=0.9,
             zorder=3,
         )
-        if total == 1:
-            ax.text(
-                year,
-                domain_idx + 0.22,
-                surname,
-                ha="center",
-                va="bottom",
-                fontsize=14,
-                color="#333333",
-            )
-        else:
-            ax.text(
-                year + x_jitter + 0.15,
-                domain_idx + y_off,
-                surname,
-                ha="left",
-                va="center",
-                fontsize=14,
-                color="#333333",
-            )
+
+        ha, x_shift, va, y_shift = label_style.get(
+            (domain_idx, year, surname),
+            ("center", 0, "bottom", 0.28)
+            if total == 1
+            else ("left", 0.20, "center", 0),
+        )
+
+        ax.text(
+            year + x_jitter + x_shift,
+            domain_idx + y_off + y_shift,
+            surname,
+            ha=ha,
+            va=va,
+            fontsize=14,
+            color="#333333",
+        )
 
     ax.set_yticks(range(len(domain_labels)))
     ax.set_yticklabels(domain_labels, fontsize=14)
     ax.set_xlabel("Publication Year")
     ax.set_xlim(2021.0, 2027.5)
     ax.set_xticks([2022, 2023, 2024, 2025, 2026])
-    ax.set_ylim(-0.85, len(domain_labels) - 0.15)
-    ax.set_title("Evidence distribution: 14 papers, 2022\u20132026")
+    ax.set_ylim(-1.0, len(domain_labels) + 0.2)
+    ax.set_title("Evidence distribution: 14 papers, 2022–2026")
 
+    # Unified legend: study type + domain in one panel
     study_handles = [
         Line2D(
             [0],
@@ -283,40 +286,30 @@ def gen_evidence_landscape():
             label="RCT / comparative",
             linestyle="None",
         ),
-    ]
-    domain_handles = [
+        Line2D([0], [0], color="none", label=""),  # spacer
         mpatches.Patch(facecolor=domain_color_list[0], label="Clinical Procedures"),
         mpatches.Patch(facecolor=domain_color_list[1], label="Elderly / Nursing Care"),
         mpatches.Patch(facecolor=domain_color_list[2], label="Rehabilitation"),
         mpatches.Patch(facecolor=domain_color_list[3], label="Mental Health / HRI"),
     ]
-    leg1 = ax.legend(
-        handles=study_handles,
-        loc="upper left",
-        bbox_to_anchor=(0, -0.22),
-        title="Study type",
-        frameon=True,
-        framealpha=0.9,
-        fontsize=13,
-        title_fontsize=14,
-    )
-    ax.add_artist(leg1)
     ax.legend(
-        handles=domain_handles,
-        loc="upper right",
-        bbox_to_anchor=(1, -0.22),
-        title="Domain",
+        handles=study_handles,
+        loc="upper center",
+        bbox_to_anchor=(0.5, -0.18),
+        title="Study type                              Domain",
+        ncol=4,
         frameon=True,
         framealpha=0.9,
-        fontsize=13,
-        title_fontsize=14,
+        fontsize=12,
+        title_fontsize=13,
+        edgecolor="#cccccc",
     )
 
-    ax.grid(axis="x", linestyle=":", linewidth=0.6, color="#cccccc")
+    ax.grid(axis="x", linestyle=":", linewidth=0.5, color="#cccccc")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
-    fig.subplots_adjust(bottom=0.32)
+    fig.subplots_adjust(bottom=0.25)
     path = f"{OUTPUT_DIR}/evidence_landscape.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
@@ -324,13 +317,7 @@ def gen_evidence_landscape():
 
 
 def gen_tech_timeline():
-    """
-    Technology timeline: dual-track horizontal stem plot.
-    figsize=(22, 20) at width=\\textwidth (~170mm).
-    Rendered scale ≈ 0.304 — fontsize=36 → ~10.9pt; year ticks fontsize=36 → ~10.9pt.
-    Era fills use alpha=0.06 (barely visible, scientific publication style).
-    Break marker '//' at x=2022 to denote compressed/expanded scale transition.
-    """
+    """Technology timeline: dual-track horizontal stem plot with era shading."""
 
     def year_to_x(y):
         break_year = 2022
@@ -340,9 +327,8 @@ def gen_tech_timeline():
 
     fig, ax = plt.subplots(figsize=(22, 20))
 
-    x_right = 2027.0
-    ax.set_xlim(year_to_x(1994.5), year_to_x(x_right))
-    ax.set_ylim(-10.5, 10.5)
+    ax.set_xlim(year_to_x(1994.5), year_to_x(2027.0))
+    ax.set_ylim(-10.5, 11.5)
     ax.axis("off")
 
     # Main timeline axis
@@ -356,13 +342,13 @@ def gen_tech_timeline():
         (2013.6, "Atlas\n(Boston Dynamics)"),
         (2018, "HRP-5P\n(AIST)"),
         (2022, "Tesla Optimus\nprototype"),
-        (2023, "Figure 01\nAnnounced"),
+        (2023, "Figure 01\nannounced"),
         (2023.8, "Unitree G1\nreleased"),
         (2024.6, "Figure 02\n+ BMW pilot"),
-        (2025, "$\\pi_0$\n(Physical Intelligence)"),
+        (2025, r"$\pi_0$" + "\n(Physical Intelligence)"),
         (2026, "13 commercial\nplatforms"),
     ]
-    platform_y = [4.0, 3.0, 2.0, 6.5, 5.0, 3.5, 5.0, 3.0, 9.0, 7.0, 8.5, 5.5]
+    platform_y = [4.0, 2.0, 0.5, 8.5, 1.5, 3.5, 5.5, 2.5, 9.5, 8.0, 6.0, 4.5]
 
     health_events = [
         (2003, "NAO first\npediatric pilot"),
@@ -376,7 +362,7 @@ def gen_tech_timeline():
         (2025, "Atar et al.\n7 procedures"),
         (2026, "Cho et al.\nhumanoid surgery"),
     ]
-    health_y = [-2.5, -4.0, -2.5, -4.5, -6.0, -2.5, -5.5, -3.5, -2.0, -7.0]
+    health_y = [-2.5, -4.5, -0.5, -3.0, -6.0, -1.0, -7.5, -3.5, -1.0, -9.0]
 
     blue = "#2166ac"
     green = "#1a9641"
@@ -392,7 +378,7 @@ def gen_tech_timeline():
             zorder=2,
             alpha=0.6,
         )
-        ax.plot(x, y_base, "o", color=color, markersize=10, zorder=3)
+        ax.plot(x, y_base, "o", color=color, markersize=11, zorder=3)
         va = "bottom" if y_base > 0 else "top"
         y_text = y_base + (0.18 if y_base > 0 else -0.18)
         ax.text(
@@ -419,16 +405,16 @@ def gen_tech_timeline():
     for (yr, lbl), yv in zip(health_events, health_y):
         draw_event(yr, lbl, yv, green)
 
-    # Era fills — alpha=0.06 only (scientific publication standard)
+    # Era fills
     era_spans = [
-        (1995, 2010, "#c6dbef", "Locomotion era\n(1996-2010)"),
-        (2010, 2022, "#fdd0a2", "Manipulation era\n(2010-2022)"),
-        (2022, 2026.9, "#c7e9c0", "Commercial scale-up\n(2022-present)"),
+        (1995, 2010, "#c6dbef", "Locomotion era\n(1996–2010)"),
+        (2010, 2022, "#fdd0a2", "Manipulation era\n(2010–2022)"),
+        (2022, 2026.9, "#c7e9c0", "Commercial scale-up\n(2022–present)"),
     ]
     era_label_x = {
-        "Locomotion era\n(1996-2010)": year_to_x(2002.5),
-        "Manipulation era\n(2010-2022)": year_to_x(2016),
-        "Commercial scale-up\n(2022-present)": year_to_x(2024),
+        "Locomotion era\n(1996–2010)": year_to_x(2002.5),
+        "Manipulation era\n(2010–2022)": year_to_x(2016),
+        "Commercial scale-up\n(2022–present)": year_to_x(2024),
     }
     for xstart, xend, color, label in era_spans:
         ax.axvspan(
@@ -436,7 +422,7 @@ def gen_tech_timeline():
         )
         ax.text(
             era_label_x[label],
-            -9.5,
+            -9.8,
             label,
             ha="center",
             va="bottom",
@@ -461,7 +447,7 @@ def gen_tech_timeline():
             str(yr),
             ha="center",
             va="top",
-            fontsize=36,
+            fontsize=34,
             color="#555555",
         )
         ax.plot(
@@ -477,7 +463,7 @@ def gen_tech_timeline():
             str(yr),
             ha="center",
             va="top",
-            fontsize=36,
+            fontsize=34,
             color="#555555",
         )
         ax.plot(
@@ -487,16 +473,19 @@ def gen_tech_timeline():
             linewidth=1.8,
         )
 
-    # '//' break marker at 2022 to signal compressed→expanded scale
+    # Break marker '//' at 2022 to signal compressed/expanded scale
     bx = year_to_x(2022)
-    for offset in (-0.15, 0.15):
+    for offset in (-0.18, 0.18):
         ax.plot(
-            [bx + offset - 0.05, bx + offset + 0.05],
-            [-0.30, 0.30],
+            [bx + offset - 0.06, bx + offset + 0.06],
+            [-0.35, 0.35],
             color="#888888",
-            linewidth=2.0,
+            linewidth=2.2,
             zorder=5,
         )
+    ax.text(
+        bx, -0.75, "scale\nbreak", ha="center", va="top", fontsize=28, color="#888888"
+    )
 
     legend_elements = [
         Line2D(
@@ -505,7 +494,7 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=blue,
-            markersize=9,
+            markersize=10,
             label="Platform / technology milestones",
         ),
         Line2D(
@@ -514,14 +503,14 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=green,
-            markersize=9,
+            markersize=10,
             label="Healthcare research events",
         ),
     ]
     ax.legend(
         handles=legend_elements,
         loc="lower center",
-        bbox_to_anchor=(0.5, -0.08),
+        bbox_to_anchor=(0.5, -0.12),
         fontsize=34,
         ncol=2,
         framealpha=0.9,
@@ -529,13 +518,12 @@ def gen_tech_timeline():
     )
 
     ax.set_title(
-        "Technology Timeline: Humanoid Robotics and Healthcare Research Events\n"
-        "(1996\u20132026; x-axis compressed before 2022, expanded after)",
+        "Technology Timeline: Humanoid Robotics Platforms and Healthcare Research Events\n"
+        "(1996–2026; x-axis compressed before 2022, expanded after)",
         fontsize=34,
-        pad=20,
+        pad=30,
     )
 
-    fig.tight_layout(pad=2.0)
     path = f"{OUTPUT_DIR}/tech_timeline.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
@@ -543,35 +531,41 @@ def gen_tech_timeline():
 
 
 def gen_regulatory_pathways():
-    """
-    Regulatory pathway flowchart: FDA De Novo (US) and EU MDR/AI Act (EU).
-    figsize=(7.5, 9.0) at width=\\textwidth (~170mm).
-    Rendered scale ≈ 170/(7.5*25.4) = 0.89 — fontsize=16 → ~14.3pt rendered.
-    Boxes on explicit grid. Column headers colored bold outside any box.
-    """
-    col_us = 3.0
-    col_eu = 9.0
+    """Regulatory pathway flowchart: FDA De Novo (US) and EU MDR/AI Act (EU)."""
+    col_us = 3.2
+    col_eu = 8.8
     col_mid = 6.0
-    box_w = 5.0
-    row_y = [8.1, 6.9, 5.7, 4.5, 3.3, 2.1]
-    row_h = [0.65, 0.56, 0.56, 0.56, 0.56, 0.56]
+    box_w = 5.2
 
-    fig, ax = plt.subplots(figsize=(7.5, 9.0))
+    row_y = [8.6, 7.45, 6.30, 5.15, 4.00, 2.85]
+    row_h = [0.88, 0.78, 0.78, 0.78, 0.78, 0.88]
+
+    us_pale = "#e8f4fc"
+    us_final_bg = "#1a5276"
+    us_final_fg = "#ffffff"
+    us_edge = "#2166ac"
+
+    eu_pale = "#e8f8f0"
+    eu_final_bg = "#1e8449"
+    eu_final_fg = "#ffffff"
+    eu_edge = "#1e8449"
+
+    fig, ax = plt.subplots(figsize=(8.0, 10.0))
     ax.set_xlim(0, 12)
-    ax.set_ylim(0, 9)
+    ax.set_ylim(0, 10.0)
     ax.axis("off")
 
-    def box(cx, row_idx, text, bg="#dce8f5", edge="#2166ac", fontsize=16, bold=False):
+    def box(cx, row_idx, text, bg, edge, fontsize=13, bold=False, textcolor="#1a1a1a"):
         cy = row_y[row_idx]
         h = row_h[row_idx]
         rect = FancyBboxPatch(
             (cx - box_w / 2, cy - h / 2),
             box_w,
             h,
-            boxstyle="round,pad=0.1",
+            boxstyle="round,pad=0.15",
             facecolor=bg,
             edgecolor=edge,
-            linewidth=1.5,
+            linewidth=1.2,
             zorder=2,
         )
         ax.add_patch(rect)
@@ -584,49 +578,50 @@ def gen_regulatory_pathways():
             va="center",
             fontsize=fontsize,
             weight=weight,
+            color=textcolor,
             zorder=3,
             multialignment="center",
         )
 
     def arrow(cx, from_row, to_row, color="#555555"):
-        y1 = row_y[from_row] - row_h[from_row] / 2 - 0.13
-        y2 = row_y[to_row] + row_h[to_row] / 2 + 0.13
+        y1 = row_y[from_row] - row_h[from_row] / 2 - 0.10
+        y2 = row_y[to_row] + row_h[to_row] / 2 + 0.10
         ax.annotate(
             "",
             xy=(cx, y2),
             xytext=(cx, y1),
-            arrowprops=dict(arrowstyle="-|>", color=color, lw=1.4, mutation_scale=14),
+            arrowprops=dict(arrowstyle="-|>", color=color, lw=1.6, mutation_scale=16),
             zorder=2,
         )
 
-    # Column headers — bold, colored
+    # Column headers
     ax.text(
         col_us,
-        8.77,
-        "United States\n\u2014 FDA Pathway",
+        9.55,
+        "United States / FDA Pathway",
         ha="center",
         va="center",
-        fontsize=16,
+        fontsize=14,
         weight="bold",
-        color="#2166ac",
+        color=us_edge,
     )
     ax.text(
         col_eu,
-        8.77,
-        "European Union\n\u2014 MDR + AI Act",
+        9.55,
+        "European Union / MDR + AI Act Pathway",
         ha="center",
         va="center",
-        fontsize=16,
+        fontsize=14,
         weight="bold",
-        color="#1e8449",
+        color=eu_edge,
     )
 
-    # Vertical divider
+    # Vertical separator
     ax.plot(
         [col_mid, col_mid],
-        [1.40, 9.0],
-        color="#bbbbbb",
-        linewidth=1.5,
+        [1.55, 9.25],
+        color="#cccccc",
+        linewidth=1.2,
         linestyle="--",
         zorder=1,
     )
@@ -635,116 +630,126 @@ def gen_regulatory_pathways():
     box(
         col_us,
         0,
-        "Clinical Humanoid Robot\n(novel device,\nno predicate)",
-        bg="#d6eaf8",
-        edge="#2166ac",
+        "Clinical Humanoid Robot\n(novel device, no predicate)",
+        bg=us_pale,
+        edge=us_edge,
         bold=True,
-        fontsize=13,
+        fontsize=12,
     )
-    arrow(col_us, 0, 1)
+    arrow(col_us, 0, 1, color=us_edge)
     box(
         col_us,
         1,
         "510(k): no predicate\nDe Novo (21 CFR 513(f)(2))",
-        bg="#eaf4fb",
-        edge="#2166ac",
+        bg=us_pale,
+        edge=us_edge,
+        fontsize=13,
     )
-    arrow(col_us, 1, 2)
+    arrow(col_us, 1, 2, color=us_edge)
     box(
         col_us,
         2,
         "Pre-Sub meeting with FDA\n(risk class, evidence plan)",
-        bg="#eaf4fb",
-        edge="#2166ac",
+        bg=us_pale,
+        edge=us_edge,
+        fontsize=13,
     )
-    arrow(col_us, 2, 3)
+    arrow(col_us, 2, 3, color=us_edge)
     box(
         col_us,
         3,
-        "De Novo request submission\n(bench + non-clin. + clinical)",
-        bg="#eaf4fb",
-        edge="#2166ac",
+        "De Novo request submission\n(bench + non-clinical + clinical)",
+        bg=us_pale,
+        edge=us_edge,
+        fontsize=13,
     )
-    arrow(col_us, 3, 4)
+    arrow(col_us, 3, 4, color=us_edge)
     box(
         col_us,
         4,
         "FDA review (~12 months)\nClassification order issued",
-        bg="#eaf4fb",
-        edge="#2166ac",
+        bg=us_pale,
+        edge=us_edge,
+        fontsize=13,
     )
-    arrow(col_us, 4, 5)
+    arrow(col_us, 4, 5, color=us_edge)
     box(
         col_us,
         5,
-        "Market auth. (Class II)\nPost-mkt. surveillance req.",
-        bg="#d5f5e3",
-        edge="#1e8449",
+        "Market authorization (Class II)\nPost-market surveillance",
+        bg=us_final_bg,
+        edge=us_edge,
         bold=True,
-        fontsize=14,
+        fontsize=13,
+        textcolor=us_final_fg,
     )
 
     # EU track
     box(
         col_eu,
         0,
-        "Clinical Humanoid Robot\n(novel device,\nno CE pred.)",
-        bg="#d5f5e3",
-        edge="#1e8449",
+        "Clinical Humanoid Robot\n(novel device, no CE predicate)",
+        bg=eu_pale,
+        edge=eu_edge,
         bold=True,
-        fontsize=13,
+        fontsize=12,
     )
-    arrow(col_eu, 0, 1, color="#1e8449")
+    arrow(col_eu, 0, 1, color=eu_edge)
     box(
         col_eu,
         1,
         "EU MDR Class IIb/III\n(Notified Body required)",
-        bg="#eafaf1",
-        edge="#1e8449",
+        bg=eu_pale,
+        edge=eu_edge,
+        fontsize=13,
     )
-    arrow(col_eu, 1, 2, color="#1e8449")
+    arrow(col_eu, 1, 2, color=eu_edge)
     box(
         col_eu,
         2,
         "EU AI Act: High-Risk AI\n(Art. 6; conformity Aug 2026)",
         bg="#fef9e7",
         edge="#d4ac0d",
+        fontsize=13,
     )
-    arrow(col_eu, 2, 3, color="#1e8449")
+    arrow(col_eu, 2, 3, color=eu_edge)
     box(
         col_eu,
         3,
-        "Clinical invest. MDR Art. 62\n(Competent Auth. + ethics)",
-        bg="#eafaf1",
-        edge="#1e8449",
+        "Clinical investigation\nMDR Art. 62 (Competent Auth. + ethics)",
+        bg=eu_pale,
+        edge=eu_edge,
+        fontsize=13,
     )
-    arrow(col_eu, 3, 4, color="#1e8449")
+    arrow(col_eu, 3, 4, color=eu_edge)
     box(
         col_eu,
         4,
         "CE marking by Notified Body\n+ AI Act declaration",
-        bg="#eafaf1",
-        edge="#1e8449",
+        bg=eu_pale,
+        edge=eu_edge,
+        fontsize=13,
     )
-    arrow(col_eu, 4, 5, color="#1e8449")
+    arrow(col_eu, 4, 5, color=eu_edge)
     box(
         col_eu,
         5,
-        "EU market authorization\nPost-mkt. follow-up (PMCF)",
-        bg="#d5f5e3",
-        edge="#1e8449",
+        "EU market authorization\nPost-Market Clinical Follow-up (PMCF)",
+        bg=eu_final_bg,
+        edge=eu_edge,
         bold=True,
-        fontsize=14,
+        fontsize=13,
+        textcolor=eu_final_fg,
     )
 
-    # Gap banner — full width
-    gap_h = 0.70
-    gap_y = 0.9
+    # Bottom banner: critical gap
+    gap_h = 1.05
+    gap_y = 1.05
     rect = FancyBboxPatch(
         (0.25, gap_y - gap_h / 2),
         11.5,
         gap_h,
-        boxstyle="round,pad=0.1",
+        boxstyle="round,pad=0.15",
         facecolor="#fdebd0",
         edgecolor="#e67e22",
         linewidth=1.5,
@@ -756,10 +761,11 @@ def gen_regulatory_pathways():
         gap_y,
         "Critical gap (both tracks): no safety standard for\n"
         "bipedal gait in patient-proximate environments\n"
-        "(ISO 13482 excl. medical devices; ISO/TS 15066: fixed-base arms)",
+        "(ISO 13482 excludes medical devices; ISO/TS 15066: fixed-base arms)",
         ha="center",
         va="center",
-        fontsize=13,
+        fontsize=12,
+        color="#1a1a1a",
         zorder=3,
         multialignment="center",
     )
@@ -767,10 +773,11 @@ def gen_regulatory_pathways():
     ax.set_title(
         "Regulatory Pathways for Clinical Humanoid Robots: FDA (US) vs. EU MDR + AI Act",
         fontsize=14,
-        pad=8,
+        pad=12,
+        weight="bold",
     )
 
-    fig.tight_layout(pad=1.2)
+    fig.tight_layout(pad=1.5)
     path = f"{OUTPUT_DIR}/regulatory_pathways.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
@@ -778,12 +785,7 @@ def gen_regulatory_pathways():
 
 
 def gen_capability_gap():
-    """
-    Capability gap: grouped horizontal bar chart (current vs. TRL-5 required).
-    figsize=(11, 6) at width=\\columnwidth (~170mm).
-    Rendered scale ≈ 170/(11*25.4) = 0.608 — fontsize=17 → ~10.3pt for value labels.
-    Legend below plot, outside axes.
-    """
+    """Capability gap: grouped horizontal bar chart with explicit gap annotations."""
     dimensions = [
         "Manipulation Precision",
         "Bipedal Gait Stability",
@@ -794,12 +796,13 @@ def gen_capability_gap():
     ]
     current = [4, 5, 5, 3, 2, 5]
     required = [8, 7, 7, 8, 8, 7]
+    gaps = [r - c for r, c in zip(required, current)]
 
     n = len(dimensions)
     y = np.arange(n)
-    bar_height = 0.35
+    bar_height = 0.32
 
-    fig, ax = plt.subplots(figsize=(11, 6))
+    fig, ax = plt.subplots(figsize=(11, 6.5))
 
     bars_req = ax.barh(
         y + bar_height / 2,
@@ -818,6 +821,7 @@ def gen_capability_gap():
         zorder=3,
     )
 
+    # Value labels on bars
     for bar, val in zip(bars_req, required):
         ax.text(
             val + 0.15,
@@ -825,7 +829,7 @@ def gen_capability_gap():
             str(val),
             va="center",
             ha="left",
-            fontsize=17,
+            fontsize=16,
             color="#333333",
         )
     for bar, val in zip(bars_cur, current):
@@ -835,16 +839,31 @@ def gen_capability_gap():
             str(val),
             va="center",
             ha="left",
-            fontsize=17,
+            fontsize=16,
             color="#333333",
         )
 
+    # Gap annotations on the right side
+    for i, gap in enumerate(gaps):
+        ax.text(
+            9.6,
+            i,
+            f"Δ = {gap}",
+            va="center",
+            ha="left",
+            fontsize=14,
+            color=PALETTE["accent"],
+            fontweight="bold",
+        )
+
     ax.set_yticks(y)
-    ax.set_yticklabels(dimensions, fontsize=17)
+    ax.set_yticklabels(dimensions, fontsize=16)
     ax.set_xlim(0, 11)
-    ax.set_xlabel("Score (0\u201310)")
+    ax.set_xlabel("Score (0–10)", fontsize=16)
     ax.set_title(
-        "Humanoid Capability Gap: Current vs. Required for Clinical Deployment", pad=12
+        "Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
+        pad=14,
+        fontsize=17,
     )
     ax.axvline(x=7, color="#aaaaaa", linewidth=0.8, linestyle="--", zorder=2)
     ax.legend(
@@ -852,13 +871,13 @@ def gen_capability_gap():
         bbox_to_anchor=(0.5, -0.10),
         ncol=2,
         framealpha=0.9,
-        fontsize=15,
+        fontsize=16,
     )
     ax.grid(axis="x", linewidth=0.5, color="#dddddd", zorder=1)
     ax.set_axisbelow(True)
     ax.invert_yaxis()
 
-    fig.tight_layout(pad=1.5)
+    fig.tight_layout(pad=1.8)
     path = f"{OUTPUT_DIR}/capability_gap.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)

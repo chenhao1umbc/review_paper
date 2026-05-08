@@ -107,7 +107,9 @@ sphenoidectomy~\cite{cho2026humanoid}. Not one of these systems holds U.S. Food 
 clearance or Conformit\'{e} Europ\'{e}enne (CE) marking for any clinical
 application. No registered clinical
 trial has enrolled a patient for a study involving a full-size bipedal humanoid
-platform. This gap is not permanent: two things converged after 2022. The first
+platform. Two things converged after 2022 that are beginning to close this gap.
+
+The first
 is hardware: 13 commercial platforms were released between 2022 and 2026,
 crossing the payload, dexterity, and locomotion threshold required to attempt
 clinical tasks in human-scale environments. The second is software: large
@@ -156,18 +158,15 @@ Concurrent with the literature search, a platform survey identified 13
 commercial and 12 academic systems meeting scope criteria, with specifications
 verified against manufacturer documentation or peer-reviewed publications.
 
-This review makes four contributions:
-\begin{itemize}
-\item First systematic review of humanoid robots in healthcare covering the
-  2022--2026 LLM/VLA era, with Technology Readiness Level (TRL) assignments per
-  ISO~16290:2013.
-\item Capability assessment of 25 bipedal humanoid platforms (13 commercial,
-  12 academic) against five clinical domain requirements.
-\item Regulatory pathway analysis covering FDA De~Novo, EU Medical Device
-  Regulation (MDR) 2017/745, and EU AI~Act 2024/1689.
-\item Humanoid Clinical Deployment Readiness (HCDR) framework linking technical
-  maturity to regulatory pathway for five clinical roles.
-\end{itemize}
+This review makes four contributions. First, we provide the first systematic
+review of humanoid robots in healthcare covering the 2022--2026 LLM/VLA era,
+with Technology Readiness Level (TRL) assignments per ISO~16290:2013. Second, we
+assess the capabilities of 25 bipedal humanoid platforms (13 commercial, 12
+academic) against five clinical domain requirements. Third, we analyze
+regulatory pathways covering FDA De~Novo, EU Medical Device Regulation (MDR)
+2017/745, and EU AI~Act 2024/1689. Fourth, we introduce the Humanoid Clinical
+Deployment Readiness (HCDR) framework, which links technical maturity to
+regulatory pathway for five clinical roles.
 The remainder of this paper is organized as follows:
 Section~\ref{sec:background} provides background; Section~\ref{sec:systems}
 surveys current humanoid capabilities; Section~\ref{sec:applications} analyzes
@@ -796,6 +795,16 @@ tissue contact against published safety thresholds. All evidence is pre-clinical
 replication on any platform other than the Unitree G1 has not occurred.
 \textbf{TRL: 3--4.}
 
+After the March 2026 search cutoff for this review, Zhang et
+al.~\cite{zhang2026rapid} demonstrated a teleoperated rapid instrument exchange
+system for humanoid robots in MIS, exploiting the dual-arm configuration for
+natural surgical workflow. The system achieved stable instrument exchanges in
+constrained clinical environments, with novice operators converging rapidly after
+brief training. This work extends the surgical humanoid evidence sequence into
+instrument workflow management, a practical sub-problem that complements the
+procedure-execution demonstrations of Atar et al.~\cite{atar2025humanoids} and
+Liang et al.~\cite{liang2025lapsurgie}.
+
 \subsection{Elderly and Nursing Care}
 \label{sec:eldercare}
 
@@ -1319,7 +1328,7 @@ aggregate finding (TRL~3--4 across all domains for bipedal humanoid
 platforms) is not a uniform statement; the TRL ceiling for each domain is
 governed by a specific domain-particular barrier.
 
-\textbf{Clinical procedures (current TRL~3--4).} Atar et
+In clinical procedures (current TRL~3--4), Atar et
 al.~\cite{atar2025humanoids}, Liang et al.~\cite{liang2025lapsurgie}, and Cho et
 al.~\cite{cho2026humanoid} constitute the most technically substantive evidence
 in the review. The cadaveric study of Cho et al.\ is the current frontier of the
@@ -1330,9 +1339,10 @@ structured IRB-approved feasibility study in a specific narrow indication
 because fully teleoperated operation keeps a human in the decision loop at all
 times), and independent replication on a platform other than the Unitree G1.
 
-\textbf{Elderly and nursing care (TRL~4--5 for social robots; TRL~3--4 for
-bipedal humanoids).} The gap between platform classes is analytically significant.
-The SPRING project achieved TRL~4--5 through real-world deployment with 60+~older
+For elderly and nursing care, the TRL gap between platform classes
+(4--5 for social robots; 3--4 for bipedal humanoids) is the central
+analytical finding for deployment planning. The SPRING project achieved TRL~4--5
+through real-world deployment with 60+~older
 adult users over four years~\cite{alamedapineda2024spring}. RHP
 Friends, the only purpose-built bipedal nursing humanoid, demonstrated patient
 transfer tasks at IREX~2023 but has not been evaluated in an actual care
@@ -1341,8 +1351,8 @@ not a question of platform capability but of deployment context: a structured
 pilot in an actual care facility, using SPRING-derived methodology on a bipedal
 platform, is the specific experiment that would advance this domain.
 
-\textbf{Rehabilitation and mental health (TRL~3--4 and TRL~4--5, respectively).}
-These two domains share a structural problem: the strongest available evidence
+Rehabilitation (TRL~3--4) and mental health (TRL~4--5) share a structural
+problem: the strongest available evidence
 was generated on the wrong platforms. In rehabilitation, Nguyen et
 al.~\cite{nguyen2024eeg} establish neuroscientific rationale, Sobrepera et
 al.~\cite{sobrepera2022feasibility} establish clinical acceptability in a small
@@ -1363,12 +1373,21 @@ clinically diagnosed population assessing validated scales. Both domains are one
 targeted study away from TRL~5. Both are currently blocked by the absence of
 that study, not by lack of underlying evidence.
 
-\textbf{Hospital logistics (TRL~2).} No peer-reviewed evidence exists for
+Hospital logistics sits at TRL~2. No peer-reviewed evidence exists for
 humanoid-specific hospital logistics tasks. Wheeled autonomous mobile robots
 already address this domain with demonstrated operational reliability. Hospital
 logistics is not a priority for bipedal humanoid development at this stage.
 
-\textbf{Cross-domain finding.} No domain has reached TRL~7 (system prototype
+Shortly after the literature search window closed, ZEALS and Omakase Robotics
+completed Japan's first hospital-based proof-of-concept deployment of a Unitree
+G1 at the University of Tsukuba Hospital (March 2026). The robot performed
+autonomous navigation, obstacle avoidance, and voice-guided delivery in the
+hospital lobby; the hospital director indicated intent to deploy within one to
+two years. This industry milestone, while not peer-reviewed, suggests that
+hospital logistics may advance faster than the published literature alone
+indicates.
+
+Across all five domains, none has reached TRL~7 (system prototype
 demonstrated in operational environment). TRL~5 (the threshold of first
 human-subject validation in a controlled clinical setting) is the realistic
 five-year target for the three leading domains.
@@ -1418,8 +1437,8 @@ performance and the scores required to reach TRL~5 for clinical deployment.
 
 Three roles have the strongest case for TRL~5 achievement within five years.
 
-\textbf{Role~1: Telemedicine and telepresence clinical assistant.} The teleoperated
-mode is the key risk-mitigation design choice: by keeping a human operator in the
+The first role is the telemedicine and telepresence clinical assistant. The
+teleoperated mode is the key risk-mitigation design choice: by keeping a human operator in the
 decision loop at all times, it avoids the regulatory classification and safety
 validation burdens associated with autonomous patient contact. The technical
 infrastructure exists: Atar et al.~\cite{atar2025humanoids} demonstrate
@@ -1430,7 +1449,7 @@ conduct a physical examination or assist in a procedure in a rural or low-resour
 setting. Realizing this role at TRL~5 requires a defined physical examination
 protocol, remote operator training standards, and IRB oversight.
 
-\textbf{Role~2: Rehabilitation movement demonstrator.} This role requires no
+The second role is the rehabilitation movement demonstrator. This role requires no
 direct patient contact: the humanoid demonstrates movements that the patient
 observes or follows. The bipedal gait safety gap identified in
 Section~\ref{sec:safety}, the most universally blocking technical
@@ -1442,7 +1461,7 @@ Sobrepera et al.'s case series~\cite{sobrepera2022feasibility}. Advancing requir
 feasibility trial adapting a NAO or Pepper protocol to a full-size bipedal
 humanoid demonstrator in stroke rehabilitation.
 
-\textbf{Role~3: Structured eldercare companion and physical assistant.} RHP
+The third role is the structured eldercare companion and physical assistant. RHP
 Friends~\cite{benallegue2025rhp} is the only platform designed specifically for
 this role. The hybrid autonomous/teleoperated architecture (in which routine
 tasks run autonomously and non-routine tasks are handed to a remote
@@ -1456,8 +1475,8 @@ actual care facility pilot.
 
 Four priorities, ordered by their blocking impact on the entire field:
 
-\textbf{Priority~1: Clinical safety validation for bipedal gait in patient-contact
-environments.} The four gait-induced contact risk scenarios documented in
+The first priority is clinical safety validation for bipedal gait in
+patient-contact environments. The four gait-induced contact risk scenarios documented in
 Section~\ref{sec:safety} are not bounded by any existing standard. No IRB will
 approve human-subject studies involving physical patient contact by a full-size
 bipedal humanoid without instrumented biomechanical data on these force profiles
@@ -1465,21 +1484,22 @@ and an accepted safety standard or architectural safeguard. This is the single
 most leverage-intensive investment the field can make: resolving it unblocks
 physical patient-contact studies in all three leading domains simultaneously.
 
-\textbf{Priority~2: Human-subject feasibility studies in leading applications.}
+The second priority is human-subject feasibility studies in leading applications.
 The cadaveric endoscopy study of Cho et al.~\cite{cho2026humanoid} is the current
 clinical frontier. The specific next step is an IRB-approved, registered
 feasibility study in a narrow indication with an explicit safety monitor protocol.
-UC San Diego (Yip Laboratory) and Johns Hopkins are the natural sites.
+UC San Diego (Yip Laboratory) and Johns Hopkins hold the clinical
+infrastructure, cadaveric study capacity, and IRB precedent to conduct this work.
 
-\textbf{Priority~3: Open clinical demonstration dataset for VLA training.} No
-public dataset of humanoid robot demonstrations in clinical or
+The third priority is an open clinical demonstration dataset for VLA training.
+No public dataset of humanoid robot demonstrations in clinical or
 clinical-simulated environments exists. Creating an open clinical demonstration
 dataset, even using simulators and clinical task protocols with mannequins, would
 unlock foundation model fine-tuning for clinical applications and enable the
 broader research community to advance clinical policy learning.
 
-\textbf{Priority~4: Platform diversification for evidence generalizability.} The
-concentration of clinical procedure evidence on the Unitree G1 (Atar et al., Liang et al., Cho et al.) is a
+The fourth priority is platform diversification for evidence generalizability.
+The concentration of clinical procedure evidence on the Unitree G1 (Atar et al., Liang et al., Cho et al.) is a
 scientific limitation. Replication of clinical task evaluations on RHP Friends,
 TALOS, or other platforms would establish whether current findings are
 platform-specific or generalizable to the bipedal humanoid class.
@@ -1584,7 +1604,7 @@ layer enforcing ISO/TS~15066 contact force limits for bipedal dynamic scenarios;
 HL7 FHIR and hospital EHR systems; (3) a public clinical demonstration dataset
 for VLA fine-tuning on medical procedures; and (4) validated medical simulation
 environments with patient anatomy proxies and clinical instrument physics. Any
-of these would materially advance the field more than platform capability
+of these would advance the field more than platform capability
 improvements at current TRL levels.
 
 \textbf{For clinical researchers and trial designers.} Three study designs are
@@ -1635,7 +1655,7 @@ key decision points for both jurisdictions.
 
 The path to the first regulatory clearance requires three sequential steps.
 
-\textbf{Step~1: Performance standards definition.} A joint effort among humanoid
+The first step is performance standards definition. A joint effort among humanoid
 manufacturers, academic medical centers (UCSD, JHU), and FDA's Center for Devices
 and Radiological Health (CDRH) is required to define the Special Controls that
 any De~Novo submission must meet: fall prevention performance requirements, patient
@@ -1643,14 +1663,15 @@ contact force limits for dynamic bipedal scenarios, teleoperation latency bounds
 and AI/ML software validation methodology consistent with FDA's Good Machine
 Learning Practice principles and the December~2024 PCCP guidance.
 
-\textbf{Step~2: IRB feasibility study generating clinical evidence.} A registered,
+The second step is an IRB feasibility study generating clinical evidence. A
+registered,
 IRB-approved feasibility study in a specific narrow indication generates the
 clinical evidence required for a De~Novo submission. This study must be designed
 from the outset with regulatory submission in mind: pre-specified safety endpoints
 and a defined safety monitor protocol.
 
-\textbf{Step~3: De~Novo submission establishing a regulatory predicate.} The
-De~Novo application proposes a new product code for bipedal humanoid clinical
+The third step is a De~Novo submission that establishes a regulatory predicate.
+The De~Novo application proposes a new product code for bipedal humanoid clinical
 assistants with Special Controls from Steps~1 and~2. First clearance establishes
 a predicate device, enabling subsequent 510(k) applications.
 
@@ -1698,9 +1719,10 @@ task offloading: routine, physically demanding, or cognitively repetitive tasks
 that do not require clinical judgment could be offloaded, freeing clinicians for
 judgment-requiring activities. The administrator survey of Imtiaz and
 Khan~\cite{imtiaz2024perceptions} shows that the perceived risk of reduced human
-contact is a primary institutional barrier; communicating the task-offloading
-framing accurately to institutional decision-makers is as important as resolving
-the technical barriers.
+contact is a primary institutional barrier; accurate communication of the
+task-offloading framing to institutional decision-makers is a parallel
+requirement, not a secondary one; neither the technical barriers nor the
+institutional perception barriers can be resolved in isolation.
 
 %%======================================================================
 \section{Conclusion}
@@ -1775,7 +1797,8 @@ human-subject feasibility studies. Cho et al.~\cite{cho2026humanoid} advance the
 state of the art by completing a cadaveric surgical study under a defined IRB
 protocol, the step immediately preceding first-in-human research. UC San Diego
 and Johns Hopkins, which together hold all three papers in the clinical procedures
-domain, are the natural sites for this next step. There is no institutional
+domain, hold the necessary combination of clinical infrastructure, cadaveric
+study capacity, and IRB precedent for this next step. There is no institutional
 reason, beyond the gait safety gap, why this study cannot begin within the current
 funding cycle.
 

@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{100}
+\begin{thebibliography}{101}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -1393,6 +1393,21 @@
 \shownote{arXiv:2501.17206}.
 
 
+\bibitem[Zhang et~al\mbox{.}(2026)]%
+        {zhang2026rapid}
+\bibfield{author}{\bibinfo{person}{Bingcong Zhang}, \bibinfo{person}{Yihang
+  Lyv}, \bibinfo{person}{Lianbo Ma}, \bibinfo{person}{Yushi He},
+  \bibinfo{person}{Pengfei Wei}, \bibinfo{person}{Xingchi Liu},
+  \bibinfo{person}{Jinhua Li}, \bibinfo{person}{Jianchang Zhao}, {and}
+  \bibinfo{person}{Lizhi Pan}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{A Rapid Instrument Exchange System for Humanoid
+  Robots in Minimally Invasive Surgery}.
+\newblock \bibinfo{howpublished}{arXiv preprint}.
+\newblock
+\newblock
+\shownote{arXiv:2604.02707}.
+
+
 \bibitem[Zhao et~al\mbox{.}(2023)]%
         {zhao2023act}
 \bibfield{author}{\bibinfo{person}{Tony~Z. Zhao}, \bibinfo{person}{Vikash
@@ -1415,7 +1430,8 @@
   \bibinfo{year}{2024}\natexlab{}.
 \newblock \showarticletitle{{3D-VLA}: A {3D} Vision-Language-Action Generative
   World Model}. In \bibinfo{booktitle}{\emph{International Conference on
-  Machine Learning ({ICML})}}.
+  Machine Learning ({ICML})}}. \bibinfo{publisher}{PMLR},
+  \bibinfo{address}{Vienna, Austria}, \bibinfo{pages}{61229--61245}.
 \newblock
 \newblock
 \shownote{arXiv:2403.09631}.
