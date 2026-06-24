@@ -338,7 +338,7 @@ def gen_tech_timeline():
     x_min = year_to_x(1994.5)
     x_max = year_to_x(2027.0)
 
-    fig, ax = plt.subplots(figsize=(22, 10))
+    fig, ax = plt.subplots(figsize=(22, 11))
 
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(-6.5, 6.5)
@@ -513,7 +513,7 @@ def gen_tech_timeline():
     ax.legend(
         handles=legend_elements,
         loc="lower center",
-        bbox_to_anchor=(0.5, 0.01),
+        bbox_to_anchor=(0.5, -0.05),
         fontsize=14,
         ncol=2,
         framealpha=0.9,
@@ -531,7 +531,7 @@ def gen_tech_timeline():
     ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
     ax.set_facecolor("white")
 
-    fig.subplots_adjust(bottom=0.10)
+    fig.subplots_adjust(bottom=0.08)
     path = f"{OUTPUT_DIR}/tech_timeline.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
