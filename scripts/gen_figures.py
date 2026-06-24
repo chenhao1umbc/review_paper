@@ -360,9 +360,10 @@ def gen_tech_timeline():
             label,
             ha="center",
             va="bottom",
-            fontsize=13,
+            fontsize=15,
             color="#555555",
             style="italic",
+            fontweight="bold",
         )
 
     # ---- Year ticks ----
