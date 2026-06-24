@@ -8,6 +8,7 @@ plan.md
 *.aux
 *.log
 *.out
+*.pdf
 __pycache__/
 .pm_state
 outputs/

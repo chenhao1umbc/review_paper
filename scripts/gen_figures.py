@@ -317,28 +317,93 @@ def gen_evidence_landscape():
 
 
 def gen_tech_timeline():
-    """Technology timeline: dual-track horizontal stem plot with era shading."""
+    """Technology timeline: dual-track non-linear timeline with era shading."""
 
+    blue = "#2166ac"
+    green = "#1a9641"
+    axis_color = "#555555"
+
+    # 3-segment piecewise linear scale: compress early years, expand post-2022.
+    # No scale-break marker; the non-linearity is implicit in the era bands.
     def year_to_x(y):
-        break_year = 2022
-        if y <= break_year:
-            return (y - 1996) * 0.46
-        return (break_year - 1996) * 0.46 + (y - break_year) * 2.5
+        if y <= 2010:
+            return 1995.5 + (y - 1996) * 0.35
+        elif y <= 2022:
+            return 1995.5 + (2010 - 1996) * 0.35 + (y - 2010) * 0.60
+        else:
+            return (
+                1995.5 + (2010 - 1996) * 0.35 + (2022 - 2010) * 0.60 + (y - 2022) * 2.2
+            )
 
-    fig, ax = plt.subplots(figsize=(22, 20))
+    x_min = year_to_x(1994.5)
+    x_max = year_to_x(2027.0)
 
-    ax.set_xlim(year_to_x(1994.5), year_to_x(2027.0))
-    ax.set_ylim(-10.5, 11.5)
-    ax.axis("off")
+    fig, ax = plt.subplots(figsize=(22, 10))
 
-    # Main timeline axis
-    ax.axhline(0, color="#555555", linewidth=3.0, zorder=1)
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(-6.5, 6.5)
 
+    ax.axhline(0, color=axis_color, linewidth=2.5, zorder=2)
+    ax.grid(False)
+
+    # ---- Era background shading ----
+    eras = [
+        (1995.5, 2010, "#deebf7", "Locomotion era (1996–2010)"),
+        (2010, 2022, "#fee6ce", "Manipulation era (2010–2022)"),
+        (2022, 2027.0, "#d9f0d3", "Commercial scale-up (2022–present)"),
+    ]
+    for x0, x1, color, label in eras:
+        ax.axvspan(year_to_x(x0), year_to_x(x1), alpha=0.28, color=color, zorder=0)
+        ax.text(
+            year_to_x((x0 + x1) / 2),
+            5.9,
+            label,
+            ha="center",
+            va="bottom",
+            fontsize=13,
+            color="#555555",
+            style="italic",
+        )
+
+    # ---- Year ticks ----
+    # Every year gets a tick; labels at non-overlapping intervals.
+    for yr in range(1996, 2027):
+        ax.plot(
+            [year_to_x(yr), year_to_x(yr)],
+            [-0.18, 0.18],
+            color="#888888",
+            linewidth=1.4,
+            zorder=3,
+        )
+    # Pre-2022: every 4 years to avoid overlap in compressed region
+    for yr in range(1996, 2022, 4):
+        ax.text(
+            year_to_x(yr),
+            -0.55,
+            str(yr),
+            ha="center",
+            va="top",
+            fontsize=14,
+            color="#444444",
+        )
+    # Post-2022: every year, expanded region has plenty of space
+    for yr in range(2022, 2027):
+        ax.text(
+            year_to_x(yr),
+            -0.55,
+            str(yr),
+            ha="center",
+            va="top",
+            fontsize=14,
+            color="#444444",
+        )
+
+    # ---- Platform events (upper track, 4 staggered heights) ----
     platform_events = [
         (1996, "Honda P3\nbipedal demo"),
         (2000, "ASIMO\nlaunched"),
         (2004, "HRP-2\n(AIST)"),
-        (2012, "DARPA\nRobotics\nChallenge"),
+        (2012, "DARPA Robotics\nChallenge"),
         (2013.6, "Atlas\n(Boston Dynamics)"),
         (2018, "HRP-5P\n(AIST)"),
         (2022, "Tesla Optimus\nprototype"),
@@ -348,145 +413,83 @@ def gen_tech_timeline():
         (2025, r"$\pi_0$" + "\n(Physical Intelligence)"),
         (2026, "13 commercial\nplatforms"),
     ]
-    platform_y = [4.0, 2.0, 0.5, 8.5, 1.5, 3.5, 5.5, 2.5, 9.5, 8.0, 6.0, 4.5]
 
+    # Heights spaced 1.2" apart; top level lowered to avoid era-label overlap.
+    p_heights = [1.0, 2.2, 3.4, 4.6]
+    p_assign = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]
+
+    # Small x-offsets for events <1 year apart in dense post-2022 region.
+    p_xoff = [0, 0, 0, 0, 0, 0, 0, 0, -0.12, -0.15, +0.15, 0]
+
+    for (yr, label), li, xo in zip(platform_events, p_assign, p_xoff):
+        yh = p_heights[li]
+        x = year_to_x(yr) + xo
+        ax.plot([x, x], [0, yh], color=blue, linewidth=1.6, zorder=2, alpha=0.40)
+        ax.plot(
+            x,
+            yh,
+            "o",
+            color=blue,
+            markersize=10,
+            zorder=3,
+            markeredgecolor="white",
+            markeredgewidth=0.6,
+        )
+        ax.text(
+            x,
+            yh + 0.35,
+            label,
+            ha="center",
+            va="bottom",
+            fontsize=17,
+            color=blue,
+            zorder=5,
+        )
+
+    # ---- Healthcare events (lower track, 4 staggered heights) ----
     health_events = [
         (2003, "NAO first\npediatric pilot"),
         (2010, "PARO\nclinical RCT"),
         (2013, "NAO ASD\ntherapy studies"),
         (2018, "Pepper dementia\npilot"),
-        (2020, "COVID:\nrobots in hospitals"),
+        (2020, "COVID: robots\nin hospitals"),
         (2022.5, "SPRING project\n(ARI, Paris)"),
         (2023.5, "RHP Friends\nIREX nursing demo"),
         (2024, "Unitree G1\nrehab / EEG"),
         (2025, "Atar et al.\n7 procedures"),
         (2026, "Cho et al.\nhumanoid surgery"),
     ]
-    health_y = [-2.5, -4.5, -0.5, -3.0, -6.0, -1.0, -7.5, -3.5, -1.0, -9.0]
 
-    blue = "#2166ac"
-    green = "#1a9641"
+    h_heights = [-1.0, -2.2, -3.4, -4.6]
+    h_assign = [0, 1, 2, 0, 1, 2, 3, 0, 1, 2]
+    h_xoff = [0, 0, 0, 0, 0, 0, -0.10, +0.10, 0, 0]
 
-    def draw_event(year, label, y_base, color, fontsize=36):
-        x = year_to_x(year)
+    for (yr, label), li, xo in zip(health_events, h_assign, h_xoff):
+        yh = h_heights[li]
+        x = year_to_x(yr) + xo
+        ax.plot([x, x], [0, yh], color=green, linewidth=1.6, zorder=2, alpha=0.40)
         ax.plot(
-            [x, x],
-            [0, y_base],
-            color=color,
-            linewidth=2.5,
-            linestyle="-",
-            zorder=2,
-            alpha=0.6,
+            x,
+            yh,
+            "o",
+            color=green,
+            markersize=10,
+            zorder=3,
+            markeredgecolor="white",
+            markeredgewidth=0.6,
         )
-        ax.plot(x, y_base, "o", color=color, markersize=11, zorder=3)
-        va = "bottom" if y_base > 0 else "top"
-        y_text = y_base + (0.18 if y_base > 0 else -0.18)
         ax.text(
             x,
-            y_text,
+            yh - 0.35,
             label,
             ha="center",
-            va=va,
-            fontsize=fontsize,
-            color=color,
-            bbox=dict(
-                boxstyle="round,pad=0.2",
-                facecolor="white",
-                edgecolor="none",
-                alpha=0.85,
-            ),
-            zorder=4,
-            clip_on=False,
-        )
-
-    for (yr, lbl), yv in zip(platform_events, platform_y):
-        draw_event(yr, lbl, yv, blue)
-
-    for (yr, lbl), yv in zip(health_events, health_y):
-        draw_event(yr, lbl, yv, green)
-
-    # Era fills
-    era_spans = [
-        (1995, 2010, "#c6dbef", "Locomotion era\n(1996–2010)"),
-        (2010, 2022, "#fdd0a2", "Manipulation era\n(2010–2022)"),
-        (2022, 2026.9, "#c7e9c0", "Commercial scale-up\n(2022–present)"),
-    ]
-    era_label_x = {
-        "Locomotion era\n(1996–2010)": year_to_x(2002.5),
-        "Manipulation era\n(2010–2022)": year_to_x(2016),
-        "Commercial scale-up\n(2022–present)": year_to_x(2024),
-    }
-    for xstart, xend, color, label in era_spans:
-        ax.axvspan(
-            year_to_x(xstart), year_to_x(xend), alpha=0.06, color=color, zorder=0
-        )
-        ax.text(
-            era_label_x[label],
-            -9.8,
-            label,
-            ha="center",
-            va="bottom",
-            fontsize=34,
-            color="#444444",
-            style="italic",
-            bbox=dict(
-                boxstyle="round,pad=0.2",
-                facecolor="white",
-                edgecolor="none",
-                alpha=0.75,
-            ),
-            clip_on=False,
+            va="top",
+            fontsize=17,
+            color=green,
             zorder=5,
         )
 
-    # Year ticks
-    for yr in range(1996, 2022, 4):
-        ax.text(
-            year_to_x(yr),
-            -0.50,
-            str(yr),
-            ha="center",
-            va="top",
-            fontsize=34,
-            color="#555555",
-        )
-        ax.plot(
-            [year_to_x(yr), year_to_x(yr)],
-            [-0.16, 0.16],
-            color="#888888",
-            linewidth=1.8,
-        )
-    for yr in range(2022, 2027, 1):
-        ax.text(
-            year_to_x(yr),
-            -0.50,
-            str(yr),
-            ha="center",
-            va="top",
-            fontsize=34,
-            color="#555555",
-        )
-        ax.plot(
-            [year_to_x(yr), year_to_x(yr)],
-            [-0.16, 0.16],
-            color="#888888",
-            linewidth=1.8,
-        )
-
-    # Break marker '//' at 2022 to signal compressed/expanded scale
-    bx = year_to_x(2022)
-    for offset in (-0.18, 0.18):
-        ax.plot(
-            [bx + offset - 0.06, bx + offset + 0.06],
-            [-0.35, 0.35],
-            color="#888888",
-            linewidth=2.2,
-            zorder=5,
-        )
-    ax.text(
-        bx, -0.75, "scale\nbreak", ha="center", va="top", fontsize=28, color="#888888"
-    )
-
+    # ---- Legend ----
     legend_elements = [
         Line2D(
             [0],
@@ -494,7 +497,7 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=blue,
-            markersize=10,
+            markersize=12,
             label="Platform / technology milestones",
         ),
         Line2D(
@@ -503,27 +506,32 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=green,
-            markersize=10,
+            markersize=12,
             label="Healthcare research events",
         ),
     ]
     ax.legend(
         handles=legend_elements,
         loc="lower center",
-        bbox_to_anchor=(0.5, -0.12),
-        fontsize=34,
+        bbox_to_anchor=(0.5, 0.01),
+        fontsize=14,
         ncol=2,
         framealpha=0.9,
         edgecolor="#cccccc",
     )
 
     ax.set_title(
-        "Technology Timeline: Humanoid Robotics Platforms and Healthcare Research Events\n"
-        "(1996–2026; x-axis compressed before 2022, expanded after)",
-        fontsize=34,
-        pad=30,
+        "Technology Timeline: Humanoid Robotics Platforms and Healthcare Research Events (1996–2026)",
+        fontsize=20,
+        pad=24,
     )
 
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.tick_params(left=False, bottom=False, labelleft=False, labelbottom=False)
+    ax.set_facecolor("white")
+
+    fig.subplots_adjust(bottom=0.10)
     path = f"{OUTPUT_DIR}/tech_timeline.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
@@ -532,12 +540,12 @@ def gen_tech_timeline():
 
 def gen_regulatory_pathways():
     """Regulatory pathway flowchart: FDA De Novo (US) and EU MDR/AI Act (EU)."""
-    col_us = 3.2
-    col_eu = 8.8
+    col_us = 3.0
+    col_eu = 9.0
     col_mid = 6.0
-    box_w = 5.2
+    box_w = 4.8
 
-    row_y = [8.6, 7.45, 6.30, 5.15, 4.00, 2.85]
+    row_y = [8.6, 7.45, 6.30, 5.15, 4.00, 2.75]
     row_h = [0.88, 0.78, 0.78, 0.78, 0.78, 0.88]
 
     us_pale = "#e8f4fc"
@@ -550,7 +558,7 @@ def gen_regulatory_pathways():
     eu_final_fg = "#ffffff"
     eu_edge = "#1e8449"
 
-    fig, ax = plt.subplots(figsize=(8.0, 10.0))
+    fig, ax = plt.subplots(figsize=(10.0, 10.0))
     ax.set_xlim(0, 12)
     ax.set_ylim(0, 10.0)
     ax.axis("off")
@@ -598,20 +606,20 @@ def gen_regulatory_pathways():
     ax.text(
         col_us,
         9.55,
-        "United States / FDA Pathway",
+        "United States\nFDA Pathway",
         ha="center",
         va="center",
-        fontsize=14,
+        fontsize=13,
         weight="bold",
         color=us_edge,
     )
     ax.text(
         col_eu,
         9.55,
-        "European Union / MDR + AI Act Pathway",
+        "European Union\nMDR + AI Act Pathway",
         ha="center",
         va="center",
-        fontsize=14,
+        fontsize=13,
         weight="bold",
         color=eu_edge,
     )
@@ -619,7 +627,7 @@ def gen_regulatory_pathways():
     # Vertical separator
     ax.plot(
         [col_mid, col_mid],
-        [1.55, 9.25],
+        [1.95, 9.25],
         color="#cccccc",
         linewidth=1.2,
         linestyle="--",
@@ -744,7 +752,7 @@ def gen_regulatory_pathways():
 
     # Bottom banner: critical gap
     gap_h = 1.05
-    gap_y = 1.05
+    gap_y = 1.45
     rect = FancyBboxPatch(
         (0.25, gap_y - gap_h / 2),
         11.5,
