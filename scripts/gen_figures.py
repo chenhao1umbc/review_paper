@@ -335,7 +335,7 @@ def gen_tech_timeline():
                 1995.5 + (2010 - 1996) * 0.35 + (2022 - 2010) * 0.60 + (y - 2022) * 2.2
             )
 
-    x_min = year_to_x(1993.0)
+    x_min = year_to_x(1990.0)
     x_max = year_to_x(2027.5)
 
     fig, ax = plt.subplots(figsize=(13, 8))
@@ -348,7 +348,7 @@ def gen_tech_timeline():
 
     # ---- Era background shading ----
     eras = [
-        (1993.0, 2010, "#deebf7", "Locomotion era\n(1996–2010)"),
+        (1990.0, 2010, "#deebf7", "Locomotion era\n(1996–2010)"),
         (2010, 2022, "#fee6ce", "Manipulation era\n(2010–2022)"),
         (2022, 2027.5, "#d9f0d3", "Commercial\nscale-up (2022–present)"),
     ]
@@ -422,10 +422,7 @@ def gen_tech_timeline():
     # Small x-offsets for events <1 year apart in dense post-2022 region.
     p_xoff = [0, 0, 0, 0, 0, 0, 0, 0, -0.12, -0.15, +0.15, 0]
 
-    # Honda P3 (first event) uses ha="left" so text grows right, staying inside blue band
-    p_ha = ["left"] + ["center"] * (len(platform_events) - 1)
-
-    for (yr, label), li, xo, ha in zip(platform_events, p_assign, p_xoff, p_ha):
+    for (yr, label), li, xo in zip(platform_events, p_assign, p_xoff):
         yh = p_heights[li]
         x = year_to_x(yr) + xo
         ax.plot([x, x], [0, yh], color=blue, linewidth=1.6, zorder=2, alpha=0.40)
@@ -443,7 +440,7 @@ def gen_tech_timeline():
             x,
             yh + 0.28,
             label,
-            ha=ha,
+            ha="center",
             va="bottom",
             fontsize=14,
             color=blue,
