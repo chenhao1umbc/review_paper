@@ -522,7 +522,7 @@ def gen_tech_timeline():
     )
 
     ax.set_title(
-        "Technology Timeline: Humanoid Robotics Platforms and Healthcare Research Events (1996–2026)",
+        "Technology Timeline: Humanoid Robotics Platforms\nand Healthcare Research Events (1996–2026)",
         fontsize=18,
         pad=16,
     )
