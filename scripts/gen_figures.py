@@ -376,8 +376,8 @@ def gen_tech_timeline():
             linewidth=1.4,
             zorder=3,
         )
-    # Pre-2022: every 8 years in compressed region to avoid overlap
-    for yr in range(1996, 2019, 8):
+    # Pre-2022: 1996, 2004, 2012, 2016 — balanced spacing without overlap
+    for yr in [1996, 2004, 2012, 2016]:
         ax.text(
             year_to_x(yr),
             -0.55,
@@ -463,7 +463,7 @@ def gen_tech_timeline():
         (2026, "Cho et al.\nhumanoid surgery"),
     ]
 
-    h_heights = [-1.0, -2.2, -3.4, -4.6]
+    h_heights = [-1.2, -2.64, -4.08, -5.52]
     h_assign = [0, 1, 2, 0, 1, 2, 3, 0, 1, 2]
     h_xoff = [0, 0, 0, 0, 0, 0, -0.10, +0.10, 0, 0]
 
