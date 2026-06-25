@@ -376,8 +376,8 @@ def gen_tech_timeline():
             linewidth=1.4,
             zorder=3,
         )
-    # Pre-2022: every 4 years; stop at 2018 to avoid 2020/2022 overlap
-    for yr in range(1996, 2019, 4):
+    # Pre-2022: every 8 years in compressed region to avoid overlap
+    for yr in range(1996, 2019, 8):
         ax.text(
             year_to_x(yr),
             -0.55,
