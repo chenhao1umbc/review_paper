@@ -376,8 +376,8 @@ def gen_tech_timeline():
             linewidth=1.4,
             zorder=3,
         )
-    # Pre-2022: every 4 years to avoid overlap in compressed region
-    for yr in range(1996, 2022, 4):
+    # Pre-2022: every 4 years; stop at 2018 to avoid 2020/2022 overlap
+    for yr in range(1996, 2019, 4):
         ax.text(
             year_to_x(yr),
             -0.55,
@@ -386,6 +386,7 @@ def gen_tech_timeline():
             va="top",
             fontsize=15,
             color="#444444",
+            fontweight="bold",
         )
     # Post-2022: every year, expanded region has plenty of space
     for yr in range(2022, 2027):
@@ -397,6 +398,7 @@ def gen_tech_timeline():
             va="top",
             fontsize=15,
             color="#444444",
+            fontweight="bold",
         )
 
     # ---- Platform events (upper track, 4 staggered heights) ----
