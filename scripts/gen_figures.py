@@ -514,11 +514,10 @@ def gen_tech_timeline():
     ax.legend(
         handles=legend_elements,
         loc="lower center",
-        bbox_to_anchor=(0.5, -0.05),
+        bbox_to_anchor=(0.5, -0.12),
         fontsize=16,
         ncol=2,
-        framealpha=0.9,
-        edgecolor="#cccccc",
+        frameon=False,
     )
 
     ax.set_title(
