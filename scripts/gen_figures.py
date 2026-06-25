@@ -422,7 +422,10 @@ def gen_tech_timeline():
     # Small x-offsets for events <1 year apart in dense post-2022 region.
     p_xoff = [0, 0, 0, 0, 0, 0, 0, 0, -0.12, -0.15, +0.15, 0]
 
-    for (yr, label), li, xo in zip(platform_events, p_assign, p_xoff):
+    # Honda P3 (first event) uses ha="left" so text grows right, staying inside blue band
+    p_ha = ["left"] + ["center"] * (len(platform_events) - 1)
+
+    for (yr, label), li, xo, ha in zip(platform_events, p_assign, p_xoff, p_ha):
         yh = p_heights[li]
         x = year_to_x(yr) + xo
         ax.plot([x, x], [0, yh], color=blue, linewidth=1.6, zorder=2, alpha=0.40)
@@ -440,7 +443,7 @@ def gen_tech_timeline():
             x,
             yh + 0.28,
             label,
-            ha="center",
+            ha=ha,
             va="bottom",
             fontsize=14,
             color=blue,
