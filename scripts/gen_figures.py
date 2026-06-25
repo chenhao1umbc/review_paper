@@ -338,7 +338,7 @@ def gen_tech_timeline():
     x_min = year_to_x(1994.5)
     x_max = year_to_x(2027.0)
 
-    fig, ax = plt.subplots(figsize=(22, 11))
+    fig, ax = plt.subplots(figsize=(13, 8))
 
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(-6.5, 6.5)
@@ -348,9 +348,9 @@ def gen_tech_timeline():
 
     # ---- Era background shading ----
     eras = [
-        (1995.5, 2010, "#deebf7", "Locomotion era (1996–2010)"),
-        (2010, 2022, "#fee6ce", "Manipulation era (2010–2022)"),
-        (2022, 2027.0, "#d9f0d3", "Commercial scale-up (2022–present)"),
+        (1994.5, 2010, "#deebf7", "Locomotion era\n(1996–2010)"),
+        (2010, 2022, "#fee6ce", "Manipulation era\n(2010–2022)"),
+        (2022, 2027.0, "#d9f0d3", "Commercial\nscale-up (2022–present)"),
     ]
     for x0, x1, color, label in eras:
         ax.axvspan(year_to_x(x0), year_to_x(x1), alpha=0.28, color=color, zorder=0)
@@ -360,7 +360,7 @@ def gen_tech_timeline():
             label,
             ha="center",
             va="bottom",
-            fontsize=15,
+            fontsize=16,
             color="#555555",
             style="italic",
             fontweight="bold",
@@ -384,7 +384,7 @@ def gen_tech_timeline():
             str(yr),
             ha="center",
             va="top",
-            fontsize=14,
+            fontsize=15,
             color="#444444",
         )
     # Post-2022: every year, expanded region has plenty of space
@@ -395,7 +395,7 @@ def gen_tech_timeline():
             str(yr),
             ha="center",
             va="top",
-            fontsize=14,
+            fontsize=15,
             color="#444444",
         )
 
@@ -431,18 +431,18 @@ def gen_tech_timeline():
             yh,
             "o",
             color=blue,
-            markersize=10,
+            markersize=7,
             zorder=3,
             markeredgecolor="white",
-            markeredgewidth=0.6,
+            markeredgewidth=0.5,
         )
         ax.text(
             x,
-            yh + 0.35,
+            yh + 0.28,
             label,
             ha="center",
             va="bottom",
-            fontsize=17,
+            fontsize=14,
             color=blue,
             zorder=5,
         )
@@ -474,18 +474,18 @@ def gen_tech_timeline():
             yh,
             "o",
             color=green,
-            markersize=10,
+            markersize=7,
             zorder=3,
             markeredgecolor="white",
-            markeredgewidth=0.6,
+            markeredgewidth=0.5,
         )
         ax.text(
             x,
-            yh - 0.35,
+            yh - 0.28,
             label,
             ha="center",
             va="top",
-            fontsize=17,
+            fontsize=14,
             color=green,
             zorder=5,
         )
@@ -498,7 +498,7 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=blue,
-            markersize=12,
+            markersize=8,
             label="Platform / technology milestones",
         ),
         Line2D(
@@ -507,7 +507,7 @@ def gen_tech_timeline():
             marker="o",
             color="w",
             markerfacecolor=green,
-            markersize=12,
+            markersize=8,
             label="Healthcare research events",
         ),
     ]
@@ -515,7 +515,7 @@ def gen_tech_timeline():
         handles=legend_elements,
         loc="lower center",
         bbox_to_anchor=(0.5, -0.05),
-        fontsize=14,
+        fontsize=16,
         ncol=2,
         framealpha=0.9,
         edgecolor="#cccccc",
@@ -523,8 +523,8 @@ def gen_tech_timeline():
 
     ax.set_title(
         "Technology Timeline: Humanoid Robotics Platforms and Healthcare Research Events (1996–2026)",
-        fontsize=20,
-        pad=24,
+        fontsize=18,
+        pad=16,
     )
 
     for spine in ax.spines.values():
