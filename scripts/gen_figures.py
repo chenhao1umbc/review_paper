@@ -335,31 +335,31 @@ def gen_tech_timeline():
                 1995.5 + (2010 - 1996) * 0.35 + (2022 - 2010) * 0.60 + (y - 2022) * 2.2
             )
 
-    x_min = year_to_x(1994.5)
-    x_max = year_to_x(2027.0)
+    x_min = year_to_x(1993.0)
+    x_max = year_to_x(2027.5)
 
     fig, ax = plt.subplots(figsize=(13, 8))
 
     ax.set_xlim(x_min, x_max)
-    ax.set_ylim(-6.5, 6.5)
+    ax.set_ylim(-7.0, 8.0)
 
     ax.axhline(0, color=axis_color, linewidth=2.5, zorder=2)
     ax.grid(False)
 
     # ---- Era background shading ----
     eras = [
-        (1994.5, 2010, "#deebf7", "Locomotion era\n(1996–2010)"),
+        (1993.0, 2010, "#deebf7", "Locomotion era\n(1996–2010)"),
         (2010, 2022, "#fee6ce", "Manipulation era\n(2010–2022)"),
-        (2022, 2027.0, "#d9f0d3", "Commercial\nscale-up (2022–present)"),
+        (2022, 2027.5, "#d9f0d3", "Commercial\nscale-up (2022–present)"),
     ]
     for x0, x1, color, label in eras:
         ax.axvspan(year_to_x(x0), year_to_x(x1), alpha=0.28, color=color, zorder=0)
         ax.text(
             year_to_x((x0 + x1) / 2),
-            5.9,
+            7.6,
             label,
             ha="center",
-            va="bottom",
+            va="top",
             fontsize=16,
             color="#555555",
             style="italic",
