@@ -214,9 +214,9 @@ def gen_evidence_landscape():
             zorder=3,
         )
 
-        text_x = dot_x + 0.30
+        text_x = dot_x + 0.15
         ax.plot(
-            [dot_x + 0.10, text_x - 0.02],
+            [dot_x + 0.05, text_x - 0.01],
             [dot_y, dot_y],
             linestyle="--",
             color="#bbbbbb",
