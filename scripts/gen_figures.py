@@ -872,9 +872,9 @@ def gen_capability_gap():
     fig.suptitle(
         "Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
         fontsize=17,
-        y=1.02,
+        y=1.0,
     )
-    fig.tight_layout(pad=1.8)
+    fig.tight_layout(rect=[0, 0, 1, 0.95], pad=1.0)
     path = f"{OUTPUT_DIR}/capability_gap.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
