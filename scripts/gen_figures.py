@@ -853,40 +853,27 @@ def gen_capability_gap():
             color="#333333",
         )
 
-    # Gap annotations on the right side
-    for i, gap in enumerate(gaps):
-        ax.text(
-            9.6,
-            i,
-            f"Δ = {gap}",
-            va="center",
-            ha="left",
-            fontsize=14,
-            color=PALETTE["accent"],
-            fontweight="bold",
-        )
-
     ax.set_yticks(y)
     ax.set_yticklabels(dimensions, fontsize=16)
-    ax.set_xlim(0, 11)
+    ax.set_xlim(0, 9.5)
     ax.set_xlabel("Score (0–10)", fontsize=16)
-    ax.set_title(
-        "Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
-        pad=14,
-        fontsize=17,
-    )
     ax.axvline(x=7, color="#aaaaaa", linewidth=0.8, linestyle="--", zorder=2)
     ax.legend(
         loc="upper center",
         bbox_to_anchor=(0.5, -0.10),
         ncol=2,
-        framealpha=0.9,
+        frameon=False,
         fontsize=16,
     )
     ax.grid(axis="x", linewidth=0.5, color="#dddddd", zorder=1)
     ax.set_axisbelow(True)
     ax.invert_yaxis()
 
+    fig.suptitle(
+        "Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
+        fontsize=17,
+        y=1.02,
+    )
     fig.tight_layout(pad=1.8)
     path = f"{OUTPUT_DIR}/capability_gap.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
