@@ -858,18 +858,20 @@ def gen_capability_gap():
     ax.set_xlim(0, 9.5)
     ax.set_xlabel("Score (0–10)", fontsize=16)
     ax.axvline(x=7, color="#aaaaaa", linewidth=0.8, linestyle="--", zorder=2)
-    ax.legend(
-        loc="upper center",
-        bbox_to_anchor=(0.5, -0.10),
-        ncol=2,
-        frameon=False,
-        fontsize=16,
-    )
     ax.grid(axis="x", linewidth=0.5, color="#dddddd", zorder=1)
     ax.set_axisbelow(True)
     ax.invert_yaxis()
 
-    fig.tight_layout(rect=[0, 0, 1, 0.96], pad=1.0)
+    fig.tight_layout(rect=[0, 0.08, 1, 0.96], pad=1.0)
+    fig.legend(
+        handles=[bars_req[0], bars_cur[0]],
+        labels=["Required (TRL 5)", "Current (best commercial, 2026)"],
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.01),
+        ncol=2,
+        frameon=False,
+        fontsize=16,
+    )
     fig.suptitle(
         "Humanoid Capability Gap: Current vs. Required for Clinical Deployment",
         fontsize=17,
