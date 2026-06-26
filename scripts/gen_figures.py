@@ -191,33 +191,20 @@ def gen_evidence_landscape():
     coord_count = Counter((d, y) for d, y, _, _ in papers)
     coord_idx = defaultdict(int)
 
-    # Per-label placement to avoid overlaps in crowded clusters.
-    # WARNING: these offsets are hand-tuned to the current dataset.
-    # Any addition/removal of papers in a cluster will require
-    # recalibration of the affected entries.
-    label_style = {
-        (1, 2024, "Alameda-Pineda"): ("right", -0.26, "center", 0),
-        (1, 2024, "Imtiaz"): ("left", 0.20, "center", 0),
-        (1, 2024, "Ghosh"): ("left", 0.20, "center", 0),
-        (1, 2025, "Benallegue"): ("left", 0.20, "center", 0),
-        (0, 2025, "Atar"): ("left", 0.20, "center", 0),
-        (0, 2025, "Liang"): ("right", -0.20, "center", 0),
-        (3, 2024, "Sayis"): ("right", -0.20, "center", 0),
-        (3, 2025, "Yuan"): ("left", 0.20, "center", 0),
-        (3, 2025, "Lindsay"): ("right", -0.20, "center", 0),
-    }
-
     for domain_idx, year, surname, stype in papers:
         key = (domain_idx, year)
         idx = coord_idx[key]
         total = coord_count[key]
-        y_off = (idx - (total - 1) / 2.0) * 0.60
-        x_jitter = (idx - (total - 1) / 2.0) * 0.12
+        y_off = (idx - (total - 1) / 2.0) * 0.45
+        x_jitter = (idx - (total - 1) / 2.0) * 0.10
         coord_idx[key] += 1
 
+        dot_x = year + x_jitter
+        dot_y = domain_idx + y_off
+
         ax.scatter(
-            year + x_jitter,
-            domain_idx + y_off,
+            dot_x,
+            dot_y,
             s=marker_sizes[stype],
             marker=shape_markers[stype],
             color=domain_color_list[domain_idx],
@@ -227,19 +214,21 @@ def gen_evidence_landscape():
             zorder=3,
         )
 
-        ha, x_shift, va, y_shift = label_style.get(
-            (domain_idx, year, surname),
-            ("center", 0, "bottom", 0.28)
-            if total == 1
-            else ("left", 0.20, "center", 0),
+        text_x = dot_x + 0.30
+        ax.plot(
+            [dot_x + 0.10, text_x - 0.02],
+            [dot_y, dot_y],
+            linestyle="--",
+            color="#bbbbbb",
+            lw=0.8,
+            zorder=2,
         )
-
         ax.text(
-            year + x_jitter + x_shift,
-            domain_idx + y_off + y_shift,
+            text_x,
+            dot_y,
             surname,
-            ha=ha,
-            va=va,
+            ha="left",
+            va="center",
             fontsize=14,
             color="#333333",
         )
