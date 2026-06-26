@@ -247,13 +247,13 @@ def gen_evidence_landscape():
     ax.set_yticks(range(len(domain_labels)))
     ax.set_yticklabels(domain_labels, fontsize=14)
     ax.set_xlabel("Publication Year")
-    ax.set_xlim(2021.0, 2027.5)
+    ax.set_xlim(2021.0, 2026.8)
     ax.set_xticks([2022, 2023, 2024, 2025, 2026])
     ax.set_ylim(-1.0, len(domain_labels) + 0.2)
     ax.set_title("Evidence distribution: 14 papers, 2022–2026")
 
-    # Unified legend: study type + domain in one panel
-    study_handles = [
+    # Two side-by-side legends: study type (left) and domain (right)
+    type_handles = [
         Line2D(
             [0],
             [0],
@@ -286,30 +286,41 @@ def gen_evidence_landscape():
             label="RCT / comparative",
             linestyle="None",
         ),
-        Line2D([0], [0], color="none", label=""),  # spacer
+    ]
+    domain_handles = [
         mpatches.Patch(facecolor=domain_color_list[0], label="Clinical Procedures"),
         mpatches.Patch(facecolor=domain_color_list[1], label="Elderly / Nursing Care"),
         mpatches.Patch(facecolor=domain_color_list[2], label="Rehabilitation"),
         mpatches.Patch(facecolor=domain_color_list[3], label="Mental Health / HRI"),
     ]
-    ax.legend(
-        handles=study_handles,
-        loc="upper center",
-        bbox_to_anchor=(0.5, -0.18),
-        title="Study type                              Domain",
-        ncol=4,
-        frameon=True,
-        framealpha=0.9,
+
+    leg1 = ax.legend(
+        handles=type_handles,
+        loc="upper left",
+        bbox_to_anchor=(0.0, -0.18),
+        title="Study type",
+        ncol=1,
+        frameon=False,
         fontsize=12,
-        title_fontsize=13,
-        edgecolor="#cccccc",
+        title_fontsize=12,
+    )
+    ax.add_artist(leg1)
+    ax.legend(
+        handles=domain_handles,
+        loc="upper right",
+        bbox_to_anchor=(1.0, -0.18),
+        title="Domain",
+        ncol=1,
+        frameon=False,
+        fontsize=12,
+        title_fontsize=12,
     )
 
     ax.grid(axis="x", linestyle=":", linewidth=0.5, color="#cccccc")
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
-    fig.subplots_adjust(bottom=0.25)
+    fig.subplots_adjust(bottom=0.30)
     path = f"{OUTPUT_DIR}/evidence_landscape.pdf"
     fig.savefig(path, bbox_inches="tight", dpi=300)
     plt.close(fig)
