@@ -22,12 +22,12 @@ from collections import defaultdict, Counter
 OUTPUT_DIR = "paper/figures"
 
 PALETTE = {
-    "primary": "#2166ac",
-    "secondary": "#4dac26",
-    "accent": "#d6604d",
-    "neutral": "#636363",
+    "primary": "#0072B2",   # Okabe-Ito blue
+    "secondary": "#009E73", # Okabe-Ito teal
+    "accent": "#D55E00",    # Okabe-Ito vermillion
+    "neutral": "#56B4E9",   # Okabe-Ito sky blue
     "subtle": "#f7f7f7",
-    "gold": "#f4a261",
+    "gold": "#E69F00",      # Okabe-Ito orange
 }
 
 mpl.rcParams.update(
@@ -53,17 +53,17 @@ mpl.rcParams.update(
         "savefig.bbox": "tight",
         "savefig.pad_inches": 0.05,
         "axes.prop_cycle": mpl.cycler(
-            color=["#2166ac", "#4dac26", "#d6604d", "#f4a261", "#636363"]
+            color=["#0072B2", "#009E73", "#D55E00", "#CC79A7", "#56B4E9"]
         ),
     }
 )
 
 DOMAIN_COLORS = {
-    "Clinical Procedures": "#2166ac",
-    "Elderly / Nursing Care": "#4dac26",
-    "Rehabilitation": "#d6604d",
-    "Mental Health / HRI": "#f4a261",
-    "Hospital Logistics": "#636363",
+    "Clinical Procedures":    "#0072B2",  # deep blue
+    "Elderly / Nursing Care": "#009E73",  # teal
+    "Rehabilitation":         "#D55E00",  # vermillion
+    "Mental Health / HRI":    "#CC79A7",  # mauve
+    "Hospital Logistics":     "#56B4E9",  # sky blue
 }
 
 
