@@ -169,15 +169,20 @@ contexts.}
 Hospital logistics requires reliable wayfinding in dynamic ward environments,
 payload capacity for transport tasks (medication carts, linen, supply bins up to
 20--30~kg), and compatibility with existing hospital information systems for task
-scheduling.\XL{Hospital logistics 这里的 wayfinding、20--30 kg payload、hospital information system compatibility 都是具体 operational requirement，建议补 hospital AMR、logistics robotics、clinical operations 或医院部署案例引用。} Crucially, it does not require bimanual dexterity, standing height,
+scheduling~\cite{ozkil2009service,bloss2011mobile}. Crucially, it does not require bimanual dexterity, standing height,
 or natural language sophistication, which raises the threshold question: is the
 humanoid form factor the right choice for this role at all?
 
-No qualifying papers were found for bipedal humanoid hospital logistics in the
-2022--2026 period. Wheeled autonomous mobile robots already address this role
-with proven operational reliability; they provide no demonstrated functional
-disadvantage for logistics tasks, and their simpler regulatory profile
-(autonomous ground vehicle versus medical device) means faster deployment.\XL{这里有两个强 claim：一是 2022--2026 没有 qualifying bipedal humanoid logistics papers，最好引用本文 search protocol / evidence table；二是 wheeled AMR 已经有 operational reliability，必须补 hospital AMR deployment paper、health-system report 或权威 industry white paper。}
+Our systematic search (Section~\ref{sec:intro}) identified no qualifying papers
+for bipedal humanoid hospital logistics in the 2022--2026 period
+(Figure~\ref{fig:evidence_dist}). Wheeled autonomous mobile robots already
+address this role with operational reliability proven over three decades of
+hospital deployment, from the HelpMate courier of the 1990s to current
+delivery fleets and sterile instrument logistics
+systems~\cite{evans1994helpmate,bloss2011mobile,fragapane2021autonomous}; they
+provide no demonstrated functional disadvantage for logistics tasks, and their
+simpler regulatory profile (autonomous ground vehicle versus medical device)
+means faster deployment.
 The humanoid form factor offers no structural advantage for corridor navigation,
 supply transport, or medication delivery over wheeled alternatives. A study of cobot logistics in a 900-bed hospital system found that nurses
 report primarily workflow integration concerns rather than form-factor
