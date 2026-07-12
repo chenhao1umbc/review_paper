@@ -1,0 +1,367 @@
+﻿%%======================================================================
+\section{Background}
+\label{sec:background}
+%%======================================================================
+
+Before assessing the clinical evidence, three core developments must be
+understood: the healthcare workforce crisis that creates demand for robotic
+assistance, the humanoid form-factor argument that makes bipedal platforms
+specifically relevant, and the LLM/VLA inflection that makes general-purpose
+clinical deployment conceivable for the first time. Two supplementary elements
+complete the context: a historical trajectory situating current platforms within
+the arc of bipedal robotics, and a structured comparison of humanoid against
+non-humanoid robotic alternatives.
+
+\subsection{The Healthcare Imperative}
+\label{sec:imperative}
+
+The global healthcare workforce is under structural strain that technology alone
+cannot resolve, but that technology may help mitigate. The World Health
+Organization projects a shortage of approximately 10 million healthcare workers
+by 2030, concentrated primarily in low- and middle-income countries but with
+significant pressure also on high-income systems where demographic aging compounds
+absolute workforce insufficiency~\cite{who2016workforce}. The root cause is well
+understood: populations in Organisation for Economic Co-operation and Development
+(OECD) countries are aging faster than working-age cohorts are
+growing~\cite{oecd2023health}. In Japan (the most extreme case), persons aged 65
+and over already represent approximately 30\% of the total population, a
+proportion that continues to rise under below-replacement fertility
+rates~\cite{japancabinet2023}. The 2023 robotics roadmap from Japan's
+Ministry of Economy, Trade and Industry (METI) explicitly identifies
+nursing-capable robots as a national strategic target by 2030,
+reflecting a governmental judgment that the eldercare workforce gap cannot be
+closed by recruitment alone.
+
+Nursing workforce shortages compound this pressure~\cite{lasater2021,aiken2014nurse},
+and the care gap operates at two intersecting levels. First, the absolute number
+of care hours demanded rises with the prevalence of chronic disease,
+multimorbidity, and frailty in an older
+population~\cite{barnett2012epidemiology,clegg2013frailty}. A patient with
+dementia and comorbid heart failure requires substantially more nursing time
+than one with a single, stable
+condition~\cite{gopfert2021primary,arling2003cognitive,moth2012chronic}, and the
+number of people living with such complex needs is projected to grow
+rapidly~\cite{kingston2018projections,prince2015burden,chowdhury2023global}.
+Second, the tasks that constitute professional care (physical repositioning of
+patients, vital-sign monitoring, medication administration, rehabilitation
+exercise guidance, and social engagement) are labor-intensive and resist
+substitution by currently deployed information technology. Electronic health
+records and remote monitoring shift documentation and surveillance load but do
+not remove the need for physical presence at the
+bedside~\cite{sinsky2016allocation,sun2020nurses,koehler2018efficacy}.
+
+Automation is best understood as a complement to human care rather than a
+replacement for it. The goal is not to displace nurses or physicians but to
+extend their reach by delegating tasks that are physically demanding, repetitive,
+or logistically routine, freeing clinicians for judgment and human connection.
+Three layers of this automation are already established. Wheeled mobile robots
+handle medication transport and specimen delivery in
+hospitals~\cite{bloss2011mobile,ozkil2009service,fragapane2021autonomous}.
+Powered exoskeletons and assistive lifting devices support rehabilitation and
+reduce the musculoskeletal strain that patient handling places on
+caregivers~\cite{nelson2006evidence,theurel2019occupational,mehrholz2017electromechanical}.
+Social and companion robots provide cognitive stimulation and companionship in
+dementia care~\cite{pu2019effectiveness,mordoch2013social,wada2007living}. What
+remains outside routine clinical deployment is a robot that can perform the
+hands-on physical care tasks (patient repositioning, standing assist, equipment
+handling, clinical examination) that still require a human body next to the
+patient~\cite{sorensen2025humanoid}. It is precisely this layer, which combines
+human-scale reach, bimanual manipulation of clinical tools, and
+patient-proximate physical assistance, that motivates interest in the humanoid
+form factor. Socially assistive robotics~\cite{feilseifer2005defining,riek2017healthcare}
+addresses part of the gap through interaction and coaching but not the
+physical-care layer, and earlier physical-assistance robots for tasks such as
+patient transfer point to the bipedal humanoid as a plausible candidate platform
+for that role~\cite{mukai2010riba,ding2014rona,desantis2008atlas}.
+
+\subsection{Why the Humanoid Form Factor}
+\label{sec:formfactor}
+
+For the purposes of this survey, a \emph{humanoid robot} is defined as a
+bipedal, free-standing robot with a human-proportioned morphology: head, torso,
+two arms, and two legs, typically ranging from 150 to 200~cm in height. This
+definition explicitly excludes social robots such as Pepper (120~cm, wheeled
+base) and NAO (58~cm, child-scale), surgical manipulator arms such as the
+da~Vinci system, and wearable exoskeletons. The rationale for this scope
+restriction is not hierarchical (social robots and surgical robots are
+clinically important and are discussed in Section~\ref{sec:alternatives}), but
+conceptual: the form-factor hypothesis concerns whether human-scale bipedal
+morphology confers advantages in human-built environments that smaller or
+non-mobile systems cannot, specifically adult-height working range, two-handed
+reach, compatibility with the spatial scale of beds, cabinets, and doorways, and
+the ability to operate clinical tools built for human
+hands~\cite{adams2000humanoid,duffy2003anthropomorphism}.
+
+Three distinct lines of argument support the humanoid form factor's suitability
+for healthcare deployment.
+
+\textbf{Environmental compatibility.} Hospitals, care homes, and residences are
+built for human-sized bipedal operators. Doorways, corridors, stairways, beds,
+examination tables, supply cabinets, and clinical instruments are largely
+dimensioned for a person roughly 160--180~cm tall with two-handed reach, even
+where wheelchairs, stretchers, and carts are also accommodated. In principle, a
+bipedal humanoid can therefore navigate these environments without infrastructure
+modification: walk through standard doorways, climb stairs, reach across a
+standard hospital bed, and operate existing clinical tools (stethoscope,
+bag-valve mask, otoscope, ultrasound probe) designed for human
+hands~\cite{adams2000humanoid,krotkov2018darpa}.
+The
+technical demonstration by Atar et al.~\cite{atar2025humanoids} explicitly grounds
+this observation: the Unitree G1 demonstrated seven medical procedures using
+existing clinical instruments, without facility modification.
+
+\textbf{Neuroscientific basis for human-robot interaction.} Action observation
+therapy (AOT), a rehabilitation technique in which patients observe biological
+motion to activate sensorimotor circuits, rests on the mirror neuron hypothesis:
+observing purposive action activates similar neural circuits as performing that
+action~\cite{rizzolatti2004mirror}. Nguyen et al.~\cite{nguyen2024eeg} provide the most direct empirical
+evidence available: EEG recordings from healthy participants during observation of
+a humanoid robot performing reaching and grasping actions showed sensorimotor
+response patterns comparable to those elicited by observing a human agent perform
+the same actions. This result is consistent with, though it does not by itself
+establish, the stronger hypothesis that a humanoid form contributes materially to
+AOT efficacy; comparative HRI studies in which a physically present robot elicits
+engagement and task responses that a screen agent does not lend the hypothesis
+further support~\cite{bainbridge2011benefits,li2015benefit}.
+A complementary behavioral finding comes from Sayis and
+Gunes~\cite{sayis2024technology}, who found that the humanoid-robot condition,
+but not a voice-only assistant, was associated with improved mood and increased
+self-disclosure in a therapeutic writing study (n\,=\,42), a difference they
+attribute to the physical embodiment of the humanoid.
+
+\textbf{User acceptance and eye-level interaction.} Patients in clinical settings
+are frequently in positions of physical vulnerability and
+dependence~\cite{gallagher2008dignity,fuseini2022dignity}.
+The SPRING
+project~\cite{alamedapineda2024spring} (\emph{scope caveat}: ARI is a wheeled
+platform, not bipedal) found that users in a real geriatric day-care facility
+explicitly cited upright, eye-level conversational presence as important for
+dignified interaction, a form-factor finding directly relevant to bipedal
+humanoid design regardless of the mobility substrate. Additional contextual
+evidence comes from research on the HRP-4C platform, which demonstrated that
+gait naturalness and facial expression generation systematically affected observer
+ratings of approachability and social presence~\cite{cao2025humanoid}.
+
+These findings collectively support, but do not yet conclusively prove, the
+form-factor hypothesis at clinical scale. The evidence is encouraging; it is not
+sufficient to substitute for clinical validation.
+
+\subsection{Why Now: The LLM/VLA Inflection Point}
+\label{sec:llm}
+
+Prior to approximately 2022, humanoid robots required explicit, hand-crafted
+programming for every behavioral task.
+A robot capable of performing a
+stethoscope placement procedure had to be programmed, step by step, for that
+specific procedure, and deploying the same robot for a second procedure required
+a substantially new programming effort~\cite{billard2008robot,schaal1999imitation}.
+Learning from demonstration was developed in part to relax this burden, letting a
+robot acquire a task from examples rather than explicit
+code~\cite{argall2009survey,ravichandar2020recent}, but before the foundation-model
+era it still generalized poorly across tasks. This approach fundamentally limited
+humanoid deployment in clinical environments, which are intrinsically
+unstructured.
+
+The emergence of large language models (LLMs), vision-language models (VLMs), and
+vision-language-action (VLA) models has changed this constraint.
+GPT-4 and its successors demonstrated that natural language can serve as a
+general-purpose task specification interface, capable of interpreting novel
+instructions and decomposing them into action plans~\cite{openai2023gpt4}.
+Physical Intelligence's $\pi_0$ and $\pi_{0.5}$ models introduced flow-based
+VLA architectures mapping language instructions and visual observations directly
+to robot actions, trained on thousands of hours of real robot
+demonstrations~\cite{black2024pi0}. Google DeepMind's Gemini Robotics applied
+multimodal foundation models to general-purpose manipulation with dexterity
+approaching human-level performance on standardized
+tasks~\cite{geminiroboticsTeam2025}. Universal Manipulation Interface (UMI)
+demonstrated that physically deployed robot teaching without robot-specific
+teleoperation hardware is viable for generalizable
+manipulation~\cite{chi2024umi}. OpenVLA~\cite{kim2024openvla} demonstrated
+that open-source, community-accessible VLA models could achieve meaningful
+generalization from limited task demonstrations. 3D-VLA~\cite{zhen20243dvla}
+extended this to three-dimensional grounding for manipulation in complex
+environments. HiRT~\cite{wen2024hirt} demonstrated hierarchical transformers
+for whole-body robot control with improved task generalization. RT-2~\cite{brohan2023rt2}
+established that vision-language foundation models trained on internet-scale
+data transfer task-relevant knowledge to robotic control without task-specific
+fine-tuning. Embodied AI surveys covering the healthcare vertical confirm that
+this software inflection is accelerating clinical
+relevance~\cite{liu2025screens,mir2026embodied,lisondra2026embodied}.
+
+Yuan et al.~\cite{yuan2025integrating} demonstrated this integration pattern in
+a dementia care context, combining reinforcement learning with a large language
+model to generate adaptive, personalized robot behavior. Although Pepper is a
+wheeled robot (not within our bipedal scope), the LLM integration
+framework, specifically its ability to model patient-specific
+cognitive-emotional states and adapt behavior accordingly, is directly applicable
+to bipedal humanoid platforms.
+
+The commercial humanoid wave of 2022--2026 coincides with this LLM inflection,
+and the coincidence is not accidental. Twelve of the thirteen commercial humanoid
+systems surveyed in Section~\ref{sec:systems} have confirmed or announced
+LLM/VLA integration as of 2026. The design assumption of current commercial
+humanoids is language-conditioned, generalist behavior: these systems are not
+being built as specialized single-task machines, a prerequisite for clinical
+task diversity.
+
+\subsection{Historical Evolution}
+\label{sec:history}
+
+Figure~\ref{fig:timeline} situates these milestones in the broader thirty-year
+arc of humanoid robot development.
+
+\begin{figure*}[!t]
+  \centering
+  \Description{Dual-track horizontal timeline from 1996 to 2026.
+  Upper track (blue): platform and technology milestones including Honda P3
+  (1996), ASIMO (2000), DARPA Robotics Challenge (2012), Atlas (2013), Tesla
+  Optimus prototype (2022), Unitree G1 release (2024), and thirteen commercial
+  platforms competing (2026).
+  Lower track (green): healthcare research events including PARO clinical RCT
+  (2010), NAO ASD therapy studies (2013), Pepper dementia pilot (2018), SPRING
+  project Paris (2022), RHP Friends IREX nursing demo (2023), Atar et al.\ seven
+  clinical procedures (2025), and Cho et al.\ humanoid surgical assistant (2026).
+  Three shaded eras: locomotion era (1996-2010), manipulation era (2010-2022),
+  and commercial scale-up era (2022-present).}
+  \includegraphics[width=\textwidth]{figures/tech_timeline.pdf}
+  \caption{Technology timeline: humanoid robotics platform milestones (upper
+  track, blue) and healthcare research events (lower track, green), 1996--2026.
+  Shaded regions demarcate three developmental eras: locomotion proof-of-concept
+  (1996--2010), manipulation and integration (2010--2022), and commercial
+  scale-up (2022--present). Healthcare research events lag platform capability
+  by approximately two years in each era.}
+  \label{fig:timeline}
+\end{figure*}
+
+The history of humanoid robotics over the past three decades can be organized
+into three eras, followed by the nascent healthcare entry period this review
+covers.
+
+\textbf{Locomotion proof-of-concept era (1996--2010).} Honda's ASIMO (2000)
+demonstrated that dynamic bipedal walking was achievable with then-current
+actuation and control technology~\cite{sakagami2002asimo,cao2025humanoid}. The
+AIST HRP series (HRP-2 through HRP-5P, 1998--2019) established the research
+infrastructure for whole-body motion planning~\cite{kaneko2019hrp5p}. Preview
+control of the zero-moment point (ZMP) provided the mathematical foundation for
+stable bipedal gait generation~\cite{kajita2003biped}. These systems proved that bipedal locomotion was a
+solvable engineering problem, with no meaningful manipulation capability or path
+to clinical relevance. ASIMO was retired in 2022.
+
+\textbf{Manipulation and integration era (2010--2020).} The DARPA Robotics
+Challenge (DRC, 2012--2015) revealed the gap between locomotion capability and
+reliable task execution. Boston Dynamics' hydraulic Atlas became the reference
+platform for whole-body manipulation research and produced dynamic capability
+demonstrations while revealing that force-controlled manipulation at clinical
+precision remained largely unsolved~\cite{cao2025humanoid}. The decade
+consolidated learning-based locomotion control, particularly deep reinforcement
+learning policies trained in simulation and transferred to
+hardware~\cite{duan2022simtoreal,radosavovic2024realworld}. Recent work
+demonstrates that transformer-based policies trained on motion-capture data
+enable zero-shot locomotion on commercial
+humanoids~\cite{radosavovic2024humanoid}. Research platforms such as
+TALOS~\cite{stasse2017talos} and iCub3~\cite{dafarra2024icub3} further expanded
+the manipulation research base during this period.
+Whole-body expressive motion control on commercial humanoids was demonstrated with high fidelity by 2024, enabling
+natural interaction behaviors relevant to care
+settings~\cite{cheng2024expressive}.
+
+\textbf{Commercial scale-up era (2022--present).} The confluence of electric
+actuator maturation, learning-based locomotion policies, and LLM integration
+produced the current commercial humanoid wave. Thirteen distinct commercial
+humanoid systems reached hardware maturity between 2022 and 2026. Global
+investment in humanoid robotics grew rapidly through 2024, driven by the
+convergence of electric actuator maturation and LLM integration, with confirmed
+commercial deployments concentrated in automotive and logistics
+applications~\cite{goldmansachs2024humanoid,ifr2025humanoid}.
+As
+of March 2026, none of these thirteen systems has been deployed in a confirmed
+clinical patient care context.
+
+\textbf{Healthcare entry point (2024--2026).} Atar et al.~\cite{atar2025humanoids}
+demonstrated bimanual teleoperation of a Unitree G1 across seven clinical
+procedures with approximately 70\% aggregate success, the first systematic
+evaluation of a current-generation commercial humanoid against a clinically
+meaningful task battery. Cho et al.~\cite{cho2026humanoid} extended this to a
+cadaveric endoscopic sinus surgery at Johns Hopkins University, the first
+documented use of a modern commercial bipedal humanoid in an actual (cadaveric)
+surgical procedure. This survey covers this nascent period.
+
+\subsection{Humanoid Robots vs.\ Other Medical Robots}
+\label{sec:alternatives}
+
+A principled comparison with existing clinical robot categories is necessary to
+locate the humanoid value proposition precisely.
+
+\subsubsection{Social Robots: NAO, Pepper, PARO}
+
+Social robots~\cite{fong2003survey,dautenhahn2007socially} have the deepest
+clinical evidence base in robotics. NAO
+(SoftBank/Aldebaran, 58~cm, 25 degrees of freedom (DOF)) has accumulated over
+1,000 peer-reviewed
+publications, with clinical use spanning autism spectrum disorder therapy,
+elderly care, and hospital patient reception~\cite{cabibihan2013robots}. Pepper
+has been deployed in approximately 2,000 Japanese healthcare facilities for
+dementia cognitive stimulation and companion interaction, with embodied
+conversational agent frameworks increasingly integrated for clinical
+applications~\cite{provoost2017embodied,sorensen2025humanoid,cunha2025humanoid}.
+Observational studies have documented psychosocial benefits of the PARO therapeutic
+seal robot in elderly residents~\cite{wada2007living}, and an integrative review
+has identified potential for social connectedness in dementia
+care~\cite{moyle2017telepresence}, and systematic reviews report benefits for
+depression in older adults~\cite{chen2018social}. Long-term deployment in care homes has been
+studied for social connectedness and dementia care~\cite{moyle2014dementia}.
+These platforms represent the most mature deployments of robots in clinical care
+settings to date~\cite{abdi2018scoping}. However, their form-factor constraints are real: NAO at 58~cm cannot
+reach adult-height work surfaces or perform physical care tasks for adults; Pepper
+on a wheeled base cannot navigate stairways or use standard clinical beds.
+
+\subsubsection{Surgical Robots: da~Vinci}
+
+The da~Vinci Surgical System is FDA-cleared (Class~II, 510(k)) with over 10
+million procedures completed across urology, gynecology, and general
+surgery~\cite{lanfranco2004robotic,sheetz2020robotic}. Robotic surgery adoption
+has grown substantially over the past decade, though adverse event analysis
+reveals the importance of systematic safety monitoring even for established
+platforms~\cite{alemzadeh2016adverse}. The historical trajectory from laboratory
+prototype to clinical instrument provides context for humanoid
+deployment~\cite{camarillo2004robotic}. Surgical robots are not competitors to
+humanoid clinical assistants; they are complementary systems addressing a
+fundamentally different need~\cite{morgan2022robots}. Da~Vinci is stationary, surgeon-controlled, and single-purpose.
+A humanoid clinical assistant operating in a post-surgical ward addresses the
+nursing and logistics tasks that da~Vinci cannot.
+
+\subsubsection{Exoskeletons: ReWalk, HAL, Ekso Bionics}
+
+Wearable robotic exoskeletons are FDA-cleared (Class~II) for spinal cord injury
+rehabilitation~\cite{esquenazi2012rewalk}, with Cochrane-level evidence supporting
+electromechanical-assisted training for walking recovery after
+stroke~\cite{mehrholz2017electromechanical}.
+These devices are established tools in rehabilitation~\cite{sorensen2025humanoid}. Exoskeletons assist the patient's own
+movement and are not substitutable with a humanoid assistant: they are worn by
+the patient, require near-ambulatory capacity, and cannot lift or reposition a
+non-ambulatory patient. The GentleHumanoid framework~\cite{lu2025gentlehumanoid}
+demonstrates the humanoid's complementary role: learning upper-body compliance
+for sit-to-stand assistance addresses patients for whom exoskeletons are not an
+option.
+
+\subsubsection{Wheeled Mobile Robots: TUG, Moxi}
+
+Autonomous wheeled mobile robots address hospital logistics with confirmed
+operational deployments at major US health systems~\cite{huang2023intelligent,morgan2022robots}.
+These systems are purpose-built for point-to-point transport on flat pre-mapped
+surfaces. They cannot navigate stairs, interact with clinical equipment not
+specifically engineered for their interfaces, or perform physical patient care
+tasks. The humanoid argument relative to wheeled logistics robots is a division
+of labor argument: wheeled robots solve the logistics layer effectively;
+humanoids are needed for the physical assistance and care layer.
+
+The four alternative categories collectively frame a finding that motivates this
+review: no existing clinical robot category combines (a)~general ambulatory
+mobility in human-built environments, (b)~bimanual dexterous manipulation of
+existing clinical tools, and (c)~natural language-mediated task specification
+enabling adaptive behavior in unstructured settings. This combination is the
+humanoid value proposition for healthcare. The evidence reviewed in this section
+supports the form-factor hypothesis without constituting clinical proof. The
+remainder of this survey characterizes where the field stands, what has been
+demonstrated, and what must be resolved before that promise can be realized.
+

@@ -1,0 +1,103 @@
+﻿%%======================================================================
+\section{Introduction}
+\label{sec:intro}
+%%======================================================================
+
+Full-size bipedal humanoids can now execute clinical procedures in the
+laboratory. A Unitree G1 teleoperated by a non-clinician completed seven
+distinct procedures: auscultation, ultrasound, intravenous catheter insertion,
+and four others~\cite{atar2025humanoids}; a second system performed
+laparoscopic surgery on a cadaveric torso~\cite{liang2025lapsurgie}; a third
+acted as a surgical first assistant in a cadaveric bilateral
+sphenoidectomy~\cite{cho2026humanoid}. Not one of these systems holds U.S. Food and Drug Administration (FDA)
+clearance or Conformit\'{e} Europ\'{e}enne (CE) marking for any clinical
+application. No registered clinical
+trial has enrolled a patient for a study involving a full-size bipedal humanoid
+platform. We nonetheless expect this gap between laboratory capability and
+clinical evidence to narrow, because two developments converged after
+2022~\cite{gu2025humanoid,cao2025humanoid}. On the hardware side, at least
+thirteen commercial full-size platforms were released between 2022 and 2026
+(Section~\ref{sec:systems}), reaching the payload, dexterity, and locomotion
+thresholds needed to attempt clinical tasks in human-scale
+environments~\cite{ifr2025humanoid,unitree2024g1,figureai2024unveils}. On the
+software side, the maturation of electric actuation and learning-based
+locomotion was accompanied by large language models (LLMs), vision-language
+models (VLMs), and vision-language-action (VLA) models that reduced the
+task-specific programming which had previously limited general-purpose humanoid
+deployment~\cite{firoozi2025foundation,kawaharazuka2024realworld,kim2024survey}.
+Where earlier systems had to be re-engineered for each new task, instruction
+following, task generalization, and adaptation to unstructured environments
+became feasible with far less bespoke
+engineering~\cite{argall2009survey,ravichandar2020recent}. In roughly three
+years, the field moved from proof-of-concept locomotion to laboratory execution
+of clinical procedure
+sequences~\cite{radosavovic2024realworld,atar2025humanoids,cho2026humanoid}.
+
+Several recent reviews approach this subject from adjacent vantage points, and we
+position our contribution against them along three axes: scope, method, and
+output. In \emph{scope}, Cao~\cite{cao2025humanoid} reviews humanoid robots and
+humanoid AI as a general technology, and Liu et al.~\cite{liu2025screens} survey
+embodied AI across the full breadth of healthcare, from diagnostic agents to
+virtual assistants; neither treats the full-size bipedal humanoid as a distinct
+clinical device class defined by its form factor. In \emph{method}, both are
+broad narrative syntheses, whereas we run a systematic search with explicit
+inclusion and exclusion criteria (detailed below) that isolates every study
+placing such a platform in a clinical task. In \emph{output}, we pair
+that evidence with a platform-by-platform capability assessment, a regulatory
+pathway analysis, and per-domain technology-readiness scoring, none of which the
+prior surveys provide. Cunha et al.~\cite{cunha2025humanoid} is the closest
+dedicated work, a 2025 scoping review, but its November 2023 search cutoff
+predates the LLM/VLA integration wave. Earlier healthcare-robot
+reviews~\cite{azeta2018review,mukherjee2022humanoid,ozturkcan2022humanoid,huang2023intelligent,morgan2022robots}
+treat platform types interchangeably, which obscures the form-factor-specific
+barriers that in practice determine clinical deployability. The 2022--2026
+bipedal-humanoid healthcare literature therefore still lacks a dedicated
+systematic review.
+
+This review covers bipedal, free-standing humanoid robots of approximately
+150--200~cm height designed for general-purpose manipulation and locomotion in
+human-scale environments, with literature from January 2022 to March 2026.
+Wheeled social robots (Pepper, ARI), sub-100~cm platforms (NAO), surgical arms
+(da~Vinci), and powered exoskeletons are excluded; each exclusion is argued on
+form-factor grounds in Section~\ref{sec:background}. RHP
+Friends~\cite{benallegue2025rhp} is the only non-commercial academic platform
+retained without caveat. The systematic search ran across five databases: arXiv
+(cs.RO, cs.AI, eess.SY), PubMed, IEEE Xplore, ACM Digital Library, and Google
+Scholar. The primary query combined platform and application terms:
+(\emph{humanoid robot} OR \emph{bipedal robot}) AND (\emph{healthcare} OR
+\emph{medical} OR \emph{clinical} OR \emph{nursing} OR \emph{rehabilitation} OR
+\emph{surgery}), supplemented by domain-specific secondary searches and
+citation-list hand-search. Title and abstract screening of 147 candidate papers
+yielded 52 full-text reviews; applying inclusion and exclusion criteria produced
+a focused set of 14 clinical studies. To our knowledge this is the complete
+clinical evidence base for bipedal humanoid research to date, and mapping it in
+full, rather than sampling it, is itself one contribution of this review; the
+larger body of material we survey spans platforms, software, safety standards,
+and regulation.
+Concurrent with the literature search, we surveyed 13
+commercial and 12 academic systems meeting scope criteria, verifying each
+specification against manufacturer documentation or peer-reviewed publications;
+the full list, per-platform sources, and specifications are given in
+Table~\ref{tab:platforms}~\cite{figureai2024unveils,unitree2024g1,bostondynamics2024atlas,apptronik2023apollo,sanctuaryai2023phoenix,dafarra2024icub3}. This review makes four contributions:
+
+
+\begin{itemize}
+\item A systematic review of humanoid robots in healthcare across the 2022--2026
+  period, over which electric actuation, learning-based control, and LLM/VLA
+  integration matured in parallel, with Technology Readiness Level (TRL)
+  assignments per ISO~16290:2013.
+\item A capability assessment of 25 bipedal humanoid platforms (13 commercial,
+  12 academic) against five clinical domain requirements.
+\item A regulatory pathway analysis covering FDA De~Novo, EU Medical Device
+  Regulation (MDR) 2017/745, and EU AI~Act 2024/1689.
+\item A Humanoid Clinical Deployment Readiness (HCDR) framework linking technical
+  maturity to regulatory pathway for five clinical roles.
+\end{itemize}
+
+The remainder of this paper is organized as follows:
+Section~\ref{sec:background} provides background; Section~\ref{sec:systems}
+surveys current humanoid capabilities; Section~\ref{sec:applications} analyzes
+what healthcare demands from humanoid robots; Section~\ref{sec:challenges}
+examines clinical deployment challenges; Section~\ref{sec:discussion} discusses
+future directions; Section~\ref{sec:conclusion} concludes.
+

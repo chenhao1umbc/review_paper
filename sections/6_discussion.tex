@@ -1,0 +1,414 @@
+﻿%%======================================================================
+\section{Discussion and Future Work}
+\label{sec:discussion}
+%%======================================================================
+
+The evidence surveyed in Sections~\ref{sec:applications} and~\ref{sec:challenges}
+shows a field that can demonstrate clinical relevance in laboratory settings but
+has not cleared any of the three thresholds required for operational deployment:
+accepted safety standards, clinical evidence in human subjects, and regulatory
+precedent.
+
+\subsection{Technology Readiness Assessment}
+\label{sec:trl}
+
+The TRL assignments in Table~\ref{tab:evidence} provide the starting point. The
+aggregate finding (TRL~3--4 across all domains for bipedal humanoid
+platforms) is not a uniform statement; the TRL ceiling for each domain is
+governed by a specific domain-particular barrier.
+
+\textbf{Clinical procedures (current TRL~3--4).} Atar et
+al.~\cite{atar2025humanoids}, Liang et al.~\cite{liang2025lapsurgie}, and Cho et
+al.~\cite{cho2026humanoid} constitute the most technically substantive evidence
+in the review. The cadaveric study of Cho et al.\ is the current frontier of the
+evidence sequence: the step immediately preceding an IRB-approved human-subject
+feasibility trial. Advancing to TRL~5 requires two things simultaneously: a
+structured IRB-approved feasibility study in a specific narrow indication
+(telemedicine-assisted physical examination is the most defensible starting point,
+because fully teleoperated operation keeps a human in the decision loop at all
+times), and independent replication on a platform other than the Unitree G1.
+
+\textbf{Elderly and nursing care (TRL~4--5 for social robots; TRL~3--4 for
+bipedal humanoids).} The gap between platform classes is analytically significant.
+The SPRING project achieved TRL~4--5 through real-world deployment with 60+~older
+adult users over four years~\cite{alamedapineda2024spring}. RHP
+Friends, the only purpose-built bipedal nursing humanoid, demonstrated patient
+transfer tasks at IREX~2023 but has not been evaluated in an actual care
+facility~\cite{benallegue2025rhp}. The path to TRL~5 for bipedal humanoids is
+not a question of platform capability but of deployment context: a structured
+pilot in an actual care facility, using SPRING-derived methodology on a bipedal
+platform, is the specific experiment that would advance this domain.
+
+\textbf{Rehabilitation and mental health (TRL~3--4 and TRL~4--5, respectively).}
+These two domains share a structural problem: the strongest available evidence
+was generated on the wrong platforms. In rehabilitation, Nguyen et
+al.~\cite{nguyen2024eeg} establish neuroscientific rationale, Sobrepera et
+al.~\cite{sobrepera2022feasibility} establish clinical acceptability in a small
+case series, and Lu et al.~\cite{lu2025gentlehumanoid} establish the
+contact-safety engineering foundation, but none of the three used a full-size
+modern bipedal humanoid with a clinical patient population. In mental health,
+Robinson et al.~\cite{robinson2023brief} ($n\,=\,230$ RCT) and Sayis and
+Gunes~\cite{sayis2024technology} ($n\,=\,42$) achieve methodologically strong
+results with consistent embodiment advantage findings, but neither specifies the
+humanoid model, and all participants are non-clinical wellness populations.
+
+The advance required in both domains is the same experiment in different forms:
+an IRB-approved human-subject study using a specified full-size bipedal platform
+with a defined patient population. For rehabilitation, the target is a stroke
+trial with standardized outcome measures (Fugl-Meyer Assessment,
+10-meter walk test). For mental health, the target is a feasibility trial with a
+clinically diagnosed population assessing validated scales. Both domains are one
+targeted study away from TRL~5. Both are currently blocked by the absence of
+that study, not by lack of underlying evidence.
+
+\textbf{Hospital logistics (TRL~2).} No peer-reviewed evidence exists for
+humanoid-specific hospital logistics tasks. Wheeled autonomous mobile robots
+already address this domain with demonstrated operational reliability. Hospital
+logistics is not a priority for bipedal humanoid development at this stage.
+
+\textbf{Cross-domain finding.} No domain has reached TRL~7 (system prototype
+demonstrated in operational environment). TRL~5 (the threshold of first
+human-subject validation in a controlled clinical setting) is the realistic
+five-year target for the three leading domains.
+
+Figure~\ref{fig:trl} visualizes the current TRL state and TRL~5 target across
+all five clinical domains.
+
+\begin{figure}[t]
+  \centering
+  \Description{Horizontal bar chart showing the Technology Readiness Level (TRL)
+  assessment for five clinical domains: clinical procedures (TRL 3--4), elderly
+  and nursing care (TRL 3--5), rehabilitation (TRL 3--4), mental health and HRI
+  (TRL 3--5), and hospital logistics (TRL 2). A dashed vertical line marks TRL 5
+  as the five-year target for leading domains.}
+  \includegraphics[width=\linewidth]{figures/trl_readiness.pdf}
+  \caption{Technology Readiness Level (TRL) assessment by clinical domain
+  (March 2026). Current TRL range (filled bars) and TRL~5 target (dashed line)
+  per ISO 16290:2013. No domain has reached TRL~7 (operational environment
+  prototype); TRL~5 (relevant-environment validation) is the realistic five-year
+  target for clinical procedures, elderly care (bipedal), and rehabilitation.}
+  \label{fig:trl}
+\end{figure}
+Figure~\ref{fig:capability_gap} quantifies the gap between best current commercial
+performance and the scores required to reach TRL~5 for clinical deployment.
+
+\begin{figure}[htbp]
+  \centering
+  \Description{Horizontal grouped bar chart with six rows (capability dimensions)
+  and two bars per row. Blue bars show current scores (0-10 scale) for each
+  dimension; orange bars show required scores for TRL 5 clinical deployment. The
+  six dimensions are: Manipulation Precision (current 4, required 8), Bipedal
+  Gait Stability (current 5, required 7), LLM/VLA Task Generalization (current 5,
+  required 7), Contact Safety (current 3, required 8), Regulatory Compliance
+  Readiness (current 2, required 8), and Human Trust Score (current 5, required 7).
+  The largest gaps are in Regulatory Compliance Readiness and Contact Safety.}
+  \includegraphics[width=\columnwidth]{figures/capability_gap.pdf}
+  \caption{Humanoid capability gap: current best-commercial scores (blue, 2026)
+  versus required scores for TRL~5 clinical deployment (orange). Scale 0--10
+  represents engineering and evidence maturity. Regulatory Compliance Readiness
+  and Contact Safety show the largest absolute gaps; Manipulation Precision is
+  the dominant procedural engineering gap.}
+  \label{fig:capability_gap}
+\end{figure}
+
+\subsection{Near-Term Deployable Roles}
+\label{sec:roles}
+
+Three roles have the strongest case for TRL~5 achievement within five years.
+
+\textbf{Role~1: Telemedicine and telepresence clinical assistant.} The teleoperated
+mode is the key risk-mitigation design choice: by keeping a human operator in the
+decision loop at all times, it avoids the regulatory classification and safety
+validation burdens associated with autonomous patient contact. The technical
+infrastructure exists: Atar et al.~\cite{atar2025humanoids} demonstrate
+teleoperated clinical task execution across seven procedures, and Liang et
+al.~\cite{liang2025lapsurgie} extend this to laparoscopic surgery. The primary
+application is specialist access extension: enabling a remote specialist to
+conduct a physical examination or assist in a procedure in a rural or low-resource
+setting. Realizing this role at TRL~5 requires a defined physical examination
+protocol, remote operator training standards, and IRB oversight.
+
+\textbf{Role~2: Rehabilitation movement demonstrator.} This role requires no
+direct patient contact: the humanoid demonstrates movements that the patient
+observes or follows. The bipedal gait safety gap identified in
+Section~\ref{sec:safety}, the most universally blocking technical
+barrier, becomes irrelevant to this specific role, because the safety concern is
+dynamic contact force during locomotion near patients, not movement observation at
+distance. The neuroscientific rationale is grounded in Nguyen et al.'s mirror
+neuron evidence~\cite{nguyen2024eeg}; the clinical acceptability is established by
+Sobrepera et al.'s case series~\cite{sobrepera2022feasibility}. Advancing requires a registered
+feasibility trial adapting a NAO or Pepper protocol to a full-size bipedal
+humanoid demonstrator in stroke rehabilitation.
+
+\textbf{Role~3: Structured eldercare companion and physical assistant.} RHP
+Friends~\cite{benallegue2025rhp} is the only platform designed specifically for
+this role. The hybrid autonomous/teleoperated architecture (in which routine
+tasks run autonomously and non-routine tasks are handed to a remote
+operator) is the correct design for this deployment scenario. The SPRING
+project~\cite{alamedapineda2024spring} provides the deployment methodology and
+user-acceptance evaluation framework. Realizing this role at TRL~5 requires an
+actual care facility pilot.
+
+\subsection{Research Priorities}
+\label{sec:research}
+
+Four priorities, ordered by their blocking impact on the entire field:
+
+\textbf{Priority~1: Clinical safety validation for bipedal gait in patient-contact
+environments.} The four gait-induced contact risk scenarios documented in
+Section~\ref{sec:safety} are not bounded by any existing standard. No IRB will
+approve human-subject studies involving physical patient contact by a full-size
+bipedal humanoid without instrumented biomechanical data on these force profiles
+and an accepted safety standard or architectural safeguard. Among the priorities
+identified here, this is the one most likely to affect multiple clinical domains,
+because it would provide a basis for patient-contact studies across the leading
+applications.
+
+\textbf{Priority~2: Human-subject feasibility studies in leading applications.}
+The cadaveric endoscopy study of Cho et al.~\cite{cho2026humanoid} is the current
+clinical frontier. The specific next step is an IRB-approved, registered
+feasibility study in a narrow indication with an explicit safety monitor protocol.
+UC San Diego (Yip Laboratory) and Johns Hopkins are especially well positioned
+for such work, given their existing contributions to the clinical procedures
+literature.
+
+\textbf{Priority~3: Open clinical demonstration dataset for VLA training.} No
+public dataset of humanoid robot demonstrations in clinical or
+clinical-simulated environments exists. Creating an open clinical demonstration
+dataset, even using simulators and clinical task protocols with mannequins, would
+unlock foundation model fine-tuning for clinical applications and enable the
+broader research community to advance clinical policy learning.
+
+\textbf{Priority~4: Platform diversification for evidence generalizability.} The
+concentration of clinical procedure evidence on the Unitree G1 (Atar et al., Liang et al., Cho et al.) is a
+scientific limitation. Replication of clinical task evaluations on RHP Friends,
+TALOS, or other platforms would establish whether current findings are
+platform-specific or generalizable to the bipedal humanoid class.
+
+\subsection{Humanoid Clinical Deployment Readiness Framework}
+\label{sec:hcdr}
+
+The TRL scale, originally defined by NASA for space systems~\cite{mankins1995trl}
+and later formalized as ISO~16290:2013~\cite{iso16290} for broader
+application~\cite{heder2017trl}, captures technology maturity along a single
+axis. Clinical deployment decisions require reasoning along at least three
+independent axes simultaneously: \emph{autonomy level}, \emph{patient-contact intensity}, and
+\emph{regulatory complexity}. We introduce the Humanoid Clinical Deployment
+Readiness (HCDR) framework to make this three-dimensional space explicit. The
+framework is not a scoring system; it is a classification tool for locating
+specific role-platform combinations in the deployment readiness space and
+identifying which axis is the binding constraint.
+
+\textbf{Axis~1: Autonomy level.} Roles range from fully teleoperated
+(human operator controls every action in real time) through supervised autonomy
+(the robot executes programmed sub-tasks under human oversight and with human
+abort authority) to conditional autonomy (robot operates autonomously under
+defined operational conditions with human escalation) and full autonomy
+(unsupervised operation). Current evidence supports only fully teleoperated roles.
+No qualifying study demonstrates supervised autonomy in a patient-contact task.
+
+\textbf{Axis~2: Patient-contact intensity.} Contact ranges from no direct contact
+(observation, companionship, logistics) through indirect contact (physical
+interaction via tools or instruments, patient not in direct force chain) to direct
+physical contact (hands on patient, transfer assistance, examination). The binding
+regulatory and safety constraints scale sharply with contact intensity: indirect
+tool contact requires force control validation; direct physical contact requires
+validated safety standards that do not yet exist for bipedal platforms.
+
+\textbf{Axis~3: Regulatory complexity.} Complexity is determined by device
+classification (Class~I--III under FDA; Class~I--III under EU MDR), presence of
+AI/ML as a decision-making component, and whether the application involves
+therapeutic intent (triggering clinical investigation requirements) or supportive
+logistics (lower classification pathway). Full autonomy with direct patient contact
+and therapeutic intent is the highest-complexity combination; teleoperation for
+physical examination assistance with physician oversight is among the lowest.
+
+Table~\ref{tab:hcdr} maps the three near-term deployable roles against the HCDR
+framework and identifies the binding constraint on each path.
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Humanoid Clinical Deployment Readiness (HCDR) Framework (March 2026).}
+  \label{tab:hcdr}
+  {\fontsize{8.9pt}{10.2pt}\selectfont
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.20cm}
+                  >{\raggedright\arraybackslash}p{3.40cm}
+                  >{\raggedright\arraybackslash}p{2.85cm}
+                  >{\raggedright\arraybackslash}p{3.10cm}
+                  >{\raggedright\arraybackslash}p{4.95cm}@{}}
+    \toprule
+    \textbf{Role} & \textbf{Autonomy} & \textbf{Patient Contact} & \textbf{Regulatory Complexity} & \textbf{Binding Constraint} \\
+    \midrule
+    Telemedicine assistant & Teleoperated & Indirect (tools) & Class~II / De~Novo & Safety standard: bipedal gait \\[4pt]
+    Rehabilitation demonstrator & Supervised & None & Class~I--II & Evidence: patient trial \\[4pt]
+    Eldercare companion / assist & Supervised-to-conditional & Direct & Class~IIb--III & Both: gait safety + contact standard \\[4pt]
+    Laparoscopic surgical assistant & Teleoperated & Indirect (instruments) & Class~III & RCM precision + regulatory precedent \\
+    \bottomrule
+    \multicolumn{5}{@{}p{18.50cm}@{}}{\textbf{Binding constraint} is the HCDR axis whose gap most delays deployment for the role.} \\
+    \multicolumn{5}{@{}p{18.50cm}@{}}{\textbf{TRL} = Technology Readiness Level (ISO 16290:2013); \textbf{RCM} = remote center of motion.} \\
+  \end{tabular}
+  }
+  }
+\end{table*}
+
+The framework reveals that the binding constraint is not uniform across roles.
+For the telemedicine assistant, the primary block is a missing safety standard for
+bipedal gait in patient-proximate environments, an engineering and standards-body
+problem, not a clinical evidence problem. For the rehabilitation demonstrator, the
+block is clinical evidence: the safety case is straightforward (no direct contact),
+but no powered clinical trial exists. For eldercare physical assistance, both gait
+safety and direct-contact force standards are missing simultaneously. The HCDR
+matrix operationalizes this distinction: investment in gait safety standards
+unblocks the telemedicine and eldercare roles; investment in a rehabilitation
+trial can proceed independently without waiting for standards resolution.
+
+\subsection{Practitioner Guidance}
+\label{sec:practitioners}
+
+The evidence synthesized in this review has different implications for different
+practitioner audiences.
+
+\textbf{For clinical engineers and hospital technology leadership.} The commercial
+humanoid platforms entering the market in 2024--2026 are designed for industrial
+labor, not healthcare. Procurement decisions made in 2026--2027 should distinguish
+between research-access platforms (Unitree G1: open SDK, lowest cost, only
+platform with published clinical task evidence, but physically limited) and future
+clinical platforms (RHP Friends: purpose-built but academic/prototype-only; Sanctuary
+Phoenix Gen~8: highest haptic sensing specification but closed ecosystem). No
+\xl{这里的平台比较涉及 open SDK、lowest cost、prototype-only、highest haptic sensing specification、closed ecosystem 等产品规格和商业属性，建议补充权威来源，例如公司官方技术文档、产品白皮书、公开规格表，或前文已经引用过的对应平台论文；如果前文已经建立这些事实，这里可以改成引用前文表格或章节，避免重复堆 citation。}
+commercial platform is ready for unsupervised clinical use in any application.
+Any hospital-based evaluation program should structure the initial phase as an IRB-
+approved research protocol, not an operational pilot, to ensure safety monitoring,
+data collection, and liability clarity. Partnering with an academic medical center
+(not a robotics company) to co-design the evaluation protocol is the appropriate
+model.
+
+\textbf{For robotics engineers entering the healthcare domain.} The most impactful
+contribution from the engineering community is not yet another manipulation
+algorithm or VLA architecture, which is not where the field is currently
+blocked. Four specific
+infrastructure gaps documented in Section~\ref{sec:accessibility} represent
+engineering problems with no current open-source solutions: (1) a runtime safety
+layer enforcing ISO/TS~15066 contact force limits for bipedal dynamic scenarios;
+(2) clinical workflow integration middleware connecting humanoid action APIs to
+HL7 FHIR and hospital EHR systems; (3) a public clinical demonstration dataset
+for VLA fine-tuning on medical procedures; and (4) validated medical simulation
+environments with patient anatomy proxies and clinical instrument physics. Any
+of these would materially advance the field more than platform capability
+improvements at current TRL levels.
+
+\textbf{For clinical researchers and trial designers.} Three study designs are
+currently feasible and would individually advance the field: (1) A registered,
+IRB-approved feasibility study of teleoperated humanoid physical examination
+assistance in a telemedicine-enabled rural clinic or outpatient setting, the
+lowest-complexity entry into patient-contact evidence. (2) A pilot RCT of
+humanoid-delivered action observation therapy for stroke rehabilitation, adapting
+the Sobrepera et al.\ protocol to a full-size bipedal platform and powered for
+a functional outcome measure (Fugl-Meyer Assessment). (3) A prospective
+multi-session care facility pilot adapting SPRING methodology to RHP Friends or
+an equivalent purpose-built platform, measuring care quality and staff burden
+outcomes. All three designs require a pre-specified safety monitoring protocol
+and an a priori definition of the study-stopping criteria for unexpected adverse
+events.
+
+\subsection{Regulatory Roadmap}
+\label{sec:roadmap}
+
+Figure~\ref{fig:regulatory} illustrates the parallel regulatory tracks and their
+key decision points for both jurisdictions.
+
+\begin{figure}[htbp]
+  \centering
+  \Description{Two-column flowchart comparing the US FDA and EU regulatory
+  pathways for a clinical humanoid robot. Left column (FDA): novel device with
+  no predicate leads to De Novo pathway (21 CFR 513(f)(2)), Pre-Submission
+  meeting, De Novo request submission with bench and clinical data, FDA review
+  approximately 12 months, then Class II market authorization with post-market
+  surveillance. Right column (EU): EU MDR Class IIb/III assessment with Notified
+  Body, EU AI Act high-risk AI system conformity assessment (effective August
+  2026), clinical investigation under MDR Article 62, CE marking plus AI Act
+  declaration of conformity, then EU market authorization with post-market
+  clinical follow-up. A red banner at the bottom highlights the critical gap in
+  both tracks: no accepted safety standard exists for bipedal gait in
+  patient-proximate environments, as ISO 13482 excludes medical devices and
+  ISO/TS 15066 is designed for fixed-base collaborative arms.}
+  \includegraphics[width=0.85\columnwidth]{figures/regulatory_pathways-1.pdf}
+  \caption{Regulatory pathways for clinical humanoid robots: FDA De~Novo (US,
+  left) and EU MDR plus EU AI Act (EU, right). Both tracks require the same
+  foundational evidence (safety standards for bipedal gait in patient-proximate
+  environments) that does not yet exist (bottom banner). FDA De~Novo is
+  identified as the most plausible first-clearance pathway; EU MDR plus AI Act
+  dual compliance represents the EU parallel track.}
+  \label{fig:regulatory}
+\end{figure}
+\xl{这里的 FDA De Novo、21 CFR 513(f)(2)、predicate/510(k)、EU MDR、EU AI Act 生效时间和 MDR Article 62 都是具体监管事实，必须有官方法规或权威 guidance 支撑；如果 Section 5 已经加过这些 citation，这里建议引用 Section~\ref{sec:challenges} 或对应监管小节/表格，不需要重复堆 citation。}
+
+The path to the first regulatory clearance requires three sequential steps.
+
+\textbf{Step~1: Performance standards definition.} A joint effort among humanoid
+manufacturers, academic medical centers (UCSD, JHU), and FDA's Center for Devices
+and Radiological Health (CDRH) is required to define the Special Controls that
+any De~Novo submission must meet: fall prevention performance requirements, patient
+contact force limits for dynamic bipedal scenarios, teleoperation latency bounds,
+and AI/ML software validation methodology consistent with FDA's Good Machine
+Learning Practice principles and the December~2024 PCCP guidance.
+
+\textbf{Step~2: IRB feasibility study generating clinical evidence.} A registered,
+IRB-approved feasibility study in a specific narrow indication generates the
+clinical evidence required for a De~Novo submission. This study must be designed
+from the outset with regulatory submission in mind: pre-specified safety endpoints
+and a defined safety monitor protocol.
+
+\textbf{Step~3: De~Novo submission establishing a regulatory predicate.} The
+De~Novo application proposes a new product code for bipedal humanoid clinical
+assistants with Special Controls from Steps~1 and~2. First clearance establishes
+a predicate device, enabling subsequent 510(k) applications.
+
+For the EU, the parallel path requires: an ISO/TC~299 scope revision of
+ISO~13482 to include clinical humanoids; EU MDR Class~IIa conformity assessment;
+and EU AI Act compliance under high-risk AI obligations (effective August~2026 for
+new AI systems; August~2027 for AI embedded in regulated medical products).
+Regulatory precedents for managing layered framework compliance exist in the
+surgical robotics domain.
+
+\subsection{Ethical Considerations}
+\label{sec:ethics}
+
+\textbf{Dignity of care.} Physical care interactions require that the patient
+feels cared for, not processed. The SPRING project finding that participants cited
+eye-level conversational positioning as important for dignified
+interaction~\cite{alamedapineda2024spring} provides direct empirical evidence that
+form factor affects perceived dignity of care. The uncanny valley phenomenon, the
+negative affective response elicited by human-like but not fully human
+entities~\cite{mori2012uncanny}, is particularly relevant for humanoid design in
+care settings, where distress rather than curiosity is the cost of a poor
+perceptual response. Care robotics designers must incorporate patient dignity
+explicitly as a design criterion alongside technical performance metrics.
+
+\textbf{Liability and informed consent.} No current healthcare liability
+framework assigns accountability for harm caused by an autonomous or
+semi-autonomous robotic action in a care setting. The ethical dimensions of robot
+care for elderly individuals, including dignity, autonomy, and emotional
+manipulation risks, require explicit frameworks before
+deployment~\cite{sharkey2012granny}. Before any human-subject deployment, consent
+processes for humanoid-assisted care must be defined. These require deliberate
+engagement between legal, ethical, and clinical stakeholders before the first
+human-subject study is launched.
+
+\textbf{Data privacy.} A humanoid operating in a patient room integrates cameras,
+microphones, depth sensors, physiological monitors, and, in future deployments,
+integration with EHR systems, into a single mobile platform in one of the most
+privacy-sensitive environments imaginable. No data governance framework specific
+to clinical humanoid sensor data currently exists.
+
+\textbf{Workforce framing.} The evidence does not support a displacement
+narrative. No clinical role exists that a humanoid currently performs reliably
+enough to replace a trained nurse or clinician. The evidence-supported framing is
+task offloading: routine, physically demanding, or cognitively repetitive tasks
+that do not require clinical judgment could be offloaded, freeing clinicians for
+judgment-requiring activities. The administrator survey of Imtiaz and
+Khan~\cite{imtiaz2024perceptions} shows that the perceived risk of reduced human
+contact is a primary institutional barrier; communicating the task-offloading
+framing accurately to institutional decision-makers is as important as resolving
+the technical barriers.

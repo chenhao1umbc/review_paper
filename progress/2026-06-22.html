@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-22 WeChat Review Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Review Notes</p>
+      <h1>2026-06-22 to 2026-06-23</h1>
+      <p class="lead">WeChat discussion notes on citation coverage, related-review comparison, PDF workflow, and research-article quality.</p>
+    </div>
+    <nav class="top-links" aria-label="Page links">
+      <a href="../progress.html">Progress index</a>
+      <a href="../main.pdf">Current PDF</a>
+      <a href="../sections/1_introduction.tex">Introduction</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <p class="eyebrow">Source</p>
+      <h2>Conversation Window</h2>
+      <p>Notes reconstructed from a WeChat screenshot covering June 22, 2026 at 09:44, 09:53, 09:56, and 10:01, with a continuation on June 23, 2026 at 11:03 and 11:25.</p>
+      <p>The screenshot included discussion around the ACM CSUR review manuscript, especially the introduction and related-review positioning.</p>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Citation QA</p>
+      <h2>References and Source Quality</h2>
+      <ul>
+        <li><strong>Issue raised:</strong> the sentence about 13 commercial platforms released between 2022 and 2026 needed citations.</li>
+        <li><strong>Current manuscript status:</strong> the sentence now cites IFR and manufacturer/platform sources: <code>ifr2025humanoid</code>, <code>unitree2024g1</code>, and <code>figureai2024unveils</code>.</li>
+        <li><strong>Additional platform table support:</strong> the platform list also cites Figure AI, Unitree, Boston Dynamics, Apptronik, Sanctuary AI, and iCub3 sources.</li>
+        <li><strong>Quality note:</strong> official company pages and manufacturer announcements are acceptable for product-release and specification claims, but they should not be used as evidence for clinical, safety, or performance claims.</li>
+        <li><strong>Policy update:</strong> a separate <code>research-citation-policy</code> skill was added to the Windows Documents master template. It requires top journals, top conferences, official standards/regulatory documents, authoritative industry white papers, or official company documentation matched to the claim type.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Related Work</p>
+      <h2>Survey Comparison</h2>
+      <ul>
+        <li><strong>Issue raised:</strong> do not merely say other surveys exist; compare against the closest reviews and explain the gap.</li>
+        <li><strong>Current manuscript status:</strong> the introduction now compares against Cao, Liu et al., Cunha et al., and earlier healthcare-robot reviews.</li>
+        <li><strong>Comparison axes now used:</strong> scope, method, and output.</li>
+        <li><strong>Claim now made:</strong> prior reviews either do not isolate full-size bipedal humanoids as a clinical device class, predate the post-2022 LLM/VLA wave, or do not provide platform capability, regulatory pathway, and TRL readiness analysis together.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Comment Preservation</p>
+      <h2>Chinese LaTeX Comments</h2>
+      <ul>
+        <li><strong>Check performed:</strong> searched current <code>main.tex</code>, all numbered <code>sections/*.tex</code>, the preserved monolithic snapshot, and the split snapshot for Chinese characters and <code>\XL{...}</code> comments.</li>
+        <li><strong>Finding:</strong> no Chinese review comments were found. The only remaining comment-related line is the <code>\XL</code> macro definition in <code>main.tex</code>.</li>
+        <li><strong>Implication:</strong> the earlier Chinese comments were likely removed or not preserved during previous editing. The screenshot discussion is now recorded here as a progress note.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Workflow</p>
+      <h2>PDF and Editing Process</h2>
+      <ul>
+        <li>The discussion noted that PDF preview did not automatically update after edits, and manual refresh or save control was needed.</li>
+        <li>The manuscript has since been reorganized so the root <code>main.tex</code> compiles into <code>build/main.pdf</code>, and the current PDF is copied to root <code>main.pdf</code> for the progress dashboard.</li>
+        <li>The original single-file manuscript is preserved at <code>draft/2026-07-07/original_monolithic_main.tex</code>.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Writing Direction</p>
+      <h2>Research Article Quality</h2>
+      <ul>
+        <li>The discussion emphasized that agents can summarize review papers, but writing a strong research article still requires a clear original contribution and author judgment.</li>
+        <li>Feedback from June 23 suggested the first section read broadly, like moving through a large ocean with a few islands, and needed stronger authorial structure and sharper contribution framing.</li>
+        <li>Future revision should preserve the systematic survey structure while making the paper's own contribution more concrete: form-factor scope, post-2022 LLM/VLA shift, clinical deployment readiness, and regulatory/TRL framework.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Review Checkpoint</p>
+      <h2>Text Review Position</h2>
+      <p>Author clarification on July 7, 2026: paragraph-by-paragraph text/citation review had reached the end of Section 3, not merely the end of the Introduction.</p>
+      <p>Figure review later reached Fig. 5, but that is a separate figure-layout pass and should not be treated as evidence that text review reached the Fig. 5 section.</p>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Next Steps</p>
+      <h2>Action Items</h2>
+      <ul>
+        <li>Audit each major claim in the introduction against the new citation policy.</li>
+        <li>Replace weak sources where a stronger top-journal, top-conference, standards, regulatory, or authoritative industry source exists.</li>
+        <li>Keep future Chinese review comments either as tracked progress notes or explicit LaTeX comments until addressed.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

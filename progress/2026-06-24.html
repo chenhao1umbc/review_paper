@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-24 Figure Review Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Figure Review</p>
+      <h1>2026-06-24 to 2026-06-25</h1>
+      <p class="lead">WeChat discussion notes on figure typography, layout, alignment, whitespace, and plot-source updates.</p>
+    </div>
+    <nav class="top-links" aria-label="Page links">
+      <a href="../progress.html">Progress index</a>
+      <a href="../main.pdf">Current PDF</a>
+      <a href="../scripts/gen_figures.py">Figure script</a>
+      <a href="../figures/tech_timeline.pdf">Fig. 1</a>
+      <a href="../figures/evidence_landscape.pdf">Fig. 2</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <p class="eyebrow">Source</p>
+      <h2>Conversation Window</h2>
+      <p>Notes reconstructed from a WeChat screenshot covering June 24, 2026 at 09:49, 09:57, 10:06, and 10:13, with follow-up on June 25, 2026 at 07:23, 21:37, 21:43, and 21:51.</p>
+      <p>The discussion focused on figure readability and whether the figure-generation code in the original repository had actually been updated.</p>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Global Figure Requirements</p>
+      <h2>Style and Layout Rules</h2>
+      <ul>
+        <li>Figure text should be larger and visually close to the caption font size.</li>
+        <li>Across all paper figures, use consistent font size, color style, formatting, alignment, and whitespace logic.</li>
+        <li>Use fewer visual treatments where possible: fewer formats, fewer colors, fewer competing styles.</li>
+        <li>Figures should feel logically organized, extremely symmetric, and comfortable for scholarly reviewers to read.</li>
+        <li>A figure should not look like a second large paragraph block on the page. The visual area and caption should have clear hierarchy.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Fig. 1</p>
+      <h2>Technology Timeline</h2>
+      <ul>
+        <li>The figure should sit near the top of the page and use the page width cleanly.</li>
+        <li>The left and right margins should feel balanced, with the figure centered relative to the page.</li>
+        <li>The in-figure text should not be smaller than the caption; otherwise the page reads as fragmented.</li>
+        <li>Reviewer note: the screenshot circled a left-side crowding problem around the earliest timeline label.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Fig. 2</p>
+      <h2>Evidence Distribution</h2>
+      <ul>
+        <li>The text in Fig. 2 was judged too large; reduce it to approximately caption size.</li>
+        <li>The legend at the bottom should not use a boxed frame.</li>
+        <li>The figure should be placed more centrally; the screenshot noted too much blank space on the right side.</li>
+        <li>The plot should avoid excessive surrounding whitespace and should not leave the reader's eye pulled to empty areas.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Fig. 5</p>
+      <h2>Capability Gap</h2>
+      <ul>
+        <li>Fig. 5 was considered mostly acceptable.</li>
+        <li>The main remaining issue was uncertainty about whether it looked like a true vector figure.</li>
+        <li>Text should still be adjusted to match caption-scale readability.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Repository and Code</p>
+      <h2>Plot Source Update</h2>
+      <ul>
+        <li>Chen Hao reported that the figure source had been updated in <code>https://github.com/chenhao1umbc/review_paper.git</code>.</li>
+        <li>The repository was described as the original paper repo, including article text and figure-generation code.</li>
+        <li>The code was expected to continue changing, especially the plotting code.</li>
+        <li>Follow-up note: a single image had been updated, but the compiled result was not visible due to slow network or delayed build.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Review Checkpoint</p>
+      <h2>Where Review Had Reached</h2>
+      <p>Based on this screenshot, the explicit figure-review checkpoint had reached Fig. 1 technology timeline, Fig. 2 evidence distribution, and Fig. 5 capability gap. This does not mean the paragraph-by-paragraph text review had reached the manuscript location around Fig. 5.</p>
+      <p>Important distinction: figure review advanced farther than text/citation review. Author clarification on July 7, 2026: paragraph-by-paragraph text/citation review had reached the end of Section 3; figure review separately reached Fig. 5.</p>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Next Steps</p>
+      <h2>Action Items</h2>
+      <ul>
+        <li>Compare the current local figures against the GitHub figure-generation code.</li>
+        <li>Regenerate figures from the latest source code when available.</li>
+        <li>Check Fig. 1, Fig. 2, and Fig. 5 visually inside the compiled PDF, not only as standalone PDFs.</li>
+        <li>Apply a unified figure style: consistent font scale, unboxed legends where possible, centered placement, and balanced whitespace.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

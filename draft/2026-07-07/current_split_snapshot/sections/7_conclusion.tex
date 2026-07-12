@@ -1,0 +1,89 @@
+﻿%%======================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%%======================================================================
+
+As of March 2026, no bipedal humanoid robot holds FDA clearance or CE marking for
+any clinical application. No registered Phase~I, II, or III clinical trial has
+enrolled patients for a study involving a full-size bipedal humanoid platform. The
+systematic search underlying this review mapped the complete clinical evidence
+base for this platform class across 2022--2026, a young body of work still
+concentrated on a
+single commercial platform (Unitree G1) and, for the clinically most advanced
+domain, on a single research cluster (UCSD Yip Laboratory and Johns Hopkins). That
+concentration is not evidence of a field in failure; it is evidence of a field in
+its earliest phase of organized research. The infrastructure that would enable
+distributed clinical investigation (accepted safety standards for bipedal
+patient-contact environments, IRB-validated study protocols, and regulatory
+pathways with established Special Controls) does not yet exist, and its absence
+explains the concentration far better than any deficit of platform capability or
+clinical motivation.
+
+This review documents that gap in a form that can guide future work. Prior
+reviews of healthcare robotics, including the
+closest comparative work in the literature~\cite{cunha2025humanoid}, either
+predate the LLM/VLA integration wave that defines the current period, or treat
+humanoid and non-humanoid platforms interchangeably,
+obscuring the platform-specific barriers and advantages that define the clinical
+deployment problem. To our knowledge, this is the first review to integrate the
+2022--2026 humanoid-specific literature with a commercial and academic platform
+capability assessment, a regulatory pathway analysis, and a per-domain TRL
+readiness evaluation grounded in clinical deployment criteria.
+
+Readiness is not uniform across applications. Three roles have a plausible path to
+first human-subject validation (TRL~5) within five years: a telemedicine and
+telepresence clinical assistant operating in fully teleoperated mode, which
+minimizes autonomous patient-contact risk and maps directly onto the established
+regulatory logic of physician-controlled surgical robotics; a rehabilitation
+movement demonstrator that exploits the mirror neuron mechanism established by
+Nguyen et al.~\cite{nguyen2024eeg} and the clinical acceptability demonstrated by
+Sobrepera et al.~\cite{sobrepera2022feasibility} without requiring any patient
+contact, rendering the bipedal gait safety gap irrelevant to this role; and a
+structured eldercare companion and physical assistant following the hybrid
+autonomous/teleoperated architecture demonstrated by RHP
+Friends~\cite{benallegue2025rhp} and the deployment methodology established by
+the SPRING project~\cite{alamedapineda2024spring}. These roles are the most
+near-term candidates because they align the strongest available evidence with
+tractable technical barriers and comparatively low regulatory risk.
+
+The HCDR framework introduced in Section~\ref{sec:hcdr} makes this
+role-differentiated picture precise. By classifying roles along three axes (autonomy
+level, patient-contact intensity, and regulatory complexity), the framework
+shows that each application is delayed by a different constraint. For the
+telemedicine assistant role, the main obstacle is a missing gait safety standard;
+for the rehabilitation demonstrator, it is clinical evidence; for eldercare
+physical assistance, both are required. This distinction has a practical
+consequence: work on gait safety standards and a rehabilitation feasibility trial
+can proceed in parallel. The field does not face a single bottleneck, but several
+separable bottlenecks that can be addressed through targeted studies.
+
+Two gaps are more consequential than the others identified in
+Section~\ref{sec:challenges}. The first is the absence of any accepted performance
+standard for bipedal humanoid robots in patient-proximate environments, specifically
+for the four categories of gait-induced contact events that ISO/TS~15066 was not
+designed to address. Closing this gap does not require a new robot architecture;
+it requires biomechanical characterization and a standards-development process.
+Without such evidence, IRBs will have little basis for approving physical
+patient-contact studies, and regulators will have little basis for defining
+Special Controls. This is the most broadly blocking gap in the field. The second
+is the absence of registered
+human-subject feasibility studies. Cho et al.~\cite{cho2026humanoid} advance the
+state of the art by completing a cadaveric surgical study under a defined IRB
+protocol, the step immediately preceding first-in-human research. UC San Diego
+and Johns Hopkins, which together hold all three papers in the clinical procedures
+domain, are well positioned to lead this next step. Beyond the gait safety gap,
+no obvious technical reason prevents such a study from being designed in the near
+term.
+
+The question confronting the field is no longer whether humanoid robots can
+perform clinically meaningful tasks in controlled settings. The evidence reviewed
+here indicates that they can. What remains uncertain is whether the research
+community, device manufacturers, clinical institutions, and regulatory agencies
+will build the sequence of evidence needed to move from laboratory performance to
+clinical evidence and, eventually, regulatory precedent. That sequence (safety
+characterization, IRB feasibility study, De~Novo submission, and predicate device
+establishment) is familiar in medical device development. Applying it to a new
+platform class with bipedal dynamics and integrated AI systems will require a
+level of institutional coordination that has not yet emerged. Building that
+infrastructure is the central task for the next five years.
+

@@ -1,0 +1,299 @@
+﻿%%======================================================================
+\section{Challenges in Clinical Deployment}
+\label{sec:challenges}
+%%======================================================================
+
+The TRL~3--4 state documented in Section~\ref{sec:applications} reflects three
+categories of barriers. Technical gaps include manipulation precision, contact
+safety during bipedal locomotion, and software validation against clinical
+performance standards. Institutional gaps include regulatory pathway ambiguity,
+liability framework absence, and actuarial non-coverage. A third category is
+circular: regulatory approval requires clinical evidence; clinical evidence
+requires Institutional Review Board (IRB)-sanctioned trials; IRB approval
+requires safety assurance; and safety assurance requires performance standards
+that do not yet exist.
+
+\subsection{Manipulation and Dexterity for Clinical Tools}
+\label{sec:manipulation}
+
+Atar et al.~\cite{atar2025humanoids} is the only study to systematically document
+manipulation performance gaps in a clinical task context. Atar et al.\ evaluated
+a Unitree G1 with Inspire Gen4 dexterous hands across seven clinical procedures,
+achieving approximately 70\% aggregate procedural success with non-clinician
+teleoperators. The paper identifies two specific failure modes: force output
+insufficiency (the actuator configuration cannot reliably generate the controlled
+forces required for needle penetration or sustained grip against resistance), and
+sensor sensitivity limitations (the tactile feedback loop is insufficient for
+sub-Newton force resolution, preventing detection of the haptic signatures that
+guide needle procedures in clinical practice).
+
+These findings generalize across the procedure literature. Liang et
+al.~\cite{liang2025lapsurgie} demonstrate that laparoscopic surgery requires
+enforcing a remote-center-of-motion (RCM) constraint at the trocar site, an
+engineering workaround for a capability that commercial humanoid arms do not
+provide natively. Cho et al.~\cite{cho2026humanoid} identify three engineering
+targets for endoscopic clinical translation: endoscope stability in confined
+anatomical cavities, force compliance during tissue contact, and positioning
+accuracy for reliable camera view.
+
+Synthesizing across Atar et al., Liang et al., and Cho et al., clinical manipulation requires three
+capabilities that current commercial humanoid arms do not yet reliably provide:
+(1)~force precision at sub-Newton resolution for needle and catheter
+procedures~\cite{atar2025humanoids}; (2)~tool-specific kinematic adaptation for
+laparoscopes, rigid endoscopes, and ultrasound probes; and (3)~fingertip-level
+tactile sensing for grip force discrimination, instrument slip detection, and
+tissue compliance sensing. Operationally, progress requires force resolution at
+sub-Newton levels for needle insertion procedures~\cite{atar2025humanoids},
+fingertip sensor density exceeding 1,000 sensing elements\xl{这里的 1,000 sensing elements 是非常具体的硬件阈值，必须补 citation；最好找 tactile sensor / GelSight / high-resolution fingertip sensor 的权威论文来支撑这个数量级。}, and teleoperation
+round-trip latency at levels consistent with real-time force feedback
+requirements. Surgical teleoperation research establishes that network latency
+above 200~ms degrades task completion time and trajectory accuracy in
+dexterous procedures~\cite{lum2009latency,xu2014latency,motiwala2025telesurgery},
+providing the clinical benchmark for humanoid teleoperation system design.
+Foundational work on dexterous manipulation documents the multi-dimensional
+sensor requirements for reliable tool handling~\cite{okamura2000dexterous}, and
+tactile-sensing reviews and high-resolution fingertip sensors define what
+clinical-grade contact perception would
+require~\cite{kappassov2015tactile,yuan2017gelsight}.
+
+\subsection{Safe Physical Contact and Bipedal Gait Dynamics}
+\label{sec:safety}
+
+Making physical robot-human contact safe in human environments has been an
+active research problem for two decades~\cite{alami2006safe}, and concrete
+progress for humanoids has recently been demonstrated. Lu et
+al.~\cite{lu2025gentlehumanoid} introduce a spring-based compliance framework for
+the Unitree G1 that quantifiably reduces peak contact forces during quasi-static
+tasks including sit-to-stand assistance and upper-body physical contact. This
+approach builds on the series elastic actuator design~\cite{pratt1995elastic},
+in which mechanical spring compliance decouples rapid force transients from the
+actuated structure. This is the most technically grounded progress toward
+patient-contact safety in the current literature. Hierarchical whole-body control
+architectures~\cite{sentis2005synthesis} provide the control-theoretic foundation
+for multi-priority task execution that safety-critical clinical interaction will
+require.
+
+The design target for patient-contact force limits is the Power and Force
+Limiting (PFL) regime of ISO/TS~15066:2016~\cite{isots15066}, which provides
+biomechanically derived thresholds for different body regions: for the face and skull, quasi-static
+contact force is limited to 65~N and pressure to 110~N/cm$^2$; for the trunk and
+thorax, 140~N and 210~N/cm$^2$\xl{这些 65 N、110 N/cm2、140 N、210 N/cm2 是标准里的具体数值，必须有直接 citation；建议把 ISO/TS 15066 的 citation 贴到这句话后面，或者确认这些数值完全来自该标准。}. The GentleHumanoid framework demonstrates a
+Unitree G1 approaching these thresholds for quasi-static upper-body contact.
+
+The critical gap, however, is structural. ISO/TS~15066 was designed for
+fixed-base collaborative robots (cobots whose base is anchored, whose motion is
+constrained to a defined workspace, and whose approach velocities are programmed).
+It does not model contact forces arising from bipedal locomotion. A bipedal
+humanoid navigating a clinical environment introduces four risk scenarios that
+ISO/TS~15066 does not bound: (1)~balance corrections, in which whole-body torque
+adjustments generate rapid impulse forces that can contact nearby persons;
+(2)~stumble recovery, in which momentum transfer creates swinging limbs and torso
+rotation at velocities above the standard's contact speed assumptions;
+(3)~narrow-corridor navigation, in which swinging arms during gait will contact
+bed rails, IV poles, and patient limbs in spaces with less than one body-width of
+clearance; and (4)~postural transitions, in which a full-size humanoid (35~kg or
+more) rising to or lowering from a working height near a supine patient generates
+dynamics that quasi-static force limits do not characterize.
+
+None of the reviewed clinical studies addresses this category of risk, and neither
+ISO/TS~15066~\cite{isots15066}, ISO~13482~\cite{iso13482}, nor
+ISO~10218-1/2~\cite{iso10218_1,iso10218_2} was designed to model or bound
+gait-induced contact events. This is an open safety engineering problem.
+Resolution requires either new standards specific to bipedal humanoid robots in
+patient-contact environments, or architectural solutions (proximity-triggered
+gait interrupts, patient-detection zones constraining locomotion near occupied
+beds, whole-body collision prediction for gait trajectories) that have not yet
+been developed in the published literature.
+
+\subsection{Human-Robot Trust and Institutional Adoption}
+\label{sec:trust}
+
+Trust and adoption operate at three distinct layers. The first layer is patient
+and clinician acceptance. Technology acceptance frameworks established for
+information systems~\cite{venkatesh2003user} and their extensions for assistive
+social robots in elderly care~\cite{heerink2010assessing,broadbent2017interactions}
+provide the theoretical basis for understanding humanoid adoption barriers.
+Studies of robot acceptability in domestic and care settings further establish
+that transparency, predictability, and social role clarity determine
+acceptance~\cite{young2009toward}.
+Trust in human-robot interaction is a multidimensional construct influenced by
+robot performance, human factors, and environmental
+context~\cite{hancock2011meta,hancock2011trust,sciutti2018humanizing}. The healthcare-specific question of whether
+humanoid form factors in clinical settings are perceived as appropriate has been
+characterized as a strategic and ethical
+question~\cite{ozturkcan2022humanoid}. Robinson et al.~\cite{robinson2023brief}
+show 53\% recruitment uptake for a humanoid wellbeing intervention in a general
+population (pilot RCT, n\,=\,230). Sayis and Gunes~\cite{sayis2024technology}
+show the humanoid condition was the only condition producing measurable mood
+improvements in a therapeutic writing task (n\,=\,42). Both results are bounded:
+the clinical populations central to humanoid deployment differ substantially from
+general and educational populations in these studies.
+
+The second layer is co-design and workflow integration. Ghosh et
+al.~\cite{ghosh2024usercentered} demonstrate that iterative co-design with care
+staff improves system usability, a methodological contribution that does not
+substitute for clinical evidence of safety and effectiveness.
+
+The third and most institutionally consequential layer is the liability gap. No
+current healthcare liability framework (US tort law, UK clinical negligence, EU
+product liability) assigns accountability for harm caused by an autonomous
+robotic action in a care setting\xl{这个 claim 不能简单找一篇文献证明“没有 liability framework”；应当补 healthcare AI liability、autonomous robotics liability、medical device/product liability 文献，用来支撑现有法律框架在 autonomous clinical AI/robotic action 上存在 accountability gap。}. This legal ambiguity deters adoption regardless
+of technical capability: hospital risk departments cannot quantify institutional
+exposure for systems operating in legally uncharted territory. Imtiaz and
+Khan~\cite{imtiaz2024perceptions} document this precisely: 269 nursing home
+administrators cite cost, reduction in human contact, and unproven clinical
+effectiveness as primary barriers.
+
+\subsection{Regulatory Pathway}
+\label{sec:regulatory}
+
+The regulatory challenge is not hostility to this technology class; it is a
+jurisdictional gap that existing frameworks leave precisely where clinical
+humanoids sit.
+
+ISO~13482:2014~\cite{iso13482} (Safety Requirements for Personal Care Robots) is
+the most directly applicable safety standard; it governs robots providing
+physical assistance in human environments. However, \S{}1.4 of ISO~13482
+explicitly excludes devices regulated as medical devices. A humanoid robot performing
+clinical tasks almost certainly meets the medical device definition under FDA
+21~CFR~\S{}201(h) and EU MDR Article~2(1)\xl{这里直接引用 FDA 和 EU MDR 的法规条文定义，必须补官方 citation；法规条文不能只写名称，最好引用 FDA medical device definition 和 EU MDR Article 2(1) 原文或官方网页。}. This creates a hard gap: the system
+is likely too clinical for ISO~13482 but no ISO medical robotics standard covers
+general-purpose bipedal humanoid assistants.
+
+In the United States, the De~Novo classification pathway is the only viable
+regulatory entry route. No 510(k) predicate exists\xl{这里是很强的监管路径判断，必须补 citation 或证据说明；建议引用 FDA De Novo guidance / FDA product classification database，并解释为什么没有合适的 510(k) predicate。}. A De~Novo submission requires
+the applicant to propose Special Controls from scratch: accepted performance
+standards for fall prevention in patient-care environments (an area where the
+patient-safety literature is well developed for human falls but silent on
+robot-induced ones)~\cite{oliver2007strategies,cameron2012interventions}, patient
+contact force limits for dynamic gait scenarios, teleoperation latency bounds for specific
+procedure types, and AI/ML software validation methodology consistent with FDA's
+AI/ML SaMD action plan~\cite{fda2021aiml} and December~2024 PCCP
+guidance~\cite{fda2024pccp}. None of these currently exist as accepted standards. This is not procedurally
+impossible: De~Novo has established new device categories for surgical planning
+software and exoskeletal rehabilitation devices, but it represents a development
+and regulatory investment no humanoid manufacturer has yet made.
+
+The structural problem is a circular dependency: approval requires clinical
+evidence; human-subject evidence requires IRB approval; IRB approval requires
+safety assurance; safety assurance requires performance standards; performance
+standards require regulatory guidance. The productive path through this circle is
+a staged evidence generation sequence (in vitro feasibility, cadaver study,
+IRB-approved human-subject feasibility trial) producing the data needed for a
+De~Novo submission. Cho et al.~\cite{cho2026humanoid} is the current frontier of
+that sequence.
+
+In the EU, a humanoid clinical assistant would likely be classified as Class~IIa
+under EU MDR Annex~VIII, with autonomous surgical assistance escalating to
+Class~IIb or~III\xl{这里涉及 EU MDR Annex VIII 的分类规则，必须补官方 EU MDR citation；Class IIa、IIb、III 的判断最好对应具体 classification rule，而不是只写作者判断。}. EU AI Act Regulation 2024/1689 additionally classifies any
+AI-driven clinical humanoid as a high-risk AI system~\cite{solaiman2024regulating}. High-risk AI rules apply
+from August 2026; AI embedded in regulated medical products transitions to August
+2027\xl{这里的 high-risk AI system 和 August 2026 / August 2027 生效时间是非常具体的法律时间点，必须补 EU AI Act 官方文本或权威法律分析；日期尤其不能裸写。}. Any EU clinical humanoid market entry must satisfy both MDR and AI Act
+simultaneously, a dual compliance burden for which no completed template yet
+exists.
+
+Table~\ref{tab:regulatory} compares the four principal frameworks across the key
+dimensions that determine market entry strategy.
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Regulatory Framework Comparison for Clinical Humanoid Robots (March 2026).}
+  \label{tab:regulatory}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}lllllp{4cm}@{}}
+    \toprule
+    \textbf{Framework} & \textbf{Jurisdiction} & \textbf{Classification} &
+    \textbf{Pathway} & \textbf{Timeline (est.)} & \textbf{Key Requirements / Gap} \\
+    \midrule
+    FDA 510(k)      & US     & Class I/II  & Substantial equivalence to predicate & 3--12 months  & No predicate exists for clinical humanoid; inapplicable \\
+    FDA De~Novo     & US     & Class II (new category) & Novel device; propose Special Controls & 12--24 months & Must define fall-prevention, PFL, latency, AI/ML Special Controls from scratch \\
+    FDA PMA         & US     & Class III   & Clinical trial evidence required & 3--7 years & Overkill for initial classification; may apply for autonomous surgical \\
+    EU MDR Class IIa & EU    & Medium risk & Notified Body QMS + clinical data & 18--36 months & Requires clinical investigation under Art.\ 62; PMCF post-market \\
+    EU MDR Class IIb & EU   & Higher risk & Notified Body + full clinical eval.\ & 24--48 months & Autonomous surgical or patient-contact without operator oversight \\
+    EU AI Act (High Risk) & EU & High-risk AI & Conformity assessment; Art.\ 6 & From Aug 2026 & Parallel obligation to MDR; dual compliance burden for clinical humanoid \\
+    ISO 13482:2014  & Global & Personal care robot safety & Voluntary standard & N/A & \textbf{Explicitly excludes medical devices}; no bipedal gait dynamic PFL spec \\
+    ISO/TS 15066:2016 & Global & Collaborative robot HRC & Voluntary; used in EU MDR & N/A & Designed for fixed-base collaborative arms; no dynamic gait scenario coverage \\
+    \bottomrule
+    \multicolumn{6}{@{}l@{}}{\textbf{PMS} = post-market surveillance; \textbf{PMCF} = post-market clinical follow-up; \textbf{SaMD} = Software as a Medical Device; \textbf{NB} = Notified Body.} \\
+    \multicolumn{6}{@{}l@{}}{No framework provides humanoid-specific guidance; all entries represent the authors' interpretation of existing rules applied to this novel device class.} \\
+  \end{tabular}%
+  }
+\end{table*}
+
+\subsection{Software Infrastructure and AI Validation}
+\label{sec:software}
+
+\xl{这一节写得有点少。跟其他段落的长度不匹配，建议扩展一下，尤其是The AI validation gap extends to deployment readiness}
+
+
+The leading VLA models, including openpi/$\pi_0$ (10,551~stars), OpenVLA (5,479~stars),
+and LeRobot (22,179~stars), represent the highest-capability general-purpose
+robot learning infrastructure publicly available. For general-purpose humanoid
+manipulation research, this infrastructure is genuinely strong.
+
+What is absent is the layer between this general infrastructure and clinical
+deployment. As identified in Section~\ref{sec:accessibility}, the four critical gaps
+with no current open-source solution are a clinical safety layer, clinical
+workflow integration, an open clinical demonstration dataset, and a validated
+medical simulation environment.
+
+The AI validation gap extends to deployment readiness. VLA models achieve high
+success rates on standard benchmarks, but these share no tasks with the clinical
+procedure requirements documented in~\cite{atar2025humanoids}. The distribution
+shift involves not only visual and geometric differences but also contact physics,
+tool compliance, and procedural sequencing requirements fundamentally different
+from household manipulation. AI in health and medicine more broadly faces similar
+validation challenges as these systems move toward clinical
+deployment~\cite{topol2019high,rajpurkar2022ai,coiera2019last,sendak2020real}. No humanoid software stack has
+addressed IEC~62443 Security Level~2 requirements either, the minimum threshold
+for networked systems in hospital environments.
+
+Table~\ref{tab:techgaps} synthesizes the five principal technical and
+translational barriers identified in this section.
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Technical and Translational Gap Summary (March 2026).}
+  \label{tab:techgaps}
+  \footnotesize
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.60cm}
+                  >{\raggedright\arraybackslash}p{4.70cm}
+                  >{\raggedright\arraybackslash}p{4.80cm}
+                  >{\raggedright\arraybackslash}p{2.70cm}
+                  >{\raggedright\arraybackslash}p{3.15cm}@{}}
+    \toprule
+    \textbf{Capability Gap} & \textbf{Current State} & \textbf{Required for TRL~5} &
+    \textbf{Blocking Domains} & \textbf{Key Evidence / Standard} \\
+    \midrule
+    Force precision \& tactile sensing &
+      Insufficient sub-N resolution; no fingertip tactile array on commercial platforms &
+      Sub-Newton force feedback; continuous fingertip sensing at clinical manipulation precision &
+      Clinical procedures, Rehabilitation &
+      \cite{atar2025humanoids}; \cite{lum2009latency} \\[4pt]
+    Gait contact safety &
+      ISO/TS~15066 quasi-static thresholds approached for upper body only~\cite{lu2025gentlehumanoid} &
+      Instrumented characterization of gait-induced force profiles; accepted standard for bipedal PFL &
+      All physical-contact domains &
+      ISO/TS~15066~\cite{isots15066}; ISO~13482~\cite{iso13482} \\[4pt]
+    Tool-specific kinematics &
+      No native RCM; no laparoscope-specific axis on commercial arms &
+      RCM enforcement or software analog; tool-path control within trocar constraints &
+      Clinical procedures &
+      \cite{liang2025lapsurgie}; \cite{cho2026humanoid} \\[4pt]
+    VLA clinical generalization &
+      VLA benchmarks: household manipulation only; no clinical demonstration dataset exists &
+      Open clinical demonstration dataset; VLA fine-tuned on clinical task protocols with validated performance &
+      Clinical procedures, all autonomous roles &
+      \cite{openxembodiment2023}; \cite{zhao2023act} \\[4pt]
+    Clinical safety standard \& regulatory predicate &
+      No accepted standard for bipedal gait in patient-contact environments; no De~Novo predicate &
+      ISO scope revision; IRB feasibility study; FDA De~Novo with proposed Special Controls &
+      All domains &
+      \cite{iso13482}; \cite{fda2021aiml}; \cite{fda2024pccp} \\
+    \bottomrule
+    \multicolumn{5}{@{}p{17.95cm}@{}}{Each row identifies a barrier from Section~\ref{sec:challenges}, its current state, the threshold required for TRL~5 advancement, blocked clinical domains, and the primary evidence or standard defining it.} \\
+    \multicolumn{5}{@{}p{17.95cm}@{}}{No single gap is insurmountable; the barriers are sequentially dependent in the order listed.} \\
+  \end{tabular}%
+  }
+\end{table*}

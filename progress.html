@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Project Progress</title>
+  <link rel="stylesheet" href="progress/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Research Writing Project</p>
+      <h1>Progress Log</h1>
+      <p class="lead">Project dashboard for the current draft, meeting notes, decisions, links, and action items.</p>
+    </div>
+    <nav class="top-links" aria-label="Primary links">
+      <a href="main.pdf">Current PDF</a>
+      <a href="main.tex">LaTeX source</a>
+      <a href="AGENTS.md">Workspace guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <article class="panel pdf-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Current Draft</p>
+            <h2>PDF Preview</h2>
+          </div>
+          <a class="button" href="main.pdf">Open PDF</a>
+        </div>
+        <object class="pdf-preview" data="main.pdf" type="application/pdf">
+          <p>PDF preview is not available. <a href="main.pdf">Open the PDF</a>.</p>
+        </object>
+      </article>
+
+      <aside class="panel">
+        <p class="eyebrow">Writing Logic</p>
+        <h2>Keep Concepts Separate</h2>
+        <div class="status-grid">
+          <div><span class="label">Motivation</span><strong>Why this matters</strong></div>
+          <div><span class="label">Gap</span><strong>What is missing</strong></div>
+          <div><span class="label">Novelty</span><strong>What is new</strong></div>
+          <div><span class="label">Architecture</span><strong>How the work is organized</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="timeline-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Meeting Pages</p>
+          <h2>Progress Timeline</h2>
+        </div>
+        <p>Dated pages under <code>progress/</code> record review decisions, evidence, and action items.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <a class="timeline-card" href="progress/2026-06-24.html">
+            <time datetime="2026-06-24">2026-06-24 to 2026-06-25</time>
+            <h3>Figure Review Notes</h3>
+            <p>Typography, figure sizing, alignment, whitespace, legend style, and plot-source update requirements.</p>
+            <span>Open details</span>
+          </a>
+        </li>
+        <li>
+          <a class="timeline-card" href="progress/2026-06-22.html">
+            <time datetime="2026-06-22">2026-06-22 to 2026-06-23</time>
+            <h3>WeChat Review Notes</h3>
+            <p>Citation coverage, related-review comparison, missing Chinese comments, PDF workflow, and research-article quality notes.</p>
+            <span>Open details</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

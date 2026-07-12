@@ -1,0 +1,117 @@
+﻿%%
+%% ACM Computing Surveys (CSUR) — main manuscript
+%% Template: acmart.cls
+%% Formatting reference: Cao (2025) ACM Computing Surveys, DOI:10.1145/3770574
+%%
+%% NOTE: Use \documentclass[manuscript,screen]{acmart} for submission draft;
+%%       switch to \documentclass[manuscript,screen]{acmart} for camera-ready.
+\documentclass[acmsmall]{acmart}
+
+%% Remove copyright box for draft
+\setcopyright{none}
+\acmDOI{}
+\acmISBN{}
+\acmJournal{CSUR}
+\acmYear{2026}
+\acmVolume{0}
+\acmNumber{0}
+\acmArticle{0}
+\acmMonth{0}
+
+%%----------------------------------------------------------------------
+%% Packages
+%%----------------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{CJKutf8}
+\newcommand{\XL}[1]{\begin{CJK*}{UTF8}{gbsn}\textcolor{red}{#1}\end{CJK*}} % Xin Liu's comment
+%% NOTE: hyperref is loaded internally by acmart — do NOT load it again
+% \usepackage{balance}  % enable for acmjour two-column camera-ready only (requires balance.sty)
+
+\setlength{\emergencystretch}{2em}
+\hbadness=10000
+\vbadness=10000
+\hfuzz=5pt
+\AtBeginDocument{
+  \fancyhead{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[LO,RE]{Anonymous Authors}
+}
+
+%%----------------------------------------------------------------------
+%% Metadata
+%%----------------------------------------------------------------------
+\title{Humanoid Robots in Healthcare: Current Systems, Research Frontiers,
+       and Clinical Opportunities}
+
+\author{Anonymous Authors}
+
+
+%%----------------------------------------------------------------------
+%% Abstract
+%%----------------------------------------------------------------------
+
+\input{sections/0_abstract}
+
+
+\keywords{humanoid robots, healthcare robotics, embodied AI, large language
+  models, human-robot interaction, clinical deployment, medical robots,
+  technology readiness level, regulatory pathway}
+
+\begin{CCSXML}
+<ccs2012>
+  <concept>
+    <concept_id>10010520.10010553.10010562</concept_id>
+    <concept_desc>Computer systems organization~Robotics</concept_desc>
+    <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+    <concept_id>10010147.10010178</concept_id>
+    <concept_desc>Computing methodologies~Artificial intelligence</concept_desc>
+    <concept_significance>300</concept_significance>
+  </concept>
+  <concept>
+    <concept_id>10003456.10003462</concept_id>
+    <concept_desc>Social and professional topics~Medical informatics</concept_desc>
+    <concept_significance>300</concept_significance>
+  </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computer systems organization~Robotics}
+\ccsdesc[300]{Computing methodologies~Artificial intelligence}
+\ccsdesc[300]{Social and professional topics~Medical informatics}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/1_introduction.tex}
+
+\input{sections/2_background.tex}
+
+\input{sections/3_systems.tex}
+
+\input{sections/4_applications.tex}
+
+\input{sections/5_challenges.tex}
+
+\input{sections/6_discussion.tex}
+
+\input{sections/7_conclusion.tex}
+
+\begin{acks}
+No external funding was received for this work.
+\end{acks}
+
+%%======================================================================
+%% References
+%%======================================================================
+
+\bibliographystyle{ACM-Reference-Format}
+
+\bibliography{refs}
+
+\end{document}

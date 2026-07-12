@@ -1,0 +1,274 @@
+﻿%%======================================================================
+\section{What Healthcare Needs from Humanoid Robots}
+\label{sec:applications}
+%%======================================================================
+
+Each clinical role imposes distinct requirements on a humanoid platform. The
+clinical studies identified in our search are evidence of how far current systems
+come toward meeting those requirements, not the subject of this section in
+themselves. We therefore ask not ``what has been done?'' but ``how close is the
+field to what clinical deployment actually demands?'' The gap between those two
+positions is a central concern of this review.
+
+\subsection{Clinical Procedures and Surgical Assistance}
+\label{sec:procedures}
+
+Clinical procedure assistance demands sub-millimeter manipulation precision,
+controlled interaction forces below tissue damage thresholds (typically
+$<$1--2~N for soft tissue contact), sterility compliance (no bare actuator
+surface in the sterile field), and consistent task execution over procedure
+durations of 20--120~minutes\xl{sub-millimeter manipulation precision, 1--2 N soft tissue contact, sterility compliance, 20--120 minutes 这些是很具体的临床/工程阈值。现在只有后面 latency 有 citation，前面这些也应该加权威来源。}. For teleoperated roles, latency below 100~ms
+round-trip is required to avoid operator disorientation during fine tool
+manipulation~\cite{lum2009latency,avgousti2016medical,motiwala2025telesurgery}. For autonomous or semi-autonomous roles, real-time anatomical
+landmark detection and adaptive trajectory generation under tissue deformation
+are prerequisites.\XL{real-time anatomical landmark detection 和 adaptive trajectory generation 是很强的 surgical/autonomous procedure requirement 判断，建议补 surgical robotics 或 autonomous surgical assistance 的 top journal / clinical robotics survey 引用。}
+
+Current evidence documents how far the field has advanced toward these
+requirements, and where the gaps remain. Three studies, all using the Unitree
+G1 under teleoperation, demonstrate feasibility across a range of procedures:
+Atar et al.~\cite{atar2025humanoids} achieved approximately 70\% task success
+across seven clinical procedures (auscultation, ultrasound, intravenous
+catheter insertion, and four others) with non-clinician teleoperators; Liang et
+al.~\cite{liang2025lapsurgie} demonstrated laparoscopic instrument manipulation
+with inverse-kinematics remapping and enforced remote-center-of-motion
+constraint; and Cho et al.~\cite{cho2026humanoid} performed cadaveric
+endoscopic surgery with a humanoid as first assistant. The robot's contribution
+in each case is physical presence and dexterity; clinical judgment and
+real-time adaptation are supplied by the remote operator. Tasks requiring high
+force precision (catheter insertion, finger-stick testing) showed the highest
+failure rates, attributable to actuator force resolution limits and insufficient
+tactile feedback.
+
+The requirements gap is precise. Teleoperation architecture meets the
+near-term procedure assistance requirement, but the 70\% task success rate is
+insufficient for unassisted clinical use. No study has measured forces in
+tissue contact against published safety thresholds. All evidence is pre-clinical
+(mannequins, cadavers, test fixtures); no patient data exist. Independent
+replication on any platform other than the Unitree G1 has not occurred.
+\textbf{TRL: 3--4.}
+
+\subsection{Elderly and Nursing Care}
+\label{sec:eldercare}
+
+Nursing care imposes a demanding combination of physical and social requirements.
+On the physical side: safe patient handling (transfer, repositioning, ambulation
+assist) requires payload capacity of 30--80~kg with compliant force control;
+gait stability on wet or uneven ward surfaces is required; and proximity to
+patients with fragile physiology demands contact-force limits more restrictive
+than industrial safety standards. On the social side: sustained interaction
+quality (naturalness, responsiveness, memory across sessions) matters for
+patient trust and care acceptance; eye-level engagement at standing height
+(150--170~cm) is preferred over wheeled alternatives for dignified interaction.\XL{Nursing care 这里的 30--80 kg payload、wet/uneven ward surfaces、contact-force limits、trust/acceptance、eye-level dignity 都是具体 requirement，特别是 30--80 kg 很具体，必须补 citation，最好用 nursing ergonomics、patient handling safety、eldercare HRI 或权威标准/指南。}
+
+Against these requirements, the evidence reveals a clear bottleneck. The only
+bipedal humanoid designed explicitly for nursing is RHP
+Friends~\cite{benallegue2025rhp}, which demonstrates autonomous-to-teleoperated
+handoff and nursing-specific motion primitives, but in controlled exhibition
+conditions, not patient-facing deployment. The SPRING project provides the only
+large-scale eldercare deployment data (60+ participants over 4 years), but on a
+wheeled ARI platform~\cite{alamedapineda2024spring}; longer-term telepresence
+robot deployments in eldercare settings have similarly relied on wheeled
+systems~\cite{cesta2016amicare}; participants' preference for
+upright humanoid form factor for eye-level interaction establishes a user
+acceptance hypothesis that bipedal systems have not yet verified with their own
+evidence. Imtiaz and Khan~\cite{imtiaz2024perceptions} surveyed 269 US nursing
+home administrators and found the primary deployment barriers are economic
+(cost, lack of effectiveness data), not technical; Mitzner et
+al.~\cite{mitzner2018technology} similarly found that older adults' concerns
+center on capability and integration rather than technology rejection, a finding
+that reframes the investment priority: the field must produce health-economic
+evidence, not only engineering demonstrations, yet rigorous economic evaluations
+even for existing aged-care technologies remain
+scarce~\cite{bulamu2018economic}. \textbf{TRL: 4 for demonstrated hardware;
+TRL~4--5 for wheeled platform deployment evidence (scope-constrained).}
+
+\subsection{Rehabilitation}
+\label{sec:rehabilitation}
+
+Rehabilitation demands contact safety as a non-negotiable prerequisite: no
+patient-contact study on a full-size bipedal humanoid is ethically or
+regulatorily feasible without a validated compliance framework that bounds peak
+interaction forces.\XL{这里是伦理和监管层面的强判断：没有 validated compliance framework 就不能做 full-size bipedal humanoid patient-contact study。建议补医疗器械安全标准、human-robot interaction safety standard、rehab robotics clinical trial precedent 或 IRB/regulatory 相关权威来源。} Beyond safety, repetition consistency across hundreds of
+movement cycles (neuromotor rehabilitation protocols typically require 300--500
+repetitions per session), patient-adaptive trajectory modification in response to
+effort and fatigue, and integration with standardized outcome measures
+(Fugl-Meyer Assessment, 10-meter walk test) define the clinical requirements for
+this role.\XL{300--500 repetitions per session、Fugl-Meyer Assessment、10-meter walk test 都是具体 rehab clinical protocol / outcome-measure requirement，建议补 stroke rehabilitation guideline、rehab robotics clinical trial 或标准量表引用。} The evidence bar for robotic rehabilitation is well established:
+Lo et al.~\cite{lo2010robot} demonstrated in a multi-site randomized trial that
+robot-assisted therapy for post-stroke upper-limb impairment can achieve
+outcomes comparable to standard care; the MIT-Manus neurorehabilitation
+robot~\cite{krebs1998robot} and ARMin exoskeleton RCT of
+Klamroth-Marganska et al.~\cite{klamroth2014armin} similarly demonstrated
+TRL~7--8 performance for upper-limb rehabilitation. Robotic rehabilitation
+technology reviews confirm this trajectory~\cite{poli2013robotic}. These serve
+as the reference standard that bipedal humanoid rehabilitation systems must
+eventually match.
+
+The requirements gap here is in two layers. The first is the safety precondition.
+Lu et al.~\cite{lu2025gentlehumanoid} address it directly, demonstrating
+measurable peak force reduction during quasi-static upper-body contact under the
+GentleHumanoid spring compliance framework on the Unitree G1. This is the
+necessary engineering precondition for all patient-contact rehabilitation work
+that follows, but it has not been validated in dynamic motion or replicated on
+other platforms. The second layer is evidence of therapeutic efficacy. Nguyen et
+al.~\cite{nguyen2024eeg} establish a neuroscientific rationale: humanoid
+observation elicits sensorimotor EEG responses in healthy subjects consistent with
+action observation therapy (AOT) for stroke rehabilitation. Sobrepera et
+al.~\cite{sobrepera2022feasibility} ($n\,=\,6$) show that patients preferred
+humanoid telepresence over video for neuromotor rehabilitation, attributing this
+to physical embodiment. The evidence is pre-clinical throughout: the EEG study
+enrolled healthy subjects only; no study applies a validated clinical outcome
+measure; no study has involved patient contact with a current-generation full-size
+bipedal platform. \textbf{TRL: 3--4.}
+
+\subsection{Mental Health and Social Interaction}
+\label{sec:mentalhealth}
+
+Mental health support demands naturalness in unscripted conversation, consistent
+interaction quality across sessions, and behavioral adaptation to individual
+patient affect and disclosure patterns. Trust is a functional requirement, not a
+preference: a patient who distrusts the system will not disclose, making the
+interaction therapeutically inert. For clinical deployment, outcomes must be
+measurable with validated instruments (PHQ-9, GAD-7, PANSS) in clinically
+diagnosed populations.\XL{Mental health 这里的 unscripted conversation、trust/disclosure、PHQ-9/GAD-7/PANSS 都属于 clinical psychology / digital mental health / psychiatric assessment 的基础要求，建议补权威 clinical psychology、digital mental health 或 assessment instrument 文献。}
+
+The evidence presents an inverse quality-specificity tradeoff. The
+best-designed studies are randomized: Robinson et al.~\cite{robinson2023brief}
+report a pilot RCT ($n\,=\,230$) in which an autonomous humanoid delivered a
+mindful breathing intervention with positive wellbeing outcomes; Sayis and
+Gunes~\cite{sayis2024technology} find that only the humanoid robot condition
+produced statistically significant mood improvements and increased self-disclosure
+($n\,=\,42$). Neither study specifies the humanoid platform, which prevents
+extrapolation to full-size bipedal systems. The only full-size platform study
+(Ghosh et al.~\cite{ghosh2024usercentered}, $n\,=\,14$) uses NAO (58~cm, out of
+scope for physical care roles). All studies use subclinical or university wellness
+populations; none involves a clinically diagnosed population under treatment. The
+embodiment advantage is consistent across designs, but it has been demonstrated
+on unspecified or out-of-scope platforms, in non-clinical settings, with
+non-patients. Yuan et al.~\cite{yuan2025integrating} provide a transferable LLM
+personalization framework for dementia care on Pepper, and Lindsay et
+al.~\cite{lindsay2022socially} demonstrate automated clinical planning in
+pediatric settings; both represent relevant methodological precedent for bipedal
+deployment. \textbf{TRL: 4--5 for social wellbeing applications in non-clinical
+settings; TRL~2--3 for bipedal humanoid deployment in clinical mental health
+contexts.}
+
+\subsection{Hospital Logistics}
+\label{sec:logistics}
+
+Hospital logistics requires reliable wayfinding in dynamic ward environments,
+payload capacity for transport tasks (medication carts, linen, supply bins up to
+20--30~kg), and compatibility with existing hospital information systems for task
+scheduling.\XL{Hospital logistics 这里的 wayfinding、20--30 kg payload、hospital information system compatibility 都是具体 operational requirement，建议补 hospital AMR、logistics robotics、clinical operations 或医院部署案例引用。} Crucially, it does not require bimanual dexterity, standing height,
+or natural language sophistication, which raises the threshold question: is the
+humanoid form factor the right choice for this role at all?
+
+No qualifying papers were found for bipedal humanoid hospital logistics in the
+2022--2026 period. Wheeled autonomous mobile robots already address this role
+with proven operational reliability; they provide no demonstrated functional
+disadvantage for logistics tasks, and their simpler regulatory profile
+(autonomous ground vehicle versus medical device) means faster deployment.\XL{这里有两个强 claim：一是 2022--2026 没有 qualifying bipedal humanoid logistics papers，最好引用本文 search protocol / evidence table；二是 wheeled AMR 已经有 operational reliability，必须补 hospital AMR deployment paper、health-system report 或权威 industry white paper。}
+The humanoid form factor offers no structural advantage for corridor navigation,
+supply transport, or medication delivery over wheeled alternatives. A study of cobot logistics in a 900-bed hospital system found that nurses
+report primarily workflow integration concerns rather than form-factor
+preferences~\cite{birkhoff2024integrating}. Academic research attention in
+2022--2026 was directed toward clinical procedure and HRI domains, reflecting this assessment implicitly. \textbf{TRL: 2 for bipedal
+humanoid hospital logistics; the role is better addressed by non-humanoid
+platforms at current maturity.}
+
+\subsection{Requirements Gap Analysis}
+\label{sec:crossdomain}
+
+Table~\ref{tab:evidence} summarizes the requirements-versus-evidence position
+across all five domains.
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Requirements Gap by Clinical Domain (March 2026).}
+  \label{tab:evidence}
+  \setlength{\tabcolsep}{3pt}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.95cm}
+                  >{\raggedright\arraybackslash}p{7.70cm}
+                  >{\raggedright\arraybackslash}p{4.25cm}
+                  >{\raggedright\arraybackslash}p{4.85cm}
+                  >{\raggedleft\arraybackslash}p{2.20cm}
+                  >{\raggedleft\arraybackslash}p{1.20cm}@{}}
+    \toprule
+    \textbf{Domain} & \textbf{Key Papers} & \textbf{Platform} & \textbf{Study Type} & \textbf{N} & \textbf{TRL} \\
+    \midrule
+    Clinical procedures &
+      Atar et al.~\cite{atar2025humanoids}, Liang et al.~\cite{liang2025lapsurgie}, Cho et al.~\cite{cho2026humanoid} &
+      Unitree G1 & Lab; user study; cadaver & 0 patients & 3--4 \\[3pt]
+    Elderly / nursing &
+      Benallegue et al.~\cite{benallegue2025rhp}, Alameda-Pineda et al.\textsuperscript{*}~\cite{alamedapineda2024spring} &
+      RHP Friends; ARI\textsuperscript{*} & Exhibition demo; field deploy &
+      0 (demo); 60+\textsuperscript{*} & 4; 4--5\textsuperscript{*} \\[3pt]
+    Rehabilitation &
+      Nguyen et al.~\cite{nguyen2024eeg}, Sobrepera et al.~\cite{sobrepera2022feasibility}, Lu et al.~\cite{lu2025gentlehumanoid} &
+      Humanoid; SRAT; Unitree G1 & EEG pilot; case series; engineering &
+      0 / 6 / 0 & 3--4 \\[3pt]
+    Mental health / HRI &
+      Robinson et al.~\cite{robinson2023brief}, Sayis and Gunes~\cite{sayis2024technology} &
+      Unspecified humanoid & RCT; comparative & 230; 42 & 4--5 \\[3pt]
+    Hospital logistics & \multicolumn{4}{l}{\emph{No qualifying papers; wheeled systems dominate (TRL~2)}} & 2 \\
+    \bottomrule
+    \multicolumn{6}{@{}l@{}}{\textbf{TRL}: ISO 16290:2013 scale.} \\
+    \multicolumn{6}{@{}l@{}}{1 = basic principles; 2 = concept formulated; 3 = experimental PoC; 4 = lab validated; 5 = relevant-environment validated; 7 = operational prototype; 9 = proven.} \\
+    \multicolumn{6}{@{}l@{}}{\textsuperscript{*}ARI/SPRING is a wheeled platform, not bipedal; scope caveat applies.} \\
+  \end{tabular}%
+  }
+\end{table*}
+
+Three structural patterns constrain the generalizability of the entire evidence
+base. \textbf{Platform monoculture:} the Unitree G1 is the experimental platform
+in four of the clinical studies (all three procedure studies and the compliance
+rehabilitation study). No other commercial platform appears in more than one qualifying study,
+because the Unitree G1's open SDK is currently the only commercial research
+access point; until equivalent access exists for higher-dexterity platforms
+(Sanctuary Phoenix Gen~8, 1X NEO Beta), cross-platform replication is
+structurally blocked. \textbf{Geographic concentration:} studies originate
+predominantly from the USA (8 papers), Japan (2), and the UK (2); no study from
+continental Europe (excluding the SPRING program), the Global South, or Southeast
+Asia appears in the qualifying set. Healthcare delivery models, regulatory
+frameworks, and workforce demographics differ substantially across these absent
+geographies. \textbf{Methodological ceiling:} no qualifying study constitutes a
+randomized controlled trial with a bipedal humanoid in a clinical population; no
+study applies a validated clinical outcome measure as its primary endpoint; no
+study exceeds a single session; no study includes health economic data. These
+gaps collectively define the minimum evidence package for any future regulatory
+submission: a prospective, multi-session, clinically powered study in a
+patient-contact context, with pre-registered primary endpoints and a costing
+analysis.
+
+The domain-level TRL picture confirms that clinical procedures and rehabilitation
+share the same bottleneck (contact safety and force control), while elderly
+care and mental health share a different bottleneck: the bottleneck is not
+hardware but evidence. Both domains have transferred results from non-bipedal
+platforms (ARI/SPRING, unspecified humanoids) and non-clinical populations that
+must be replicated on full-size bipedal systems in patient populations before
+regulatory evidence packages can be assembled.
+
+Figure~\ref{fig:evidence_dist} visualizes the distribution of the qualifying
+clinical studies by domain and year, with marker shape indicating study design type.
+
+\begin{figure*}[t]
+  \centering
+  \Description{Dot matrix showing 14 qualifying papers organized by clinical
+  domain (y-axis: Clinical Procedures, Elderly/Nursing Care, Rehabilitation,
+  Mental Health/HRI) and publication year (x-axis: 2022-2026). Marker shape
+  encodes study design: circle for engineering/lab, diamond for case series or
+  observational, star for RCT/comparative. Clinical procedure papers are
+  concentrated in 2025-2026; mental health studies span 2023-2025;
+  rehabilitation studies span 2022-2025; elderly/nursing care studies
+  span 2024-2025. Author surnames label each marker.}
+  \includegraphics[width=\textwidth]{figures/evidence_landscape.pdf}
+  \caption{Evidence distribution: qualifying clinical studies by clinical domain and
+  publication year. Marker shape encodes study design (circle: engineering/lab;
+  diamond: case series/observational; star: RCT/comparative); color encodes
+  domain. Clinical procedure evidence is concentrated in 2025--2026.
+  Rehabilitation and mental health evidence is more temporally distributed
+  but limited by platform specificity. No papers qualify for hospital
+  logistics.}
+  \label{fig:evidence_dist}
+\end{figure*}

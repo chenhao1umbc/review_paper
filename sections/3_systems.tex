@@ -1,0 +1,242 @@
+﻿%%======================================================================
+\section{What Can Humanoid Robots Do Today?}
+\label{sec:systems}
+%%======================================================================
+
+The global humanoid robot field in 2024--2026 comprises two largely distinct
+populations: commercial platforms designed for industrial labor and a set of
+academic research systems whose provenance spans two decades of bipedal
+locomotion research. The central empirical finding of this section is that no
+confirmed clinical deployment of any full-size bipedal humanoid robot exists as
+of March 2026~\cite{atar2025humanoids,cho2026humanoid,cunha2025humanoid}.
+
+Table~\ref{tab:platforms} provides the full specification comparison for all
+thirteen commercial and selected academic platforms discussed in this section.
+The analysis below synthesizes capability patterns and clinical relevance across
+the field rather than characterizing individual platforms.
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Humanoid Platform Capability Comparison (March 2026).}
+  \label{tab:platforms}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}llrlllll@{}}
+    \toprule
+    \textbf{Robot} & \textbf{Type} & \textbf{Ht (cm)} &
+    \textbf{Total DOF} & \textbf{Payload} &
+    \textbf{LLM Integration} & \textbf{Open SW} &
+    \textbf{Medical Deployment} \\
+    \midrule
+    Figure 02~\cite{figureai2024unveils} & Commercial & 168 & 28 & 20\,kg & Yes (in-house VLA)    & No      & None \\
+    Tesla Optimus G2~\cite{tesla2023optimusgen2} & Commercial & 173 & 28+            & 20\,kg     & Yes (FSD-derived)     & No      & None \\
+    BD Atlas (elec.)~\cite{bostondynamics2024atlas} & Commercial & $\sim$165 & 28      & 30\,kg & Yes (Gemini, announced) & No & None \\
+    Agility Digit v4~\cite{agilityrobotics2023digit} & Commercial & 175 & N/A            & 16\,kg     & Announced             & Partial & None \\
+    Unitree G1~\cite{unitree2024g1}       & Commercial & 132 & 23--43         & N/A        & Yes (VLA, open)       & Yes     & Research prototype\textsuperscript{$\dagger$}~\cite{atar2025humanoids,cho2026humanoid} \\
+    Unitree H1~\cite{unitree2023h1}       & Commercial & 180 & 19             & N/A        & Yes (open)            & Yes     & None \\
+    1X NEO Beta~\cite{onex2025neo}      & Commercial & 165 & 75             & 25\,kg     & Yes (proprietary)     & No      & None \\
+    Apptronik Apollo~\cite{apptronik2023apollo} & Commercial & 173 & N/A            & 25\,kg     & Yes (Google AI)       & No      & None \\
+    Sanctuary Ph. G8~\cite{sanctuaryai2023phoenix} & Commercial & 170 & N/A            & 25\,kg     & Yes (Carbon/Microsoft)& No      & None \\
+    Fourier GR-2~\cite{fourier2024gr2}     & Commercial & 175 & 53             & N/A        & Announced             & Partial & None \\
+    UBTECH Walker X~\cite{ubtech2024walkers}  & Commercial & 130--145 & 41        & 10\,kg    & Yes (multimodal LLM)  & No      & None \\
+    AgiBot A2~\cite{agibot2025a2}        & Commercial & 175 & 49+            & N/A        & Yes (proprietary)     & No      & None \\
+    NEURA 4NE-1~\cite{neura2025_4ne1}      & Commercial & $\sim$175 & N/A      & 15--20\,kg & Yes (cognitive AI)   & No      & None \\
+    RHP Friends      & Academic   & 168 & 30             & N/A        & No                    & Partial & IREX 2023 nursing demo~\cite{benallegue2025rhp} \\
+    NAO\textsuperscript{*} & Academic & 58 & 25         & N/A   & No                    & Partial & Human-Robot Interaction (HRI)/ASD trials (social only) \\
+    Pepper\textsuperscript{*} & Academic & 120 & N/A   & N/A        & No                    & Partial & 2,000+ Japan care facilities \\
+    \bottomrule
+    \multicolumn{8}{@{}l@{}}{\textsuperscript{$\dagger$}Research prototype only, not clinical deployment.} \\
+    \multicolumn{8}{@{}l@{}}{\textsuperscript{*}Not bipedal under this paper's scope definition; included as deployment benchmark.} \\
+  \end{tabular}%
+  }
+\end{table*}
+
+\subsection{Manipulation Maturity}
+\label{sec:manipmaturity}
+
+Dexterous manipulation is the primary functional gap between current humanoid
+capability and clinical task requirements. Across the thirteen commercial platforms
+surveyed, total articulation ranges from approximately 3~DOF per arm (Agility
+Digit v4, designed for logistics bin-picking) to 75 total DOF (1X NEO Beta, with
+22~DOF per hand). This spread reflects a fundamental architectural divergence:
+logistics-oriented platforms optimize for payload and cycle time, whereas
+platforms targeting service or research applications invest in hand complexity.
+
+Payload capacity spans 10--30~kg across the commercial tier, well above the
+requirements for most clinical manipulation tasks (stethoscope, ultrasound probe,
+catheter, laparoscopic instrument). The binding constraint is not force output
+but force \emph{control}: clinical contact requires sub-Newton precision at the
+contact surface, a requirement that no platform has validated against patient-contact
+standards such as ISO/TS~15066. The single exception is Sanctuary Phoenix Gen~8,
+which specifies 5~mN tactile force sensitivity, the only commercial platform with
+a disclosed haptic sensing specification relevant to clinical touch discrimination.
+
+Documented medical procedure performance exists for one platform only: the
+Unitree G1, in two independent studies achieving approximately 70\% aggregate
+task success across seven clinical procedures under teleoperation~\cite{atar2025humanoids},
+and demonstrating endoscope holding in a cadaveric surgical context~\cite{cho2026humanoid}.
+Both results are preclinical prototypes. The cross-platform pattern is worth
+noting: the most dexterous commercial platforms (NEO Beta, Sanctuary Phoenix)
+have no clinical task evidence, while the only platform with clinical evidence
+(Unitree G1) was chosen not for its dexterity but for its open SDK and research
+accessibility. The bottleneck is therefore not raw manipulation capability but
+manipulation that has been validated \emph{for clinical contact}.
+
+\subsection{Locomotion and Clinical Environment Compatibility}
+\label{sec:locomotion}
+
+The 2022--2024 generation of commercial humanoids completed a decisive architectural
+transition from hydraulic to electric actuation. All thirteen commercial platforms
+surveyed are fully electric, with brushless DC or high-torque servo actuators.
+This transition has three clinical implications: (1)~reduced acoustic output
+enabling patient-proximate operation, (2)~elimination of fluid-system leak risk
+in sterile environments, and (3)~simplified field maintenance without hydraulic
+servicing. 1X NEO Beta specifies 22~dB operating noise (below the 30--35~dB
+threshold typical of hospital wards at night), making it the only platform with
+a disclosed acoustic specification relevant to patient care settings.
+
+However, the clinical environment poses locomotion requirements that industrial
+deployments have not exercised. Hospital flooring transitions between vinyl,
+linoleum, ceramic tile, and threshold plates; patient room layouts require
+operation in spaces as narrow as 90~cm; and patient contact during transfer
+assistance imposes dynamic disturbance loads not present in logistics contexts.
+No commercial platform has published locomotion performance data in hospital
+environments, and no platform has been evaluated against IEC~62133 or IEC~60601
+electrical safety standards in clinical settings.
+
+Platform scale is a further structural constraint. The scope of this review sets
+a 150~cm lower bound for human-adult-care tasks; of the 13 commercial platforms,
+UBTECH Walker X (130--145~cm) and Unitree G1 (132~cm) fall at or below this
+threshold. The Unitree G1 is retained as the only platform with clinical evidence
+despite this limitation. Academic platforms designed for healthcare, including
+RHP Friends (168~cm, 54~kg, 30~DOF), demonstrate that human-scale form factors
+can be achieved with explicit clinical design intent~\cite{benallegue2025rhp}.
+
+\subsection{LLM/VLA Integration and Task Architecture}
+\label{sec:llmvla}
+
+Twelve of the thirteen commercial platforms surveyed include announced or
+deployed LLM/VLA integration~\cite{cao2025humanoid}. Architectures span three
+patterns: (1)~in-house VLA foundation models trained on proprietary demonstration
+data (Figure~02, Tesla Optimus); (2)~integration of open third-party models such
+as Google Gemini Robotics (Boston Dynamics Atlas), open VLA frameworks
+(Unitree G1 with LeRobot and OpenVLA support), or Microsoft-partnered AI
+(Sanctuary Phoenix via Carbon); and (3)~multimodal LLM integration for
+instruction following without explicit VLA policy training (UBTECH Walker X).
+
+This architectural diversity obscures a uniform empirical gap: no VLA or LLM
+system deployed on any humanoid platform has been trained on, evaluated against,
+or validated for clinical task performance. The largest open VLA training corpus
+(Open X-Embodiment, approximately 970,000 demonstrations) consists entirely of
+household tabletop manipulation and pick-and-place tasks. Medical procedures
+require physically and procedurally distinct demonstration data (instrument
+grasps under sterile technique, force profiles during tissue contact, workflow
+sequencing under infection control constraints), none of which appear in any
+published training corpus.
+
+The implication for clinical deployment is concrete: LLM/VLA integration as
+currently implemented provides natural-language task specification and general
+manipulation priors, but does not constitute a path to autonomous clinical task
+execution. The Unitree G1's teleoperation results~\cite{atar2025humanoids,cho2026humanoid}
+are informative because they bypass VLA autonomy entirely: the
+cognitive and dexterous work is performed by a remote human operator, with the
+robot serving as a physical proxy. Universal and dexterous human-to-humanoid
+whole-body teleoperation has been demonstrated to enable complex bimanual
+tasks~\cite{he2024omnikh}, consistent with the teleoperation-first architecture
+these clinical studies employ. This teleoperation-first architecture may
+represent the viable near-term clinical deployment model for all platforms,
+regardless of their onboard AI sophistication.
+
+\subsection{Platform Accessibility for Clinical Research}
+\label{sec:accessibility}
+
+Research access to humanoid platforms is heavily asymmetric. Unitree Robotics
+is the only major commercial manufacturer to release and maintain a fully open
+hardware SDK, which directly explains why the Unitree G1 is the only commercial
+platform with peer-reviewed clinical task evidence. All other commercial platforms
+operate under proprietary software stacks with no published API access for
+external researchers. Academic platforms, including RHP Friends (30~DOF, purpose-built
+for nursing) and iCub3 (54~DOF, full-body tactile skin, 40+ units in research
+labs), provide broader research access but lack the scale and industrial backing
+needed for clinical deployment pathways.
+
+The open-source software ecosystem relevant to humanoid clinical research is
+mature in general manipulation infrastructure but entirely absent in clinical-specific
+components. A systematic survey of prominent repositories yields four layers:
+
+\textbf{Foundation models and VLA frameworks.} LeRobot~\cite{cadene2024lerobot}
+(HuggingFace; 22,179~stars; Apache~2.0) provides a hardware-agnostic imitation
+learning and VLA pipeline with direct Unitree G1 support. Physical Intelligence's
+openpi provides the $\pi_0$~\cite{black2024pi0} VLA model pre-trained on over
+10,000~hours of real robot demonstrations, with best-reported results on ALOHA
+bimanual benchmarks~\cite{zhao2023act}. OpenVLA~\cite{kim2024openvla} (7B parameters,
+970,000 real-world demonstrations from Open X-Embodiment~\cite{openxembodiment2023};
+MIT license) and Diffusion Policy~\cite{chi2023diffusion} complete the general-purpose
+manipulation toolkit. All are general-purpose; none include healthcare-specific
+training data, safety validation, or clinical task benchmarks.
+
+\textbf{Simulation environments.} Genesis (28,254~stars; Apache~2.0) provides
+unified differentiable physics simulation; Isaac Lab (6,544~stars; BSD-3-Clause)
+offers GPU-accelerated reinforcement learning with native Unitree G1/H1 support.
+Neither provides medical environment models, clinical workflow scenarios, or
+validated patient-contact physics.
+
+\textbf{Unitree hardware ecosystem.} The Unitree GitHub organization maintains
+nine publicly accessible repositories including unitree\_rl\_gym (3,022~stars),
+unitree\_sdk2 (932~stars), and xr\_teleoperate (1,309~stars) for full-body
+XR teleoperation, the software component used in Atar et al.~\cite{atar2025humanoids}.
+Low-cost leader-follower teleoperation hardware such as GELLO~\cite{wu2023gello}
+further lowers the barrier to clinical procedure research.
+
+\textbf{The clinical infrastructure gap.} Four categories of infrastructure
+required for clinical deployment are absent from the open-source ecosystem:
+(1)~a validated safety layer enforcing patient-contact force limits at runtime;
+(2)~clinical workflow integration connecting humanoid actions to hospital EHR
+and nursing systems; (3)~an open clinical demonstration dataset (every major
+VLA training corpus consists of household and tabletop tasks); and (4)~a validated
+medical simulation environment with clinical instrument physics and patient
+anatomy proxies. The transition from general-purpose manipulation to clinically
+safe, task-verified medical assistance is primarily a software and validation
+challenge that the open-source community has not yet begun to address.
+
+Table~\ref{tab:opensource} summarizes the most prominent open-source repositories
+in this ecosystem.
+
+
+\begin{table*}[t]
+  \captionsetup{justification=centering,skip=2pt}
+  \caption{Open-Source Software Ecosystem for Humanoid and Embodied-AI Robotics
+  (March 2026).}
+  \label{tab:opensource}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.60cm}
+                  >{\raggedright\arraybackslash}p{3.45cm}
+                  >{\raggedleft\arraybackslash}p{1.25cm}
+                  >{\raggedright\arraybackslash}p{5.45cm}
+                  >{\raggedright\arraybackslash}p{1.95cm}
+                  >{\raggedright\arraybackslash}p{6.10cm}
+                  >{\raggedleft\arraybackslash}p{1.10cm}@{}}
+    \toprule
+    \textbf{Repository} & \textbf{Org / Author} & \textbf{Stars} &
+    \textbf{Purpose} & \textbf{License} & \textbf{Notes} & \textbf{Med.\ Rel.} \\
+    \midrule
+    lerobot            & HuggingFace        & $\sim$22k  & VLA/imitation learning pipeline  & Apache 2.0  & Supports Unitree G1; no clinical data & H \\
+    openpi             & Physical Intelligence & $\sim$10k & $\pi_0$ VLA foundation model      & Apache 2.0  & 10k+ hrs robot demos; bimanual ALOHA   & H \\
+    openvla            & Stanford/Berkeley/TRI & $\sim$5.4k & 7B-param open VLA model          & MIT         & 970k demos; generalist manipulation    & H \\
+    act                & tonyzhaozh         & $\sim$5k   & Action Chunking Transformers      & MIT         & Original ALOHA bimanual policy code    & H \\
+    diffusion\_policy  & Columbia/MIT       & $\sim$4.5k & Diffusion-based robot policy      & MIT         & Imitation learning / VLA pipeline        & M \\
+    Genesis            & Genesis-Embodied-AI & $\sim$28k & Differentiable physics simulation & Apache 2.0  & No medical environment models          & M \\
+    IsaacLab           & isaac-sim (NVIDIA) & $\sim$6.5k & GPU-accelerated RL + sim          & BSD-3       & G1/H1 native support; no clinical env. & M \\
+    unitree\_rl\_gym   & Unitree Robotics   & $\sim$3k   & RL locomotion for Unitree robots   & BSD-3       & G1/H1/B2 locomotion training           & H \\
+    xr\_teleoperate    & Unitree Robotics   & $\sim$1.3k & Full-body XR teleoperation        & Apache 2.0  & Used in Atar et al.\ 2025 study        & H \\
+    unitree\_sdk2      & Unitree Robotics   & $\sim$0.9k & Hardware SDK for G1/H1/B2         & Apache 2.0  & Low-level hardware interface           & H \\
+    ManiSkill          & HKUST              & $\sim$1.8k & Embodied manipulation benchmark   & Apache 2.0  & No clinical task benchmarks            & M \\
+    RoboManip          & isri-robot         & $\sim$0.3k & Bimanual manipulation dataset     & MIT         & Tabletop tasks only                    & M \\
+    Open Duck Mini     & apirrone           & $\sim$2k   & Miniature bipedal robot (open HW) & MIT         & Educational; not clinical scale        & L \\
+    \bottomrule
+    \multicolumn{7}{@{}l@{}}{\textbf{Stars}: approximate GitHub star counts recorded in March 2026.} \\
+    \multicolumn{7}{@{}l@{}}{\textbf{Med.\ Rel.} $\mid$ medical relevance, author-assessed.} \\
+    \multicolumn{7}{@{}l@{}}{\textbf{H} = direct support for candidate clinical platforms; \textbf{M} = transferable general-purpose capability; \textbf{L} = infrastructure or simulation support only.} \\
+    % \multicolumn{7}{@{}l@{}}{None of the listed repositories provides clinical-specific safety validation or medical workflow integration.} \\
+  \end{tabular}%
+  }
+\end{table*}
