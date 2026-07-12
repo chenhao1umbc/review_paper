@@ -14,14 +14,18 @@ positions is a central concern of this review.
 \label{sec:procedures}
 
 Clinical procedure assistance demands sub-millimeter manipulation precision,
-controlled interaction forces below tissue damage thresholds (typically
-$<$1--2~N for soft tissue contact), sterility compliance (no bare actuator
-surface in the sterile field), and consistent task execution over procedure
-durations of 20--120~minutes\xl{sub-millimeter manipulation precision, 1--2 N soft tissue contact, sterility compliance, 20--120 minutes 这些是很具体的临床/工程阈值。现在只有后面 latency 有 citation，前面这些也应该加权威来源。}. For teleoperated roles, latency below 100~ms
-round-trip is required to avoid operator disorientation during fine tool
-manipulation~\cite{lum2009latency,avgousti2016medical,motiwala2025telesurgery}. For autonomous or semi-autonomous roles, real-time anatomical
-landmark detection and adaptive trajectory generation under tissue deformation
-are prerequisites.\XL{real-time anatomical landmark detection 和 adaptive trajectory generation 是很强的 surgical/autonomous procedure requirement 判断，建议补 surgical robotics 或 autonomous surgical assistance 的 top journal / clinical robotics survey 引用。}
+controlled interaction forces on the order of 1--2~N for delicate soft-tissue
+manipulation~\cite{taylor2003medical,okamura2009haptic}, sterility compliance
+(no bare actuator surface in the sterile field)~\cite{taylor2003medical}, and
+consistent task execution over procedure durations of 20--120~minutes, 
+consistent with the range of procedures evaluated in this  
+review~\cite{atar2025humanoids,liang2025lapsurgie,cho2026humanoid}. For
+teleoperated roles, latency below 100~ms round-trip is required to avoid  
+operator disorientation during fine tool 
+manipulation~\cite{lum2009latency,avgousti2016medical,motiwala2025telesurgery}. 
+For autonomous or semi-autonomous roles, real-time anatomical landmark 
+detection and adaptive trajectory generation under tissue deformation are 
+prerequisites~\cite{yang2017medical,saeidi2022autonomous}.
 
 Current evidence documents how far the field has advanced toward these
 requirements, and where the gaps remain. Three studies, all using the Unitree
@@ -52,13 +56,13 @@ replication on any platform other than the Unitree G1 has not occurred.
 
 Nursing care imposes a demanding combination of physical and social requirements.
 On the physical side: safe patient handling (transfer, repositioning, ambulation
-assist) requires payload capacity of 30--80~kg with compliant force control;
-gait stability on wet or uneven ward surfaces is required; and proximity to
+assist) requires payload capacity of 30--80~kg with compliant force
+control~\cite{mukai2010riba}; gait stability on wet or uneven ward surfaces is
+required~\cite{niosh2011slips,joeoh2019terrain}; and proximity to
 patients with fragile physiology demands contact-force limits more restrictive
-than industrial safety standards. On the social side: sustained interaction
+than industrial safety standards~\cite{iso13482,iso10218_1}. On the social side: sustained interaction
 quality (naturalness, responsiveness, memory across sessions) matters for
-patient trust and care acceptance; eye-level engagement at standing height
-(150--170~cm) is preferred over wheeled alternatives for dignified interaction.\XL{Nursing care 这里的 30--80 kg payload、wet/uneven ward surfaces、contact-force limits、trust/acceptance、eye-level dignity 都是具体 requirement，特别是 30--80 kg 很具体，必须补 citation，最好用 nursing ergonomics、patient handling safety、eldercare HRI 或权威标准/指南。}
+patient trust and care acceptance~\cite{zafrani2022betweenfear}.
 
 Against these requirements, the evidence reveals a clear bottleneck. The only
 bipedal humanoid designed explicitly for nursing is RHP
@@ -88,12 +92,17 @@ TRL~4--5 for wheeled platform deployment evidence (scope-constrained).}
 Rehabilitation demands contact safety as a non-negotiable prerequisite: no
 patient-contact study on a full-size bipedal humanoid is ethically or
 regulatorily feasible without a validated compliance framework that bounds peak
-interaction forces.\XL{这里是伦理和监管层面的强判断：没有 validated compliance framework 就不能做 full-size bipedal humanoid patient-contact study。建议补医疗器械安全标准、human-robot interaction safety standard、rehab robotics clinical trial precedent 或 IRB/regulatory 相关权威来源。} Beyond safety, repetition consistency across hundreds of
-movement cycles (neuromotor rehabilitation protocols typically require 300--500
-repetitions per session), patient-adaptive trajectory modification in response to
+interaction forces, the requirement codified for rehabilitation robots in
+IEC~80601-2-78 and, for collaborative force limits, in
+ISO/TS~15066~\cite{iec80601_2_78,isots15066,yang2017medical}. Beyond safety, repetition consistency across hundreds of
+movement cycles (neuromotor rehabilitation protocols target repetition doses on
+the order of 300+ per session, far above the $\sim$30 typically delivered in
+conventional therapy)~\cite{lang2009observation,birkenmeier2010translating},
+patient-adaptive trajectory modification in response to
 effort and fatigue, and integration with standardized outcome measures
-(Fugl-Meyer Assessment, 10-meter walk test) define the clinical requirements for
-this role.\XL{300--500 repetitions per session、Fugl-Meyer Assessment、10-meter walk test 都是具体 rehab clinical protocol / outcome-measure requirement，建议补 stroke rehabilitation guideline、rehab robotics clinical trial 或标准量表引用。} The evidence bar for robotic rehabilitation is well established:
+(Fugl-Meyer Assessment, 10-meter walk
+test)~\cite{fuglmeyer1975poststroke,winstein2016guidelines} define the clinical
+requirements for this role. The evidence bar for robotic rehabilitation is well established:
 Lo et al.~\cite{lo2010robot} demonstrated in a multi-site randomized trial that
 robot-assisted therapy for post-stroke upper-limb impairment can achieve
 outcomes comparable to standard care; the MIT-Manus neurorehabilitation
@@ -126,11 +135,12 @@ bipedal platform. \textbf{TRL: 3--4.}
 
 Mental health support demands naturalness in unscripted conversation, consistent
 interaction quality across sessions, and behavioral adaptation to individual
-patient affect and disclosure patterns. Trust is a functional requirement, not a
+patient affect and disclosure patterns~\cite{fitzpatrick2017woebot}. Trust is a functional requirement, not a
 preference: a patient who distrusts the system will not disclose, making the
-interaction therapeutically inert. For clinical deployment, outcomes must be
-measurable with validated instruments (PHQ-9, GAD-7, PANSS) in clinically
-diagnosed populations.\XL{Mental health 这里的 unscripted conversation、trust/disclosure、PHQ-9/GAD-7/PANSS 都属于 clinical psychology / digital mental health / psychiatric assessment 的基础要求，建议补权威 clinical psychology、digital mental health 或 assessment instrument 文献。}
+interaction therapeutically inert~\cite{lucas2014computer}. For clinical deployment, outcomes must be
+measurable with validated instruments
+(PHQ-9~\cite{kroenke2001phq9}, GAD-7~\cite{spitzer2006gad7},
+PANSS~\cite{kay1987panss}) in clinically diagnosed populations.
 
 The evidence presents an inverse quality-specificity tradeoff. The
 best-designed studies are randomized: Robinson et al.~\cite{robinson2023brief}
