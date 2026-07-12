@@ -274,9 +274,10 @@ humanoid platforms entering the market in 2024--2026 are designed for industrial
 labor, not healthcare. Procurement decisions made in 2026--2027 should distinguish
 between research-access platforms (Unitree G1: open SDK, lowest cost, only
 platform with published clinical task evidence, but physically limited) and future
-clinical platforms (RHP Friends: purpose-built but academic/prototype-only; Sanctuary
-Phoenix Gen~8: highest haptic sensing specification but closed ecosystem). No
-\xl{这里的平台比较涉及 open SDK、lowest cost、prototype-only、highest haptic sensing specification、closed ecosystem 等产品规格和商业属性，建议补充权威来源，例如公司官方技术文档、产品白皮书、公开规格表，或前文已经引用过的对应平台论文；如果前文已经建立这些事实，这里可以改成引用前文表格或章节，避免重复堆 citation。}
+clinical platforms (RHP Friends: purpose built but academic prototype; Sanctuary
+Phoenix Gen~8: highest haptic sensing specification but closed ecosystem). These
+platform specifications and their sources are compared in
+Table~\ref{tab:platforms} and Section~\ref{sec:manipmaturity}. No
 commercial platform is ready for unsupervised clinical use in any application.
 Any hospital-based evaluation program should structure the initial phase as an IRB-
 approved research protocol, not an operational pilot, to ensure safety monitoring,
@@ -342,9 +343,12 @@ key decision points for both jurisdictions.
   dual compliance represents the EU parallel track.}
   \label{fig:regulatory}
 \end{figure}
-\xl{这里的 FDA De Novo、21 CFR 513(f)(2)、predicate/510(k)、EU MDR、EU AI Act 生效时间和 MDR Article 62 都是具体监管事实，必须有官方法规或权威 guidance 支撑；如果 Section 5 已经加过这些 citation，这里建议引用 Section~\ref{sec:challenges} 或对应监管小节/表格，不需要重复堆 citation。}
-
-The path to the first regulatory clearance requires three sequential steps.
+The regulatory instruments named here (the FDA De~Novo route, the absence of a
+510(k) predicate, EU MDR classification and its Article~62 clinical investigation
+requirement, and the EU AI Act application dates) are detailed with their official
+sources in Section~\ref{sec:regulatory} and Table~\ref{tab:regulatory}. Building on
+that analysis, the path to the first regulatory clearance requires three
+sequential steps.
 
 \textbf{Step~1: Performance standards definition.} A joint effort among humanoid
 manufacturers, academic medical centers (UCSD, JHU), and FDA's Center for Devices
@@ -376,10 +380,7 @@ surgical robotics domain.
 \label{sec:ethics}
 
 \textbf{Dignity of care.} Physical care interactions require that the patient
-feels cared for, not processed. The SPRING project finding that participants cited
-eye-level conversational positioning as important for dignified
-interaction~\cite{alamedapineda2024spring} provides direct empirical evidence that
-form factor affects perceived dignity of care. The uncanny valley phenomenon, the
+feels cared for, not processed. The uncanny valley phenomenon, the
 negative affective response elicited by human-like but not fully human
 entities~\cite{mori2012uncanny}, is particularly relevant for humanoid design in
 care settings, where distress rather than curiosity is the cost of a poor
