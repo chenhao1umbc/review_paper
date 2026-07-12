@@ -44,7 +44,9 @@ laparoscopes, rigid endoscopes, and ultrasound probes; and (3)~fingertip-level
 tactile sensing for grip force discrimination, instrument slip detection, and
 tissue compliance sensing. Operationally, progress requires force resolution at
 sub-Newton levels for needle insertion procedures~\cite{atar2025humanoids},
-fingertip sensor density exceeding 1,000 sensing elements\xl{这里的 1,000 sensing elements 是非常具体的硬件阈值，必须补 citation；最好找 tactile sensor / GelSight / high-resolution fingertip sensor 的权威论文来支撑这个数量级。}, and teleoperation
+fingertip sensor density on the order of $10^3$ sensing elements, a resolution
+already reached by camera-based tactile skins such as
+GelSight~\cite{yuan2017gelsight}, and teleoperation
 round-trip latency at levels consistent with real-time force feedback
 requirements. Surgical teleoperation research establishes that network latency
 above 200~ms degrades task completion time and trajectory accuracy in
@@ -75,9 +77,10 @@ require.
 
 The design target for patient-contact force limits is the Power and Force
 Limiting (PFL) regime of ISO/TS~15066:2016~\cite{isots15066}, which provides
-biomechanically derived thresholds for different body regions: for the face and skull, quasi-static
-contact force is limited to 65~N and pressure to 110~N/cm$^2$; for the trunk and
-thorax, 140~N and 210~N/cm$^2$\xl{这些 65 N、110 N/cm2、140 N、210 N/cm2 是标准里的具体数值，必须有直接 citation；建议把 ISO/TS 15066 的 citation 贴到这句话后面，或者确认这些数值完全来自该标准。}. The GentleHumanoid framework demonstrates a
+biomechanically derived thresholds for different body regions
+(Table~A.2): for the face, quasi-static contact force is limited to 65~N and
+pressure to 110~N/cm$^2$; for the chest, to 140~N and 120~N/cm$^2$
+(sternum)~\cite{isots15066}. The GentleHumanoid framework demonstrates a
 Unitree G1 approaching these thresholds for quasi-static upper-body contact.
 
 The critical gap, however, is structural. ISO/TS~15066 was designed for
@@ -136,8 +139,11 @@ substitute for clinical evidence of safety and effectiveness.
 
 The third and most institutionally consequential layer is the liability gap. No
 current healthcare liability framework (US tort law, UK clinical negligence, EU
-product liability) assigns accountability for harm caused by an autonomous
-robotic action in a care setting\xl{这个 claim 不能简单找一篇文献证明“没有 liability framework”；应当补 healthcare AI liability、autonomous robotics liability、medical device/product liability 文献，用来支撑现有法律框架在 autonomous clinical AI/robotic action 上存在 accountability gap。}. This legal ambiguity deters adoption regardless
+product liability) cleanly assigns accountability for harm caused by an autonomous
+robotic action in a care setting: as autonomy increases, the agency, control, and
+foreseeability tests that negligence and product liability doctrines rely on break
+down, leaving a recognized accountability
+gap~\cite{eldakak2024civil,solaiman2024regulating}. This legal ambiguity deters adoption regardless
 of technical capability: hospital risk departments cannot quantify institutional
 exposure for systems operating in legally uncharted territory. Imtiaz and
 Khan~\cite{imtiaz2024perceptions} document this precisely: 269 nursing home
@@ -155,13 +161,17 @@ ISO~13482:2014~\cite{iso13482} (Safety Requirements for Personal Care Robots) is
 the most directly applicable safety standard; it governs robots providing
 physical assistance in human environments. However, \S{}1.4 of ISO~13482
 explicitly excludes devices regulated as medical devices. A humanoid robot performing
-clinical tasks almost certainly meets the medical device definition under FDA
-21~CFR~\S{}201(h) and EU MDR Article~2(1)\xl{这里直接引用 FDA 和 EU MDR 的法规条文定义，必须补官方 citation；法规条文不能只写名称，最好引用 FDA medical device definition 和 EU MDR Article 2(1) 原文或官方网页。}. This creates a hard gap: the system
+clinical tasks almost certainly meets the medical device definition under the US
+Federal Food, Drug, and Cosmetic Act \S{}201(h)~\cite{fdcact201h} and EU MDR
+Article~2(1)~\cite{eumdr2017}. This creates a hard gap: the system
 is likely too clinical for ISO~13482 but no ISO medical robotics standard covers
 general-purpose bipedal humanoid assistants.
 
 In the United States, the De~Novo classification pathway is the only viable
-regulatory entry route. No 510(k) predicate exists\xl{这里是很强的监管路径判断，必须补 citation 或证据说明；建议引用 FDA De Novo guidance / FDA product classification database，并解释为什么没有合适的 510(k) predicate。}. A De~Novo submission requires
+regulatory entry route. Because no legally marketed device of comparable
+intended use and technology exists, there is no predicate to support a 510(k)
+substantial-equivalence claim, which is precisely the case the De~Novo route was
+created to address~\cite{fda2021denovo}. A De~Novo submission requires
 the applicant to propose Special Controls from scratch: accepted performance
 standards for fall prevention in patient-care environments (an area where the
 patient-safety literature is well developed for human falls but silent on
@@ -185,10 +195,11 @@ that sequence.
 
 In the EU, a humanoid clinical assistant would likely be classified as Class~IIa
 under EU MDR Annex~VIII, with autonomous surgical assistance escalating to
-Class~IIb or~III\xl{这里涉及 EU MDR Annex VIII 的分类规则，必须补官方 EU MDR citation；Class IIa、IIb、III 的判断最好对应具体 classification rule，而不是只写作者判断。}. EU AI Act Regulation 2024/1689 additionally classifies any
-AI-driven clinical humanoid as a high-risk AI system~\cite{solaiman2024regulating}. High-risk AI rules apply
-from August 2026; AI embedded in regulated medical products transitions to August
-2027\xl{这里的 high-risk AI system 和 August 2026 / August 2027 生效时间是非常具体的法律时间点，必须补 EU AI Act 官方文本或权威法律分析；日期尤其不能裸写。}. Any EU clinical humanoid market entry must satisfy both MDR and AI Act
+Class~IIb or~III~\cite{eumdr2017}. EU AI Act Regulation 2024/1689 additionally classifies any
+AI-driven clinical humanoid as a high-risk AI system~\cite{euaiact2024,solaiman2024regulating}. Under Article~113,
+high-risk AI obligations apply from 2~August~2026, while AI embedded in products
+regulated under existing Union law such as the MDR transitions on
+2~August~2027~\cite{euaiact2024}. Any EU clinical humanoid market entry must satisfy both MDR and AI Act
 simultaneously, a dual compliance burden for which no completed template yet
 exists.
 
@@ -223,9 +234,6 @@ dimensions that determine market entry strategy.
 \subsection{Software Infrastructure and AI Validation}
 \label{sec:software}
 
-\xl{这一节写得有点少。跟其他段落的长度不匹配，建议扩展一下，尤其是The AI validation gap extends to deployment readiness}
-
-
 The leading VLA models, including openpi/$\pi_0$ (10,551~stars), OpenVLA (5,479~stars),
 and LeRobot (22,179~stars), represent the highest-capability general-purpose
 robot learning infrastructure publicly available. For general-purpose humanoid
@@ -237,16 +245,40 @@ with no current open-source solution are a clinical safety layer, clinical
 workflow integration, an open clinical demonstration dataset, and a validated
 medical simulation environment.
 
-The AI validation gap extends to deployment readiness. VLA models achieve high
-success rates on standard benchmarks, but these share no tasks with the clinical
-procedure requirements documented in~\cite{atar2025humanoids}. The distribution
-shift involves not only visual and geometric differences but also contact physics,
-tool compliance, and procedural sequencing requirements fundamentally different
-from household manipulation. AI in health and medicine more broadly faces similar
-validation challenges as these systems move toward clinical
-deployment~\cite{topol2019high,rajpurkar2022ai,coiera2019last,sendak2020real}. No humanoid software stack has
-addressed IEC~62443 Security Level~2 requirements either, the minimum threshold
-for networked systems in hospital environments.
+The AI validation gap extends to deployment readiness. The leading VLA models
+achieve high success rates on standard manipulation benchmarks, but those
+benchmarks share no tasks with the clinical procedure requirements documented by
+Atar et al.~\cite{atar2025humanoids}, and the shift from benchmark to clinic
+involves not only visual and geometric differences but also contact physics, tool
+compliance, and procedural sequencing fundamentally different from household
+manipulation. A success rate acceptable for a benchmark grasping task is not
+acceptable for needle insertion or catheter placement, where the approximately
+70\% aggregate success observed on real clinical tasks~\cite{atar2025humanoids}
+translates directly into patient risk. This mirrors a broader pattern in medical
+AI, where models that perform well in retrospective evaluation degrade under
+prospective deployment and distribution
+shift~\cite{topol2019high,rajpurkar2022ai,coiera2019last,sendak2020real}.
+
+Beyond raw task performance, learned control policies raise a verification and
+validation problem that current infrastructure does not solve. A VLA policy is a
+function defined over a very large parameter space, and its safety envelope cannot
+be exhaustively characterized by testing; yet regulatory clearance through the
+De~Novo route would require exactly such evidence, expressed as accepted Special
+Controls and, for models that keep learning after deployment, a predetermined
+change control plan~\cite{fda2021aiml,fda2024pccp}. No humanoid software stack
+today supplies the artifacts this demands: a documented safety case, a bounded and
+continuously monitored operational design domain, and validated behavior under the
+sensor noise, occlusion, and contact uncertainty of a real ward. The open
+demonstration datasets and validated medical simulation environments that would
+let such a safety case be assembled do not yet exist for clinical humanoid tasks,
+as identified in Section~\ref{sec:accessibility}.
+
+Security compounds the problem. No humanoid software stack has addressed
+IEC~62443 Security Level~2 requirements, the minimum threshold for networked
+systems in hospital environments; a robot connected to hospital networks while in
+physical contact with patients presents a combined digital and physical attack
+surface for which no security validation specific to humanoids has been
+published.
 
 Table~\ref{tab:techgaps} synthesizes the five principal technical and
 translational barriers identified in this section.
